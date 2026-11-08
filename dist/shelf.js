@@ -85,6 +85,28 @@
   }
   const art = (isbn, title) => '<div class="detailart"><img src="covers/' + isbn + '.jpg" alt="' + escape(title) + ' 英文版封面"></div>';
   const info = (isbn, label) => '<div class="identifier"><div><small>' + label + '</small><b>' + isbn + '</b></div><button class="copy" data-copy="' + isbn + '" type="button">复制 ISBN</button></div>';
+  const retail = JSON.parse(document.querySelector('#retaildata').textContent);
+  function purchaseLinks(isbn) {
+    const shops = retail.products[isbn] || [];
+    const chosen = new Set();
+    const anchor = (url, label, note) => '<a class="shoplink" href="' + escape(url) +
+      '" target="_blank" rel="noopener noreferrer"><span>' + escape(label) +
+      ' ↗</span>' + (note ? '<small>' + escape(note) + '</small>' : '') + '</a>';
+    const top = retail.priority.map(platform => {
+      const direct = shops.find(shop => shop.channel === platform.channel);
+      if (direct) {
+        chosen.add(direct);
+        return anchor(direct.url, direct.platform, direct.stock || '商品页');
+      }
+      return anchor(platform.search.replace('{isbn}',isbn), platform.label, '按 ISBN 搜索');
+    }).join('');
+    const others = shops.filter(shop => !chosen.has(shop));
+    const extra = others.map(shop => anchor(shop.url,shop.platform,shop.stock || '商品页')).join('');
+    const additional = extra ? '<details class="shopmore"><summary>其他书店 · ' + others.length +
+      '</summary><div class="shopgrid">' + extra + '</div></details>' : '';
+    return '<section class="buyarea" aria-label="ISBN ' + isbn + ' 的购买链接"><h4>购买链接</h4><div class="shopgrid">' +
+      top + '</div>' + additional + '</section>';
+  }
   function show(content) {
     document.querySelector('#inside').innerHTML = '<div class="dialoglayout">' + content + '</div>';
     if (!detail.open) detail.showModal();
@@ -101,7 +123,7 @@
       '<div><strong>' + escape(v.label) + '</strong><p class="edsize">' + escape(v.size) + '</p>' +
       (v.pack ? '<p class="meta">随 ' + escape(v.pack) + ' 收录</p>' : '') +
       info(v.isbn, v.scope) + '<div class="edactions"><button class="secondary" data-owned="' + v.key + '" type="button"></button><a target="_blank" rel="noopener" href="' + escape(v.link) + '">英文版资料 ↗</a>' +
-      (v.ref && v.ref !== v.link ? '<a target="_blank" rel="noopener" href="' + escape(v.ref) + '">尺寸出处 ↗</a>' : '') + '</div></div></div>').join('');
+      (v.ref && v.ref !== v.link ? '<a target="_blank" rel="noopener" href="' + escape(v.ref) + '">尺寸出处 ↗</a>' : '') + '</div>' + purchaseLinks(v.isbn) + '</div></div>').join('');
     show(art(id, b.title) + '<div class="description"><div class="kicker">' + escape(b.group + ' · ' + b.edition) + '</div><h2 id="dialogtitle">' + escape(b.title) +
       '</h2><div class="zh">' + escape(b.cn) + '</div><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p><p class="meta">' + escape(credit) + '　<a target="_blank" rel="noopener" href="' + escape(b.summarySource) + '">内容出处 ↗</a></p>' +
       (b.tower ? '<p class="meta">照片里的四册书塔收录了迷你版。</p>' : '') + note + '<h3 class="edhead">英文购买版本</h3>' + editionRows + '<p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
@@ -109,7 +131,7 @@
   function showTower() {
     show(art('9780763650100', 'Baby’s Book Tower') + '<div class="description"><div class="kicker">FOUR MINI BOARD BOOKS</div><h2 id="dialogtitle">Baby’s Book Tower</h2><div class="zh">照片里的四册迷你书塔</div><p>盒内每本约 <b>6 × 6 cm</b>。同样四个故事也有约 <b>17.8 × 17.8 cm</b> 的常规英文单行本，各自有独立 ISBN。</p><p class="tower-contents">' +
       books.filter(b => b.tower).map(b => '<button class="titlechip" data-open="'+b.isbn+'">'+escape(b.title)+'</button>').join(' ') + '</p>' + info('9780763650100', '四册迷你版的整盒 ISBN') +
-      '<div class="dialogactions"><button class="action" id="markTower" type="button"></button><button class="secondary" id="filtertower" type="button">查看这四部作品 ↓</button></div><p class="meta"><a href="https://www.mackids.com.tw/product/detail/1907" target="_blank" rel="noopener">迷你单册尺寸 ↗</a>　<a href="https://www.walkerbooks.com.au/book/9780763650100/" target="_blank" rel="noopener">书塔出版信息 ↗</a></p><p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
+      purchaseLinks('9780763650100') + '<div class="dialogactions"><button class="action" id="markTower" type="button"></button><button class="secondary" id="filtertower" type="button">查看这四部作品 ↓</button></div><p class="meta"><a href="https://www.mackids.com.tw/product/detail/1907" target="_blank" rel="noopener">迷你单册尺寸 ↗</a>　<a href="https://www.walkerbooks.com.au/book/9780763650100/" target="_blank" rel="noopener">书塔出版信息 ↗</a></p><p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }
   async function copyIsbn(button) {
     const id = button.dataset.copy;
@@ -174,7 +196,7 @@
     }).join('');
     document.querySelector('#comparison').innerHTML = '<div><h3>重复 · ' + common.length + ' 本</h3>' + (titles(common) || '两套没有重复的书。') +
       '</div><div><h3>新增 · ' + fresh.length + ' 本</h3>' + (titles(fresh) || '已有套装包含这些书。') +
-      '</div><p class="setfoot"><img src="covers/' + next.isbn + '.jpg" alt="' + escape(next.title) + ' 套装外观"><span><b>想比较的这套 · 单册尺寸</b>　' + escape(next.singleSize) + '<br><b>整套包装尺寸</b>　' + escape(next.packageSize) + '<br><a href="' + escape(next.link) + '" target="_blank" rel="noopener">查这套组合 ↗</a>　套装 ISBN ' + next.isbn + '</span></p>';
+      '</div><p class="setfoot"><img src="covers/' + next.isbn + '.jpg" alt="' + escape(next.title) + ' 套装外观"><span><b>想比较的这套 · 单册尺寸</b>　' + escape(next.singleSize) + '<br><b>整套包装尺寸</b>　' + escape(next.packageSize) + '<br><a href="' + escape(next.link) + '" target="_blank" rel="noopener">查这套组合 ↗</a>　套装 ISBN ' + next.isbn + '</span></p>' + purchaseLinks(next.isbn);
   }
   baseSelect.addEventListener('change',compare);
   nextSelect.addEventListener('change',compare);

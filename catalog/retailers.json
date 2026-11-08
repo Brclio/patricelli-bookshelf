@@ -1,0 +1,2043 @@
+{
+  "checked": "2026-11-08",
+  "priority": [
+    {
+      "channel": "amazon-us",
+      "label": "亚马逊美国",
+      "search": "https://www.amazon.com/s?i=stripbooks&k={isbn}"
+    },
+    {
+      "channel": "taobao",
+      "label": "淘宝",
+      "search": "https://s.taobao.com/search?q={isbn}"
+    }
+  ],
+  "products": {
+    "9780763619503": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/001995087",
+        "source": "https://www.sanmin.com.tw/product/index/001995087",
+        "stock": "需订货"
+      },
+      {
+        "platform": "誠品線上",
+        "channel": "other",
+        "url": "https://www.eslite.com/product/1001294883563834",
+        "source": "https://www.eslite.com/product/1001294883563834"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/827",
+        "source": "https://www.mackids.com.tw/product/detail/827",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/yummy-yucky-9780763619503",
+        "source": "https://buybookbook.com/zh/products/yummy-yucky-9780763619503"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763619507",
+        "source": "https://www.amazon.com/Yummy-Yucky-Leslie-Patricelli-board/dp/0763619507"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/yummy-yucky-leslie-patricelli/1100303865?ean=9780763619503",
+        "source": "https://www.barnesandnoble.com/w/yummy-yucky-leslie-patricelli/1100303865?ean=9780763619503"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763619503/Yummy-Yucky-Leslie-Patricelli-board-0763619507/plp",
+        "source": "https://www.abebooks.com/9780763619503/Yummy-Yucky-Leslie-Patricelli-board-0763619507/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763619503.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763619503.html"
+      }
+    ],
+    "9780763619510": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/001995088",
+        "source": "https://www.sanmin.com.tw/product/index/001995088",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/829",
+        "source": "https://www.mackids.com.tw/product/detail/829",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/big-little-9780763619510",
+        "source": "https://buybookbook.com/zh/products/big-little-9780763619510"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763619515",
+        "source": "https://www.amazon.com/Little-Leslie-Patricelli-board-books/dp/0763619515"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/big-little-leslie-patricelli/1102302025?ean=9780763619510",
+        "source": "https://www.barnesandnoble.com/w/big-little-leslie-patricelli/1102302025?ean=9780763619510"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763619510/Big-Little-Playful-Concept-Book-0763619515/plp",
+        "source": "https://www.abebooks.com/9780763619510/Big-Little-Playful-Concept-Book-0763619515/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/big-little-leslie-patricelli/book/9780763619510.html",
+        "source": "https://www.booktopia.com.au/big-little-leslie-patricelli/book/9780763619510.html"
+      }
+    ],
+    "9780763619527": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/001995089",
+        "source": "https://www.sanmin.com.tw/product/index/001995089",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/825",
+        "source": "https://www.mackids.com.tw/product/detail/825",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/quiet-loud-9780763619527",
+        "source": "https://buybookbook.com/zh/products/quiet-loud-9780763619527"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763619523",
+        "source": "https://www.amazon.com/Quiet-Leslie-Patricelli-board-books/dp/0763619523"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/quiet-loud-leslie-patricelli/1005798889?ean=9780763619527",
+        "source": "https://www.barnesandnoble.com/w/quiet-loud-leslie-patricelli/1005798889?ean=9780763619527"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763619527/Quiet-Loud-Leslie-Patricelli-board-0763619523/plp",
+        "source": "https://www.abebooks.com/9780763619527/Quiet-Loud-Leslie-Patricelli-board-0763619523/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763619527.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763619527.html"
+      }
+    ],
+    "9780763623630": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/002940152",
+        "source": "https://www.sanmin.com.tw/product/index/002940152",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1037",
+        "source": "https://www.mackids.com.tw/product/detail/1037",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/blankie-9780763623630",
+        "source": "https://buybookbook.com/zh/products/blankie-9780763623630"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763623636",
+        "source": "https://www.amazon.com/Blankie-Leslie-Patricelli-board-books/dp/0763623636"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/blankie-leslie-patricelli/1103362941?ean=9780763623630",
+        "source": "https://www.barnesandnoble.com/w/blankie-leslie-patricelli/1103362941?ean=9780763623630"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763623630/Blankie-Leslie-Patricelli-board-books-0763623636/plp",
+        "source": "https://www.abebooks.com/9780763623630/Blankie-Leslie-Patricelli-board-books-0763623636/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763623630.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763623630.html"
+      }
+    ],
+    "9780763623647": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/002898354",
+        "source": "https://www.sanmin.com.tw/product/index/002898354",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1035",
+        "source": "https://www.mackids.com.tw/product/detail/1035",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/binky-9780763623647",
+        "source": "https://buybookbook.com/zh/products/binky-9780763623647"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763623644",
+        "source": "https://www.amazon.com/Binky-Leslie-Patricelli-board-books/dp/0763623644"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/binky-leslie-patricelli/1103362933?ean=9780763623647",
+        "source": "https://www.barnesandnoble.com/w/binky-leslie-patricelli/1103362933?ean=9780763623647"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763623647/Binky-Comforting-Story-Pacifier-Attachment-0763623644/plp",
+        "source": "https://www.abebooks.com/9780763623647/Binky-Comforting-Story-Pacifier-Attachment-0763623644/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763623647.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763623647.html"
+      }
+    ],
+    "9780763628253": [
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763628255",
+        "source": "https://www.amazon.com/Birthday-Box-Leslie-Patricelli/dp/0763628255"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763628253/Birthday-Box-Patricelli-Leslie-0763628255/plp",
+        "source": "https://www.abebooks.com/9780763628253/Birthday-Box-Patricelli-Leslie-0763628255/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/the-birthday-box-leslie-patricelli/book/9780763628253.html",
+        "source": "https://www.booktopia.com.au/the-birthday-box-leslie-patricelli/book/9780763628253.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763632410": [
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632414",
+        "source": "https://www.amazon.com/Higher-Leslie-Patricelli/dp/0763632414"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632410/Higher-Patricelli-Leslie-0763632414/plp",
+        "source": "https://www.abebooks.com/9780763632410/Higher-Patricelli-Leslie-0763632414/plp"
+      }
+    ],
+    "9780763632427": [
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632422",
+        "source": "https://www.amazon.com/Patterson-Puppies-Rainy-Day/dp/0763632422"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632427/Patterson-Puppies-Rainy-Day-Patricelli-0763632422/plp",
+        "source": "https://www.abebooks.com/9780763632427/Patterson-Puppies-Rainy-Day-Patricelli-0763632422/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/patterson-puppies-and-the-rainy-day-leslie-patricelli/book/9780763632427.html",
+        "source": "https://www.booktopia.com.au/patterson-puppies-and-the-rainy-day-leslie-patricelli/book/9780763632427.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763632434": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004102958",
+        "source": "https://www.sanmin.com.tw/product/index/004102958",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/the-patterson-puppies-and-the-midnight-monster-party-9780763632434",
+        "source": "https://buybookbook.com/zh/products/the-patterson-puppies-and-the-midnight-monster-party-9780763632434"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632430",
+        "source": "https://www.amazon.com/Patterson-Puppies-Midnight-Monster-Party/dp/0763632430"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632434/Patterson-Puppies-Midnight-Monster-Party-0763632430/plp",
+        "source": "https://www.abebooks.com/9780763632434/Patterson-Puppies-Midnight-Monster-Party-0763632430/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/the-patterson-puppies-and-the-midnight-monster-party-leslie-patricelli/book/9780763632434.html",
+        "source": "https://www.booktopia.com.au/the-patterson-puppies-and-the-midnight-monster-party-leslie-patricelli/book/9780763632434.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763632441": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/001995142",
+        "source": "https://www.sanmin.com.tw/product/index/001995142",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1497",
+        "source": "https://www.mackids.com.tw/product/detail/1497",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/no-no-yes-yes-9780763632441",
+        "source": "https://buybookbook.com/zh/products/no-no-yes-yes-9780763632441"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632449",
+        "source": "https://www.amazon.com/Yes-Leslie-Patricelli-board-books/dp/0763632449"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/no-no-yes-yes-leslie-patricelli/1008696915?ean=9780763632441",
+        "source": "https://www.barnesandnoble.com/w/no-no-yes-yes-leslie-patricelli/1008696915?ean=9780763632441"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632441/Gentle-Introduction-Manners-Behavior-Making-0763632449/plp",
+        "source": "https://www.abebooks.com/9780763632441/Gentle-Introduction-Manners-Behavior-Making-0763632449/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632441.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632441.html"
+      }
+    ],
+    "9780763632458": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/002765374",
+        "source": "https://www.sanmin.com.tw/product/index/002765374",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1495",
+        "source": "https://www.mackids.com.tw/product/detail/1495",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/baby-happy-baby-sad-9780763632458",
+        "source": "https://buybookbook.com/zh/products/baby-happy-baby-sad-9780763632458"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632457",
+        "source": "https://www.amazon.com/Happy-Leslie-Patricelli-board-books/dp/0763632457"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/baby-happy-baby-sad-leslie-patricelli/1102302028?ean=9780763632458",
+        "source": "https://www.barnesandnoble.com/w/baby-happy-baby-sad-leslie-patricelli/1102302028?ean=9780763632458"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632458/Baby-Happy-Sad-Gentle-Introduction-0763632457/plp",
+        "source": "https://www.abebooks.com/9780763632458/Baby-Happy-Sad-Gentle-Introduction-0763632457/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632458.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632458.html"
+      }
+    ],
+    "9780763632465": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003279296",
+        "source": "https://www.sanmin.com.tw/product/index/003279296",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/2319",
+        "source": "https://www.mackids.com.tw/product/detail/2319",
+        "stock": "可下单"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632465",
+        "source": "https://www.amazon.com/Huggy-Kissy-Leslie-Patricelli-board/dp/0763632465"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/huggy-kissy-leslie-patricelli/1109601338?ean=9780763632465",
+        "source": "https://www.barnesandnoble.com/w/huggy-kissy-leslie-patricelli/1109601338?ean=9780763632465"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632465/Huggy-Kissy-Sweet-Story-Ways-0763632465/plp",
+        "source": "https://www.abebooks.com/9780763632465/Huggy-Kissy-Sweet-Story-Ways-0763632465/plp"
+      }
+    ],
+    "9780763632472": [
+      {
+        "platform": "华研外语（有赞）",
+        "channel": "other",
+        "url": "https://detail.youzan.com/show/goods?alias=2g1g69qwodf02np",
+        "source": "https://detail.youzan.com/show/goods?alias=2g1g69qwodf02np",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003189967",
+        "source": "https://www.sanmin.com.tw/product/index/003189967",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/2313",
+        "source": "https://www.mackids.com.tw/product/detail/2313",
+        "stock": "可下单"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763632473",
+        "source": "https://www.candlewick.com/9780763632472/fa-la-la/"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763632472/Joyful-Celebration-Christmas-Holiday-Traditions-0763632473/plp",
+        "source": "https://www.abebooks.com/9780763632472/Joyful-Celebration-Christmas-Holiday-Traditions-0763632473/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632472.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763632472.html"
+      }
+    ],
+    "9780763641580": [
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763641588",
+        "source": "https://www.amazon.com/Board-Books-Leslie-Patricelli-board/dp/0763641588"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763641580/Box-Board-Books-Leslie-Patricelli-0763641588/plp",
+        "source": "https://www.abebooks.com/9780763641580/Box-Board-Books-Leslie-Patricelli-0763641588/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/yes-yes--leslie-patricelli/book/9780763641580.html",
+        "source": "https://www.booktopia.com.au/yes-yes--leslie-patricelli/book/9780763641580.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763644338": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003149985",
+        "source": "https://www.sanmin.com.tw/product/index/003149985",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1909",
+        "source": "https://www.mackids.com.tw/product/detail/1909",
+        "stock": "可下单"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763644331",
+        "source": "https://www.amazon.com/Higher-Leslie-Patricelli-board-books/dp/0763644331"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/higher-higher-leslie-patricelli/1112050915?ean=9780763644338",
+        "source": "https://www.barnesandnoble.com/w/higher-higher-leslie-patricelli/1112050915?ean=9780763644338"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763644338/Higher-Leslie-Patricelli-board-books-0763644331/plp",
+        "source": "https://www.abebooks.com/servlet/SearchResults?isbn=9780763644338"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/higher-higher--leslie-patricelli/book/9780763644338.html",
+        "source": "https://www.booktopia.com.au/higher-higher--leslie-patricelli/book/9780763644338.html"
+      }
+    ],
+    "9780763644499": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003134262",
+        "source": "https://www.sanmin.com.tw/product/index/003134262",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1709",
+        "source": "https://www.mackids.com.tw/product/detail/1709",
+        "stock": "可下单"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763644498",
+        "source": "https://www.amazon.com/Birthday-Leslie-Patricelli-board-books/dp/0763644498"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/the-birthday-box-leslie-patricelli/1008147297?ean=9780763644499",
+        "source": "https://www.barnesandnoble.com/w/the-birthday-box-leslie-patricelli/1008147297?ean=9780763644499"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763644499/Birthday-Box-Fun-Tale-Celebrations-0763644498/plp",
+        "source": "https://www.abebooks.com/9780763644499/Birthday-Box-Fun-Tale-Celebrations-0763644498/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/the-birthday-box-leslie-patricelli/book/9780763644499.html",
+        "source": "https://www.booktopia.com.au/the-birthday-box-leslie-patricelli/book/9780763644499.html"
+      }
+    ],
+    "9780763644765": [
+      {
+        "platform": "中商进口商城（有赞）",
+        "channel": "other",
+        "url": "https://detail.youzan.com/show/goods?alias=27bg370xww55t",
+        "source": "https://detail.youzan.com/show/goods?alias=27bg370xww55t",
+        "stock": "缺货"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003175247",
+        "source": "https://www.sanmin.com.tw/product/index/003175247",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1911",
+        "source": "https://www.mackids.com.tw/product/detail/1911",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/potty-9780763644765",
+        "source": "https://buybookbook.com/zh/products/potty-9780763644765"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763644765",
+        "source": "https://www.amazon.com/Potty-Leslie-Patricelli-board-books/dp/0763644765"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/potty-leslie-patricelli/1101956989?ean=9780763644765",
+        "source": "https://www.barnesandnoble.com/w/potty-leslie-patricelli/1101956989?ean=9780763644765"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763644765/Potty-Toilet-Training-Story-Bathroom-0763644765/plp",
+        "source": "https://www.abebooks.com/9780763644765/Potty-Toilet-Training-Story-Bathroom-0763644765/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763644765.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763644765.html"
+      }
+    ],
+    "9780763644772": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004097148",
+        "source": "https://www.sanmin.com.tw/product/index/004097148",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763644773",
+        "source": "https://www.amazon.com/Be-Quiet-Mike-Leslie-Patricelli/dp/0763644773"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763644772/Quiet-Mike-Patricelli-Leslie-0763644773/plp",
+        "source": "https://www.abebooks.com/9780763644772/Quiet-Mike-Patricelli-Leslie-0763644773/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/be-quiet-mike--leslie-patricelli/book/9780763644772.html",
+        "source": "https://www.booktopia.com.au/be-quiet-mike--leslie-patricelli/book/9780763644772.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763645670": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003172768",
+        "source": "https://www.sanmin.com.tw/product/index/003172768",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/28301",
+        "source": "https://www.mackids.com.tw/product/detail/28301",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/tubby-9780763645670",
+        "source": "https://buybookbook.com/zh/products/tubby-9780763645670"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763645672",
+        "source": "https://www.amazon.com/Tubby-Leslie-Patricelli-board-books/dp/0763645672"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/tubby-leslie-patricelli/1102581172?ean=9780763645670",
+        "source": "https://www.barnesandnoble.com/w/tubby-leslie-patricelli/1102581172?ean=9780763645670"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763645670/Tubby-Leslie-Patricelli-board-books-0763645672/plp",
+        "source": "https://www.abebooks.com/9780763645670/Tubby-Leslie-Patricelli-board-books-0763645672/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763645670.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763645670.html"
+      }
+    ],
+    "9780763650100": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003175265",
+        "source": "https://www.sanmin.com.tw/product/index/003175265",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/1907",
+        "source": "https://www.mackids.com.tw/product/detail/1907",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/babys-book-tower-9780763650100",
+        "source": "https://buybookbook.com/zh/products/babys-book-tower-9780763650100"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763650102",
+        "source": "https://www.amazon.com/Babys-Tower-Leslie-Patricelli-board/dp/0763650102"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/babys-book-tower-leslie-patricelli/1103362755?ean=9780763650100",
+        "source": "https://www.barnesandnoble.com/w/babys-book-tower-leslie-patricelli/1103362755?ean=9780763650100"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763650100/Babys-Book-Tower-Leslie-Patricelli-0763650102/plp",
+        "source": "https://www.abebooks.com/9780763650100/Babys-Book-Tower-Leslie-Patricelli-0763650102/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/baby-s-book-tower-leslie-patricelli/book/9780763650100.html",
+        "source": "https://www.booktopia.com.au/baby-s-book-tower-leslie-patricelli/book/9780763650100.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763651046": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/006431869",
+        "source": "https://www.sanmin.com.tw/product/index/006431869",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763651044",
+        "source": "https://www.amazon.com/Rizzlerunk-Club-Best-Under-Frogs/dp/0763651044"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/best-buds-under-frogs-leslie-patricelli/1142363393?ean=9780763651046",
+        "source": "https://www.barnesandnoble.com/w/best-buds-under-frogs-leslie-patricelli/1142363393?ean=9780763651046"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763651046/Rizzlerunk-Club-Best-Buds-Under-0763651044/plp",
+        "source": "https://www.abebooks.com/9780763651046/Rizzlerunk-Club-Best-Buds-Under-0763651044/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/best-buds-under-frogs-the-rizzlerunk-club-leslie-patricelli/book/9780763651046.html",
+        "source": "https://www.booktopia.com.au/best-buds-under-frogs-the-rizzlerunk-club-leslie-patricelli/book/9780763651046.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763651053": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/009657553",
+        "source": "https://www.sanmin.com.tw/product/index/009657553",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/the-rizzlerunk-club-the-big-bad-lies-9780763651053",
+        "source": "https://buybookbook.com/zh/products/the-rizzlerunk-club-the-big-bad-lies-9780763651053"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763651052",
+        "source": "https://www.amazon.com/Rizzlerunk-Club-Big-Bad-Lies/dp/0763651052"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/the-big-bad-lies-leslie-patricelli/1142363394?ean=9780763651053",
+        "source": "https://www.barnesandnoble.com/w/the-big-bad-lies-leslie-patricelli/1142363394?ean=9780763651053"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763651053/Rizzlerunk-Club-Big-Bad-Lies-0763651052/plp",
+        "source": "https://www.abebooks.com/9780763651053/Rizzlerunk-Club-Big-Bad-Lies-0763651052/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/the-rizzlerunk-club-leslie-patricelli/book/9780763651053.html",
+        "source": "https://www.booktopia.com.au/the-rizzlerunk-club-leslie-patricelli/book/9780763651053.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763654733": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004102823",
+        "source": "https://www.sanmin.com.tw/product/index/004102823",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/faster-faster-9780763654733",
+        "source": "https://buybookbook.com/zh/products/faster-faster-9780763654733"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763654736",
+        "source": "https://www.amazon.com/Faster-Leslie-Patricelli/dp/0763654736"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/faster-faster-leslie-patricelli/1111572931?ean=9780763654733",
+        "source": "https://www.barnesandnoble.com/w/faster-faster-leslie-patricelli/1111572931?ean=9780763654733"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763654733/Faster-Leslie-Patricelli-0763654736/plp",
+        "source": "https://www.abebooks.com/9780763654733/Faster-Leslie-Patricelli-0763654736/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/faster-faster--leslie-patricelli/book/9780763654733.html",
+        "source": "https://www.booktopia.com.au/faster-faster--leslie-patricelli/book/9780763654733.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763662226": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/003937590",
+        "source": "https://www.sanmin.com.tw/product/index/003937590",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/2543",
+        "source": "https://www.mackids.com.tw/product/detail/2543",
+        "stock": "缺货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763662224",
+        "source": "https://www.amazon.com/Faster-Leslie-Patricelli-board-books/dp/0763662224"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/faster-faster-leslie-patricelli/1111572931?ean=9780763662226",
+        "source": "https://www.barnesandnoble.com/w/faster-faster-leslie-patricelli/1111572931?ean=9780763662226"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763662226/Faster-Leslie-Patricelli-0763662224/plp",
+        "source": "https://www.abebooks.com/9780763662226/Faster-Leslie-Patricelli-0763662224/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/faster-faster--leslie-patricelli/book/9780763662226.html",
+        "source": "https://www.booktopia.com.au/faster-faster--leslie-patricelli/book/9780763662226.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763663193": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004736747",
+        "source": "https://www.sanmin.com.tw/product/index/004736747",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/3235",
+        "source": "https://www.mackids.com.tw/product/detail/3235",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/hop-hop-9780763663193",
+        "source": "https://buybookbook.com/zh/products/hop-hop-9780763663193"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763663190",
+        "source": "https://www.amazon.com/Hop-Leslie-Patricelli-board-books/dp/0763663190"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/hop-hop-leslie-patricelli/1119987274?ean=9780763663193",
+        "source": "https://www.barnesandnoble.com/w/hop-hop-leslie-patricelli/1119987274?ean=9780763663193"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763663193/Hop-Colorful-Easter-Holiday-Adventure-0763663190/plp",
+        "source": "https://www.abebooks.com/9780763663193/Hop-Colorful-Easter-Holiday-Adventure-0763663190/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763663193.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763663193.html"
+      }
+    ],
+    "9780763663209": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004815284",
+        "source": "https://www.sanmin.com.tw/product/index/004815284",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/boo-9780763663209",
+        "source": "https://buybookbook.com/zh/products/boo-9780763663209"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763663204",
+        "source": "https://www.amazon.com/Boo-Leslie-Patricelli-board-books/dp/0763663204"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/boo-leslie-patricelli/1120610994?ean=9780763663209",
+        "source": "https://www.barnesandnoble.com/w/boo-leslie-patricelli/1120610994?ean=9780763663209"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763663209/Boo-Playful-Story-Halloween-Traditions-0763663204/plp",
+        "source": "https://www.abebooks.com/9780763663209/Boo-Playful-Story-Halloween-Traditions-0763663204/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/boo--leslie-patricelli/book/9780763663209.html",
+        "source": "https://www.booktopia.com.au/boo--leslie-patricelli/book/9780763663209.html"
+      }
+    ],
+    "9780763663216": [
+      {
+        "platform": "华研外语（有赞）",
+        "channel": "other",
+        "url": "https://detail.youzan.com/show/goods?alias=2xa8t06wgiwj61d",
+        "source": "https://detail.youzan.com/show/goods?alias=2xa8t06wgiwj61d",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004123655",
+        "source": "https://www.sanmin.com.tw/product/index/004123655",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/2797",
+        "source": "https://www.mackids.com.tw/product/detail/2797",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/toot-9780763663216",
+        "source": "https://buybookbook.com/zh/products/toot-9780763663216"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763663212",
+        "source": "https://www.amazon.com/Toot-Leslie-Patricelli-board-books/dp/0763663212"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/toot-leslie-patricelli/1115960947?ean=9780763663216",
+        "source": "https://www.barnesandnoble.com/w/toot-leslie-patricelli/1115960947?ean=9780763663216"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763663216/Toot-Leslie-Patricelli-board-books-0763663212/plp",
+        "source": "https://www.abebooks.com/9780763663216/Toot-Leslie-Patricelli-board-books-0763663212/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/toot-leslie-patricelli/book/9780763663216.html",
+        "source": "https://www.booktopia.com.au/toot-leslie-patricelli/book/9780763663216.html"
+      }
+    ],
+    "9780763663223": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004123656",
+        "source": "https://www.sanmin.com.tw/product/index/004123656",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/2811",
+        "source": "https://www.mackids.com.tw/product/detail/2811",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/tickle-9780763663223",
+        "source": "https://buybookbook.com/zh/products/tickle-9780763663223"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763663220",
+        "source": "https://www.amazon.com/Tickle-Leslie-Patricelli-board-books/dp/0763663220"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763663223/Tickle-Playful-Story-Family-Bonding-0763663220/plp",
+        "source": "https://www.abebooks.com/9780763663223/Tickle-Playful-Story-Family-Bonding-0763663220/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763663223.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9780763663223.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763679309": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/006566741",
+        "source": "https://www.sanmin.com.tw/product/index/006566741",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/bigger-bigger-9780763679309",
+        "source": "https://buybookbook.com/zh/products/bigger-bigger-9780763679309"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763679305",
+        "source": "https://www.amazon.com/Bigger-Leslie-Patricelli/dp/0763679305"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/bigger-bigger-leslie-patricelli/1126977024?ean=9780763679309",
+        "source": "https://www.barnesandnoble.com/w/bigger-bigger-leslie-patricelli/1126977024?ean=9780763679309"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763679309/Bigger-Patricelli-Leslie-0763679305/plp",
+        "source": "https://www.abebooks.com/9780763679309/Bigger-Patricelli-Leslie-0763679305/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/bigger-bigger--leslie-patricelli/book/9780763679309.html",
+        "source": "https://www.booktopia.com.au/bigger-bigger--leslie-patricelli/book/9780763679309.html",
+        "stock": "需订货"
+      }
+    ],
+    "9780763679316": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005999855",
+        "source": "https://www.sanmin.com.tw/product/index/005999855",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/26695",
+        "source": "https://www.mackids.com.tw/product/detail/26695",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/hair-9780763679316",
+        "source": "https://buybookbook.com/zh/products/hair-9780763679316"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763679313",
+        "source": "https://www.amazon.com/Hair-Leslie-Patricelli-board-books/dp/0763679313"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/hair-leslie-patricelli/1123655190?ean=9780763679316",
+        "source": "https://www.barnesandnoble.com/w/hair-leslie-patricelli/1123655190?ean=9780763679316"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763679316/Hair-Gentle-First-Haircut-Story-0763679313/plp",
+        "source": "https://www.abebooks.com/9780763679316/Hair-Gentle-First-Haircut-Story-0763679313/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/hair-leslie-patricelli/book/9780763679316.html",
+        "source": "https://www.booktopia.com.au/hair-leslie-patricelli/book/9780763679316.html"
+      }
+    ],
+    "9780763679323": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005999856",
+        "source": "https://www.sanmin.com.tw/product/index/005999856",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/26697",
+        "source": "https://www.mackids.com.tw/product/detail/26697",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/nighty-night-9780763679323",
+        "source": "https://buybookbook.com/zh/products/nighty-night-9780763679323"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763679321",
+        "source": "https://www.amazon.com/Nighty-Night-Leslie-Patricelli-board-books/dp/0763679321"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/nighty-night-leslie-patricelli/1123655191?ean=9780763679323",
+        "source": "https://www.barnesandnoble.com/w/nighty-night-leslie-patricelli/1123655191?ean=9780763679323"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763679323/Nighty-Night-Bedtime-Story-Night-Time-0763679321/plp",
+        "source": "https://www.abebooks.com/9780763679323/Nighty-Night-Bedtime-Story-Night-Time-0763679321/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/nighty-night-leslie-patricelli/book/9780763679323.html",
+        "source": "https://www.booktopia.com.au/nighty-night-leslie-patricelli/book/9780763679323.html"
+      }
+    ],
+    "9780763679330": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/006690143",
+        "source": "https://www.sanmin.com.tw/product/index/006690143",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/32875",
+        "source": "https://www.mackids.com.tw/product/detail/32875",
+        "stock": "缺货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/076367933X",
+        "source": "https://www.amazon.com/Tooth-Leslie-Patricelli-board-books/dp/076367933X"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/tooth-leslie-patricelli/1127871329?ean=9780763679330",
+        "source": "https://www.barnesandnoble.com/w/tooth-leslie-patricelli/1127871329?ean=9780763679330"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763679330/Tooth-Fun-Story-Babys-First-076367933X/plp",
+        "source": "https://www.abebooks.com/servlet/SearchResults?isbn=9780763679330"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/tooth-leslie-patricelli/book/9780763679330.html",
+        "source": "https://www.booktopia.com.au/tooth-leslie-patricelli/book/9780763679330.html"
+      }
+    ],
+    "9780763679347": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/006690144",
+        "source": "https://www.sanmin.com.tw/product/index/006690144",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/32873",
+        "source": "https://www.mackids.com.tw/product/detail/32873",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/big-kid-bed-9780763679347",
+        "source": "https://buybookbook.com/zh/products/big-kid-bed-9780763679347"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0763679348",
+        "source": "https://www.amazon.com/Big-Leslie-Patricelli-board-books/dp/0763679348"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/big-kid-bed-leslie-patricelli/1127871330?ean=9780763679347",
+        "source": "https://www.barnesandnoble.com/w/big-kid-bed-leslie-patricelli/1127871330?ean=9780763679347"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780763679347/Big-Kid-Bed-Milestone-Bedtime-0763679348/plp",
+        "source": "https://www.abebooks.com/9780763679347/Big-Kid-Bed-Milestone-Bedtime-0763679348/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/big-kid-bed-leslie-patricelli/book/9780763679347.html",
+        "source": "https://www.booktopia.com.au/big-kid-bed-leslie-patricelli/book/9780763679347.html"
+      }
+    ],
+    "9780963908506": [
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/0963908502",
+        "source": "https://www.amazon.com/Espresso-Served-Here-Leslie-Patricelli/dp/0963908502"
+      },
+      {
+        "platform": "eBay 美国",
+        "channel": "other",
+        "url": "https://www.ebay.com/itm/188934845929",
+        "source": "https://www.ebay.com/itm/188934845929",
+        "stock": "二手"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9780963908506/Espresso-Served-Patricelli-Leslie-Gruening-0963908502/plp",
+        "source": "https://www.abebooks.com/9780963908506/Espresso-Served-Patricelli-Leslie-Gruening-0963908502/plp"
+      }
+    ],
+    "9781406378092": [
+      {
+        "platform": "誠品線上",
+        "channel": "other",
+        "url": "https://www.eslite.com/product/10012071872682884000000",
+        "source": "https://www.eslite.com/product/10012071872682884000000"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1406378097",
+        "source": "https://www.amazon.com/Leslie-Patricellis-Brilliant-Collection-Higher/dp/1406378097"
+      },
+      {
+        "platform": "Books2Door 英国",
+        "channel": "other",
+        "url": "https://www.books2door.com/products/leslie-patricellis-big-box-of-brilliant-8-books-collection-box-set-ages-1-3-board-book",
+        "source": "https://www.books2door.com/products/leslie-patricellis-big-box-of-brilliant-8-books-collection-box-set-ages-1-3-board-book",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "Books4People 英国",
+        "channel": "other",
+        "url": "https://www.books4people.co.uk/products/leslie-patricellis-big-box-of-brilliant-books-8-board-books-collection-set-higher-higher-on-my-potty-in-the-bath-huggy-kissy-tickle-toot-no-no-yes-yes-and-quiet-loud",
+        "source": "https://www.books4people.co.uk/products/leslie-patricellis-big-box-of-brilliant-books-8-board-books-collection-set-higher-higher-on-my-potty-in-the-bath-huggy-kissy-tickle-toot-no-no-yes-yes-and-quiet-loud"
+      }
+    ],
+    "9781419709517": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004467751",
+        "source": "https://www.sanmin.com.tw/product/index/004467751",
+        "stock": "已绝版"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419709518",
+        "source": "https://www.amazon.com/Mini-Myths-Be-Patient-Pandora/dp/1419709518"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419709517/Patient-Pandora-Mini-Myths-Holub-1419709518/plp",
+        "source": "https://www.abebooks.com/9781419709517/Patient-Pandora-Mini-Myths-Holub-1419709518/plp"
+      }
+    ],
+    "9781419709524": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004738930",
+        "source": "https://www.sanmin.com.tw/product/index/004738930",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419709526",
+        "source": "https://www.amazon.com/Mini-Myths-Make-Wish-Midas/dp/1419709526"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419709524/Mini-Myths-Wish-Midas-Joan-1419709526/plp",
+        "source": "https://www.abebooks.com/9781419709524/Mini-Myths-Wish-Midas-Joan-1419709526/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/make-a-wish-midas--joan-holub/book/9781419709524.html",
+        "source": "https://www.booktopia.com.au/make-a-wish-midas--joan-holub/book/9781419709524.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781419709531": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004738931",
+        "source": "https://www.sanmin.com.tw/product/index/004738931",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419709534",
+        "source": "https://www.amazon.com/Brush-Your-Hair-Medusa-Myths/dp/1419709534"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419709531/Brush-Hair-Medusa-Mini-Myths-1419709534/plp",
+        "source": "https://www.abebooks.com/9781419709531/Brush-Hair-Medusa-Mini-Myths-1419709534/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/brush-your-hair-medusa--joan-holub/book/9781419709531.html",
+        "source": "https://www.booktopia.com.au/brush-your-hair-medusa--joan-holub/book/9781419709531.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781419709548": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004467752",
+        "source": "https://www.sanmin.com.tw/product/index/004467752",
+        "stock": "已绝版"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419709542",
+        "source": "https://www.amazon.com/Play-Nice-Hercules-Mini-Myths/dp/1419709542"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419709548/Mini-Myths-Play-Nice-Hercules-1419709542/plp",
+        "source": "https://www.abebooks.com/9781419709548/Mini-Myths-Play-Nice-Hercules-1419709542/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/play-nice-hercules--joan-holub/book/9781419709548.html",
+        "source": "https://www.booktopia.com.au/play-nice-hercules--joan-holub/book/9781419709548.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781419716775": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005080323",
+        "source": "https://www.sanmin.com.tw/product/index/005080323",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/mini-myths-be-careful-icarus-board-bookleslie-patricelli",
+        "source": "https://buybookbook.com/zh/products/mini-myths-be-careful-icarus-board-bookleslie-patricelli"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419716778",
+        "source": "https://www.amazon.com/Be-Careful-Icarus-Mini-Myths/dp/1419716778"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419716775/Careful-Icarus-Mini-Myths-Holub-1419716778/plp",
+        "source": "https://www.abebooks.com/9781419716775/Careful-Icarus-Mini-Myths-Holub-1419716778/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/be-careful-icarus--joan-holub/book/9781419716775.html",
+        "source": "https://www.booktopia.com.au/be-careful-icarus--joan-holub/book/9781419716775.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781419716782": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005080324",
+        "source": "https://www.sanmin.com.tw/product/index/005080324",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419716786",
+        "source": "https://www.amazon.com/Please-Share-Aphrodite-Mini-Myths/dp/1419716786"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/please-share-aphrodite-joan-holub/1123989801?ean=9781419716782",
+        "source": "https://www.barnesandnoble.com/w/please-share-aphrodite-joan-holub/1123989801?ean=9781419716782"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419716782/Mini-Myths-Please-Share-Aphrodite-1419716786/plp",
+        "source": "https://www.abebooks.com/9781419716782/Mini-Myths-Please-Share-Aphrodite-1419716786/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/please-share-aphrodite--joan-holub/book/9781419716782.html",
+        "source": "https://www.booktopia.com.au/please-share-aphrodite--joan-holub/book/9781419716782.html"
+      }
+    ],
+    "9781419718977": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005437868",
+        "source": "https://www.sanmin.com.tw/product/index/005437868",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419718975",
+        "source": "https://www.amazon.com/Dont-Lost-Odysseus-Mini-Myths/dp/1419718975"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419718977/Mini-Myths-Get-Lost-Odysseus-1419718975/plp",
+        "source": "https://www.abebooks.com/9781419718977/Mini-Myths-Get-Lost-Odysseus-1419718975/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/mini-myths-joan-holub/book/9781419718977.html",
+        "source": "https://www.booktopia.com.au/mini-myths-joan-holub/book/9781419718977.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781419718984": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005437869",
+        "source": "https://www.sanmin.com.tw/product/index/005437869",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1419718983",
+        "source": "https://www.amazon.com/Good-Job-Athena-Mini-Myths/dp/1419718983"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/good-job-athena-joan-holub/1123989802?ean=9781419718984",
+        "source": "https://www.barnesandnoble.com/w/good-job-athena-joan-holub/1123989802?ean=9781419718984"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781419718984/Mini-Myths-Good-Job-Athena-1419718983/plp",
+        "source": "https://www.abebooks.com/9781419718984/Mini-Myths-Good-Job-Athena-1419718983/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/good-job-athena--joan-holub/book/9781419718984.html",
+        "source": "https://www.booktopia.com.au/good-job-athena--joan-holub/book/9781419718984.html"
+      }
+    ],
+    "9781536203790": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007747099",
+        "source": "https://www.sanmin.com.tw/product/index/007747099",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/doggie-gets-scared-9781536203790",
+        "source": "https://buybookbook.com/zh/products/doggie-gets-scared-9781536203790"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536203793",
+        "source": "https://www.amazon.com/Doggie-Scared-Leslie-Patricelli-board/dp/1536203793"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/doggie-gets-scared-leslie-patricelli/1136270153?ean=9781536203790",
+        "source": "https://www.barnesandnoble.com/w/doggie-gets-scared-leslie-patricelli/1136270153?ean=9781536203790"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536203790/Doggie-Gets-Scared-Leslie-Patricelli-1536203793/plp",
+        "source": "https://www.abebooks.com/9781536203790/Doggie-Gets-Scared-Leslie-Patricelli-1536203793/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/doggie-gets-scared-leslie-patricelli/book/9781536203790.html",
+        "source": "https://www.booktopia.com.au/doggie-gets-scared-leslie-patricelli/book/9781536203790.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781536203806": [
+      {
+        "platform": "华研外语（有赞）",
+        "channel": "other",
+        "url": "https://detail.youzan.com/show/goods?alias=366hsmlxhfjeqp5",
+        "source": "https://detail.youzan.com/show/goods?alias=366hsmlxhfjeqp5",
+        "stock": "核对时有货"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007747100",
+        "source": "https://www.sanmin.com.tw/product/index/007747100",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/39109",
+        "source": "https://www.mackids.com.tw/product/detail/39109",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/mad-mad-mad-9781536203806",
+        "source": "https://buybookbook.com/zh/products/mad-mad-mad-9781536203806"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536203807",
+        "source": "https://www.amazon.com/Mad-Leslie-Patricelli-board-books/dp/1536203807"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/mad-mad-mad-leslie-patricelli/1136270154?ean=9781536203806",
+        "source": "https://www.barnesandnoble.com/w/mad-mad-mad-leslie-patricelli/1136270154?ean=9781536203806"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536203806/Mad-Gentle-Introduction-Emotions-Coping-1536203807/plp",
+        "source": "https://www.abebooks.com/9781536203806/Mad-Gentle-Introduction-Emotions-Coping-1536203807/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536203806.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536203806.html"
+      }
+    ],
+    "9781536203813": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007993292",
+        "source": "https://www.sanmin.com.tw/product/index/007993292",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/40193",
+        "source": "https://www.mackids.com.tw/product/detail/40193",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/mommy-9781536203813",
+        "source": "https://buybookbook.com/zh/products/mommy-9781536203813"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536203815",
+        "source": "https://www.amazon.com/Mommy-Leslie-Patricelli-board-books/dp/1536203815"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/mommy-leslie-patricelli/1137330792?ean=9781536203813",
+        "source": "https://www.barnesandnoble.com/w/mommy-leslie-patricelli/1137330792?ean=9781536203813"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536203813/Mommy-Heartwarming-Story-Mother-Child-Bonding-1536203815/plp",
+        "source": "https://www.abebooks.com/9781536203813/Mommy-Heartwarming-Story-Mother-Child-Bonding-1536203815/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536203813.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536203813.html"
+      }
+    ],
+    "9781536203820": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007993293",
+        "source": "https://www.sanmin.com.tw/product/index/007993293",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/40191",
+        "source": "https://www.mackids.com.tw/product/detail/40191",
+        "stock": "可下单"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/daddy-9781536203820",
+        "source": "https://buybookbook.com/zh/products/daddy-9781536203820"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536203823",
+        "source": "https://www.amazon.com/Daddy-Leslie-Patricelli-board-books/dp/1536203823"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/daddy-leslie-patricelli/1137330839?ean=9781536203820",
+        "source": "https://www.barnesandnoble.com/w/daddy-leslie-patricelli/1137330839?ean=9781536203820"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536203820/Daddy-Heartwarming-Story-Father-Child-Bonding-1536203823/plp",
+        "source": "https://www.abebooks.com/9781536203820/Daddy-Heartwarming-Story-Father-Child-Bonding-1536203823/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/daddy-leslie-patricelli/book/9781536203820.html",
+        "source": "https://www.booktopia.com.au/daddy-leslie-patricelli/book/9781536203820.html"
+      }
+    ],
+    "9781536211337": [
+      {
+        "platform": "誠品線上",
+        "channel": "other",
+        "url": "https://www.eslite.com/product/1003149142733666",
+        "source": "https://www.eslite.com/product/1003149142733666"
+      },
+      {
+        "platform": "YES24 韩国",
+        "channel": "other",
+        "url": "https://www.yes24.com/product/goods/72156572",
+        "source": "https://www.yes24.com/product/goods/72156572"
+      }
+    ],
+    "9781536211351": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007254514",
+        "source": "https://www.sanmin.com.tw/product/index/007254514",
+        "stock": "需订货"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536211354",
+        "source": "https://www.amazon.com/Huggy-Kissy-Leslie-Patricelli-board/dp/1536211354"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/huggy-kissy-leslie-patricelli/1109601338?ean=9781536211351",
+        "source": "https://www.barnesandnoble.com/w/huggy-kissy-leslie-patricelli/1109601338?ean=9781536211351"
+      },
+      {
+        "platform": "Bookshop.org",
+        "channel": "other",
+        "url": "https://bookshop.org/p/books/huggy-kissy-padded-board-book-a-sweet-story-about-the-many-ways-families-show-love-for-babies-and-toddlers-leslie-patricelli/e906772021e8e285?ean=9781536211351",
+        "source": "https://bookshop.org/book/9781536211351"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536211351/Huggy-Kissy-Padded-Board-Book-1536211354/plp",
+        "source": "https://www.abebooks.com/9781536211351/Huggy-Kissy-Padded-Board-Book-1536211354/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536211351.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536211351.html"
+      }
+    ],
+    "9781536218794": [
+      {
+        "platform": "Book Outlet 美国",
+        "channel": "other",
+        "url": "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b",
+        "source": "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b"
+      },
+      {
+        "platform": "Books4School 美国",
+        "channel": "other",
+        "url": "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html",
+        "source": "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html",
+        "stock": "缺货"
+      }
+    ],
+    "9781536219838": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/010008587",
+        "source": "https://www.sanmin.com.tw/product/index/010008587",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/45513",
+        "source": "https://www.mackids.com.tw/product/detail/45513",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/splash-9781536219838",
+        "source": "https://buybookbook.com/zh/products/splash-9781536219838"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536219835",
+        "source": "https://www.amazon.com/Splash-Leslie-Patricelli-board-books/dp/1536219835"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/splash-leslie-patricelli/1139996591?ean=9781536219838",
+        "source": "https://www.barnesandnoble.com/w/splash-leslie-patricelli/1139996591?ean=9781536219838"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536219838/Splash-Playful-Introduction-Summer-Fun-1536219835/plp",
+        "source": "https://www.abebooks.com/9781536219838/Splash-Playful-Introduction-Summer-Fun-1536219835/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536219838.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536219838.html"
+      }
+    ],
+    "9781536219845": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/011915814",
+        "source": "https://www.sanmin.com.tw/product/index/011915814",
+        "stock": "需订货"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/47559",
+        "source": "https://www.mackids.com.tw/product/detail/47559",
+        "stock": "缺货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/snow-9781536219845",
+        "source": "https://buybookbook.com/zh/products/snow-9781536219845"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536219843",
+        "source": "https://www.amazon.com/Snow-Leslie-Patricelli-board-books/dp/1536219843"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/snow-leslie-patricelli/1142940847?ean=9781536219845",
+        "source": "https://www.barnesandnoble.com/w/snow-leslie-patricelli/1142940847?ean=9781536219845"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536219845/Snow-Playful-Introduction-Winter-Fun-1536219843/plp",
+        "source": "https://www.abebooks.com/9781536219845/Snow-Playful-Introduction-Winter-Fun-1536219843/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536219845.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536219845.html"
+      }
+    ],
+    "9781536223071": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/009657605",
+        "source": "https://www.sanmin.com.tw/product/index/009657605",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/the-rizzlerunk-club-best-buds-under-frogs-9781536223071",
+        "source": "https://buybookbook.com/zh/products/the-rizzlerunk-club-best-buds-under-frogs-9781536223071"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536223077",
+        "source": "https://www.amazon.com/Rizzlerunk-Club-Best-Under-Frogs/dp/1536223077",
+        "stock": "缺货"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/best-buds-under-frogs-leslie-patricelli/1142363393?ean=9781536223071",
+        "source": "https://www.barnesandnoble.com/w/best-buds-under-frogs-leslie-patricelli/1142363393?ean=9781536223071"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536223071/Rizzlerunk-Club-Best-Buds-Under-1536223077/plp",
+        "source": "https://www.abebooks.com/9781536223071/Rizzlerunk-Club-Best-Buds-Under-1536223077/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/the-rizzlerunk-club-leslie-patricelli/book/9781536223071.html",
+        "source": "https://www.booktopia.com.au/the-rizzlerunk-club-leslie-patricelli/book/9781536223071.html",
+        "stock": "需订货"
+      }
+    ],
+    "9781536230031": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/015061188",
+        "source": "https://www.sanmin.com.tw/product/index/015061188",
+        "stock": "需订货"
+      },
+      {
+        "platform": "香港 BuyBookBook",
+        "channel": "other",
+        "url": "https://buybookbook.com/zh/products/9781536230031",
+        "source": "https://buybookbook.com/zh/products/9781536230031"
+      },
+      {
+        "platform": "亚马逊美国",
+        "channel": "amazon-us",
+        "url": "https://www.amazon.com/dp/1536230030",
+        "source": "https://www.amazon.com/Spring-Leslie-Patricelli-Board-Books/dp/1536230030"
+      },
+      {
+        "platform": "Barnes & Noble",
+        "channel": "other",
+        "url": "https://www.barnesandnoble.com/w/spring-leslie-patricelli/1147531870?ean=9781536230031",
+        "source": "https://www.barnesandnoble.com/w/spring-leslie-patricelli/1147531870?ean=9781536230031"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781536230031/Spring-Leslie-Patricelli-Board-Books-1536230030/plp",
+        "source": "https://www.abebooks.com/9781536230031/Spring-Leslie-Patricelli-Board-Books-1536230030/plp"
+      },
+      {
+        "platform": "Booktopia",
+        "channel": "other",
+        "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536230031.html",
+        "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536230031.html"
+      }
+    ]
+  }
+}

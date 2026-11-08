@@ -1,6 +1,6 @@
 # Leslie Patricelli 英文作品书架
 
-[在线书架](https://baby-bookshelf.bornforthis.cn/)收录 44 部作品，附英文封面、中文内容摘要和 61 条购买版本记录。读者可以注册自己的书架账号，登录后分别标记同一个故事的不同开本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
+[在线书架](https://baby-bookshelf.bornforthis.cn/)收录 44 部作品，附英文封面、中文内容摘要和 61 条购买版本记录。亚马逊、淘宝及其他书店的入口按单本或套装 ISBN 匹配，搜索入口标为「按 ISBN 搜索」。读者可以注册自己的书架账号，登录后分别标记同一个故事的不同开本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
 
 ## 本地运行
 
@@ -17,7 +17,7 @@ npm run preview
 
 ## 维护书目
 
-书名、摘要、ISBN、尺寸和出处在 `catalog/`，封面在 `dist/covers/`。编辑书目后运行以下命令重新生成页面并构建 Worker。渲染脚本使用 Python 3 标准库。
+书名、摘要、ISBN、尺寸和出处在 `catalog/`，封面在 `dist/covers/`。`catalog/retailers.json` 保存按 ISBN 核对的商品页、核对来源和日期。编辑书目后运行以下命令重新生成页面并构建 Worker。渲染脚本使用 Python 3 标准库。
 
 ```sh
 python3 scripts/render_catalog.py

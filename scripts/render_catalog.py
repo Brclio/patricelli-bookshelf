@@ -2,6 +2,7 @@ from pathlib import Path
 import csv
 import html
 import json
+from urllib.parse import urlsplit
 
 project = Path(__file__).resolve().parents[1]
 base = project / "catalog"
@@ -30,6 +31,13 @@ for collection in ("authored", "illustrated", "rare"):
                           link=item.get("link") or item.get("url") or item["source"]))
 assert len({b["isbn"] for b in books}) == len({b["title"] for b in books}) == len(books)
 boxes = json.loads((base / "boxes.json").read_text())
+retail = json.loads((base / "retailers.json").read_text())
+for isbn, shops in retail["products"].items():
+    if not (site / "covers" / f"{isbn}.jpg").exists():
+        raise ValueError(f"Unknown purchase ISBN: {isbn}")
+    for shop in shops:
+        if urlsplit(shop["url"]).scheme != "https":
+            raise ValueError(f"Invalid retailer URL: {isbn}")
 assert all(set(box["books"]) <= {b["title"] for b in books} for box in boxes)
 dim = json.loads((base / "work-dimensions.json").read_text())
 packs = json.loads((base / "mini-editions.json").read_text())["packs"]
@@ -96,7 +104,7 @@ index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <main id="top">
 <div class="herowrap"><section class="hero wrap"><div class="intro"><p class="byline"><span></span>LESLIE PATRICELLI</p>
 <h1>从一根毛宝宝<br><em>到整座书架</em></h1>
-<p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 COUNT 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。点开封面，可按版本分别标记已购。</p>
+<p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 COUNT 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。点开封面，可选尺寸、找购买链接，并分别标记已购。</p>
 <a class="primary" href="#catalog">浏览单本目录 <span aria-hidden="true">↓</span></a>
 <button class="herocompare" type="button" data-tower>书塔小本与常规本 ↗</button></div>
 <div class="showcase" aria-label="书架选取的三本英文原版封面">
@@ -156,10 +164,12 @@ index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="bookdata">DATA</script>
 <script type="application/json" id="boxdata">BOXJSON</script>
+<script type="application/json" id="retaildata">RETAILJSON</script>
 </body></html>'''
 groups = ['<option value="">所有作品类型</option>']
 for name in dict.fromkeys(b["group"] for b in books):
     groups.append(f'<option value="{name}">{name} · {sum(b["group"]==name for b in books)} 本</option>')
 index = index.replace("BASECSS", variables).replace("GROUPS","".join(groups)).replace("SIZECOUNT",str(sum(b["multiSize"] for b in books))).replace("COUNT",str(len(books))).replace("CARDS", "".join(map(card, books))).replace("DATA", json.dumps(books,ensure_ascii=False).replace("<","\\u003c"))
 index = index.replace("BOXOPTIONS", "".join(f'<option value="{b["isbn"]}">{html.escape(b["title"])}（{len(b["books"])} 册）</option>' for b in boxes)).replace("BOXJSON", json.dumps(boxes, ensure_ascii=False).replace("<","\\u003c"))
+index = index.replace("RETAILJSON", json.dumps(retail, ensure_ascii=False).replace("<","\\u003c"))
 (site / "index.html").write_text(index)
