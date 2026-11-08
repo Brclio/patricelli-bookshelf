@@ -1,0 +1,27 @@
+
+    :root { --_brclio-ds: "brclio-v1";
+      --blue: #2B7FD8;
+      --yellow: #F4D758;
+      --red: #E84A5F;
+      --cream: #fefcf6;
+      --ink: #1A1A2E;
+      --ink-light: #4A4A5A;
+      --ink-faint: #8A8A9A;
+      --card-bg: #fff;
+      --border: rgba(26,26,26,.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    ::selection {
+      background: var(--yellow);
+      color: var(--ink);
+    }

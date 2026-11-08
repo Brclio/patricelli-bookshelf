@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Baby’s Book Tower",
+    "isbn": "9780763650100",
+    "books": [
+      "Baby Happy Baby Sad",
+      "No No Yes Yes",
+      "Quiet Loud",
+      "Yummy Yucky"
+    ],
+    "link": "https://www.walkerbooks.com.au/book/9780763650100/"
+  },
+  {
+    "title": "Yes Yes! A Box of Board Books",
+    "isbn": "9780763641580",
+    "books": [
+      "Big Little",
+      "No No Yes Yes",
+      "Yummy Yucky"
+    ],
+    "link": "https://www.abebooks.com/9780763641580/Box-Board-Books-Leslie-Patricelli-0763641588/plp"
+  },
+  {
+    "title": "Leslie Patricelli’s Little Library",
+    "isbn": "9781536218794",
+    "books": [
+      "Big Kid Bed",
+      "Huggy Kissy",
+      "Nighty-Night",
+      "Potty",
+      "Quiet Loud",
+      "Toot",
+      "Tooth",
+      "Yummy Yucky"
+    ],
+    "link": "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b"
+  },
+  {
+    "title": "Leslie Patricelli’s Big Box of Brilliant Books",
+    "isbn": "9781406378092",
+    "books": [
+      "Tickle",
+      "Huggy Kissy",
+      "Potty",
+      "Higher! Higher!",
+      "No No Yes Yes",
+      "Tubby",
+      "Quiet Loud",
+      "Toot"
+    ],
+    "link": "https://www.eslite.com/product/10012071872682884000000"
+  },
+  {
+    "title": "Leslie Patricelli Shrinkwrap Set",
+    "isbn": "9781536211337",
+    "books": [
+      "Potty",
+      "Yummy Yucky",
+      "Toot",
+      "No No Yes Yes",
+      "Huggy Kissy",
+      "Tickle"
+    ],
+    "link": "https://www.eslite.com/product/1003149142733666",
+    "format": "塑封合售"
+  }
+]

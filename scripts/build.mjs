@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { build } from 'esbuild';
 
 const root = resolve(import.meta.dirname, '..');
 const dist = resolve(root, 'dist');
@@ -29,14 +30,21 @@ const publicFiles = (await readdir(dist, { withFileTypes: true }))
 for (const name of [...publicFiles, 'covers']) {
   await cp(resolve(dist, name), resolve(client, name), { recursive: true });
 }
-const workerSource = await readFile(resolve(root, 'worker/index.js'), 'utf8');
-await writeFile(resolve(server, 'index.js'), 'const editionKeys = ' + JSON.stringify(editionKeys) + ';\n' + workerSource);
+await build({
+  stdin: {
+    contents: `import { createWorker } from './worker/index.js'; export default createWorker(${JSON.stringify(editionKeys)});`,
+    resolveDir: root, sourcefile: 'bookshelf-worker-entry.js'
+  },
+  bundle: true, format: 'esm', platform: 'neutral', target: 'es2022',
+  external: ['node:crypto'], outfile: resolve(server, 'index.js')
+});
 const config = {
   name: 'baby-bookshelf',
   main: 'index.js',
   compatibility_date: '2026-05-15',
+  compatibility_flags: ['nodejs_compat'],
   assets: { directory: '../client', binding: 'ASSETS', run_worker_first: ['/api/*'] },
-  d1_databases: [{ binding: 'DB', database_name: 'site-creator-d1', database_id: '00000000-0000-4000-8000-000000000000' }]
+  d1_databases: [{ binding: 'DB', database_name: 'site-creator-d1', database_id: '00000000-0000-4000-8000-000000000000', migrations_dir: '../../drizzle' }]
 };
 await writeFile(resolve(server, 'wrangler.json'), JSON.stringify(config, null, 2) + '\n');
 await writeFile(resolve(metadata, 'hosting.json'), JSON.stringify(hosting, null, 2) + '\n');

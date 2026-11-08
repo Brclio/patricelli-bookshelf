@@ -8,6 +8,13 @@
       "when": 1794147227708,
       "tag": "0000_dear_shinobi_shaw",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1794148275270,
+      "tag": "0001_bookshelf_accounts",
+      "breakpoints": true
     }
   ]
 }

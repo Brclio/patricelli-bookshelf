@@ -5,11 +5,14 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "db:generate": "drizzle-kit generate",
-    "preview": "wrangler dev --local --config dist/server/wrangler.json --ip 127.0.0.1"
+    "preview": "wrangler dev --local --config dist/server/wrangler.json --ip 127.0.0.1",
+    "test": "npm run build && node --test test/*.test.mjs"
   },
   "devDependencies": {
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",
+    "esbuild": "0.25.12",
+    "miniflare": "4.20260515.0",
     "wrangler": "4.92.0"
   }
 }

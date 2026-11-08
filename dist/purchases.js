@@ -10,10 +10,13 @@
     let phase = 'loading';
     let inFlight = false;
     let again = false;
+    let suspended = false;
+    let generation = 0;
     let retry = 0;
     let retryTimer;
     let storageAvailable = true;
     const sessionChanges = new Map();
+    const syncWaiters = new Set();
     const getPrefix = () => prefix + scope + '.';
 
     function storage(action) {
@@ -104,12 +107,14 @@
       }
       return data;
     }
-    async function exchange() {
+    async function exchange(ticket) {
+      if (ticket !== generation || suspended) return;
       const data = await request({method:'GET'});
+      if (ticket !== generation) return;
       scope = data.scope;
       allRemote = new Set(data.purchased.filter(k => validKeys.has(k)));
       usable = true;
-      importLegacy();
+      if (data.mode === 'sites') importLegacy();
       const snapshot = entries();
       const changes = [...latest(snapshot).values()]
         .filter(({key,purchased}) => purchased !== allRemote.has(key))
@@ -120,6 +125,7 @@
         const updated = await request({method: 'PUT',
           headers: {'Content-Type':'application/json', 'If-Match-Account':scope},
           body: JSON.stringify({changes})});
+        if (ticket !== generation) return;
         if (updated.scope !== scope) throw Object.assign(new Error('account changed'), {status:409});
         allRemote = new Set(updated.purchased.filter(k => validKeys.has(k)));
       }
@@ -133,14 +139,17 @@
       retry = 0;
     }
     async function sync() {
+      if (suspended) return;
       if (inFlight) { again = true; return; }
       clearTimeout(retryTimer);
       inFlight = true;
       again = false;
+      const ticket = generation;
       try {
-        if (navigator.locks) await navigator.locks.request(prefix + 'sync', exchange);
-        else await exchange();
+        if (navigator.locks) await navigator.locks.request(prefix + 'sync', () => exchange(ticket));
+        else await exchange(ticket);
       } catch (error) {
+        if (ticket !== generation) return;
         if (error.status === 401 || error.status === 403) {
           clearSession();
           phase = 'login';
@@ -158,8 +167,32 @@
       } finally {
         inFlight = false;
         render(state());
+        for (const done of syncWaiters) done();
+        syncWaiters.clear();
         if (again) queueMicrotask(sync);
       }
+    }
+    async function flushPending() {
+      if (!entries().size) return true;
+      if (!usable || suspended) return false;
+      // Wait for any older request, then submit edits made during that request.
+      for (let attempt = 0; attempt < 2; attempt++) {
+        await new Promise(resolve => { syncWaiters.add(resolve); sync(); });
+        if (!usable || suspended || phase === 'offline' || !entries().size) break;
+      }
+      return usable && !entries().size;
+    }
+    function suspend() {
+      ++generation;
+      suspended = true;
+      clearTimeout(retryTimer);
+      clearSession();
+      phase = 'loading';
+      render(state());
+    }
+    function resume() {
+      suspended = false;
+      sync();
     }
     function start() {
       window.addEventListener('storage', e => {
@@ -175,6 +208,6 @@
       setInterval(() => { if (!document.hidden && !inFlight && phase !== 'offline') sync(); }, 20000);
       sync();
     }
-    return {edit, sync, start, state};
+    return {edit, sync, start, state, suspend, resume, flushPending};
   };
 }());

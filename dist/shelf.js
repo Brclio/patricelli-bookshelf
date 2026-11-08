@@ -4,6 +4,7 @@
   const cards = [...document.querySelectorAll('.book')];
   const variants = new Map(books.flatMap(book => book.variants.map(edition => [edition.key, {edition,book}])));
   const purchases = window.createPurchaseShelf(new Set(variants.keys()), refreshPurchases);
+  const account = window.createBookshelfAccount(purchases);
   let {marked: owned, pending, usable, phase, storageAvailable} = purchases.state();
   function refreshPurchases(state) {
     ({marked: owned, pending, usable, phase, storageAvailable} = state);
@@ -52,7 +53,8 @@
     document.querySelector('#ownedcount').textContent = usable ? nOwned : '…';
     document.querySelector('#unownedcount').textContent = usable ? variants.size - nOwned : '…';
     document.querySelector('#syncnote').textContent = syncMessage();
-    document.querySelector('#syncagain').hidden = phase !== 'offline' && phase !== 'login';
+    document.querySelector('#syncagain').hidden = phase !== 'offline';
+    document.querySelector('[data-account-login]').hidden = phase !== 'login';
     const dialogSync = document.querySelector('#dialogsync');
     if (dialogSync) dialogSync.textContent = syncMessage();
     document.querySelectorAll('[data-variants]').forEach(button => {
@@ -64,20 +66,21 @@
     document.querySelectorAll('[data-owned]').forEach(button => {
       const {book,edition} = variants.get(button.dataset.owned);
       const marked = owned.has(edition.key);
-      button.disabled = !usable;
-      button.textContent = !usable ? '购买记录未载入' : (marked ? '✓ 已购买' : '未购买 · 标记购买') + (pending.has(edition.key) ? ' · 待同步' : '');
-      button.setAttribute('aria-label', (marked ? '设为未购买 ' : '设为已购买 ') + book.title + ' ' + edition.label);
+      button.disabled = !usable && phase !== 'login';
+      button.textContent = !usable ? (phase === 'login' ? '登录后标记' : '购买记录未载入') : (marked ? '✓ 已购买' : '未购买 · 标记购买') + (pending.has(edition.key) ? ' · 待同步' : '');
+      button.setAttribute('aria-label', (phase === 'login' ? '登录后标记 ' : marked ? '设为未购买 ' : '设为已购买 ') + book.title + ' ' + edition.label);
       button.setAttribute('aria-pressed', String(marked));
     });
     const boxButton = document.querySelector('#markTower');
     if (boxButton) {
       const all = books.filter(b => b.tower).every(b => owned.has(b.isbn+'-9780763650100'));
-      boxButton.disabled = !usable;
-      boxButton.textContent = !usable ? '购买记录未载入' : all ? '✓ 四本迷你版已购' : '标记四本迷你版已购';
+      boxButton.disabled = !usable && phase !== 'login';
+      boxButton.textContent = !usable ? (phase === 'login' ? '登录后标记四本迷你版' : '购买记录未载入') : all ? '✓ 四本迷你版已购' : '标记四本迷你版已购';
       boxButton.setAttribute('aria-pressed',String(all));
     }
   }
   function toggleOwned(id) {
+    if (phase === 'login') { account.open(); return; }
     purchases.edit([{key:id, purchased:!owned.has(id)}]);
   }
   const art = (isbn, title) => '<div class="detailart"><img src="covers/' + isbn + '.jpg" alt="' + escape(title) + ' 英文版封面"></div>';
@@ -126,11 +129,16 @@
   document.addEventListener('click', e => {
     const button = e.target.closest('button');
     if (!button) return;
-    if (button.hasAttribute('data-filter')) { filter = button.dataset.filter; group.value = ''; applyFilters(); }
+    if (button.hasAttribute('data-filter')) {
+      if (phase === 'login' && ['owned','unowned'].includes(button.dataset.filter)) account.open();
+      else { filter = button.dataset.filter; group.value = ''; applyFilters(); }
+    }
+    else if (button.hasAttribute('data-account-login')) account.open();
     else if (button.hasAttribute('data-tower')) showTower();
     else if (button.hasAttribute('data-open')) showBook(button.dataset.open);
     else if (button.hasAttribute('data-variants')) showBook(button.dataset.variants);
     else if (button.id === 'markTower') {
+      if (phase === 'login') { account.open(); return; }
       const ids = books.filter(b => b.tower).map(b => b.isbn + '-9780763650100');
       const marked = ids.every(key => owned.has(key));
       purchases.edit(ids.map(key => ({key, purchased:!marked})));
@@ -172,5 +180,6 @@
   nextSelect.addEventListener('change',compare);
   compare();
   applyFilters();
+  account.start();
   purchases.start();
 })();

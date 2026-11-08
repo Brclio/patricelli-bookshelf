@@ -1,0 +1,156 @@
+{
+  "packs": [
+    {
+      "title": "Baby’s Book Tower",
+      "isbn": "9780763650100",
+      "books": [
+        "Baby Happy Baby Sad",
+        "No No Yes Yes",
+        "Quiet Loud",
+        "Yummy Yucky"
+      ],
+      "link": "https://www.walkerbooks.com.au/book/9780763650100/",
+      "singleSize": "约 6 × 6 cm（书店单册规格）",
+      "packageSize": "宽 6.5 × 高 24.3 cm（Walker）；Booktopia 另列厚约 5.1 cm",
+      "notes": "4 本均为迷你纸板书。查询到的 ISBN 属于整盒，未核实这四册迷你版本各自的独立 ISBN。",
+      "miniStatus": "明确为迷你单册",
+      "sources": [
+        "https://www.mackids.com.tw/product/detail/1907",
+        "https://www.walkerbooks.com.au/book/9780763650100/",
+        "https://www.booktopia.com.au/baby-s-book-tower-leslie-patricelli/book/9780763650100.html"
+      ]
+    },
+    {
+      "title": "Yes Yes! A Box of Board Books",
+      "isbn": "9780763641580",
+      "books": [
+        "Big Little",
+        "No No Yes Yes",
+        "Yummy Yucky"
+      ],
+      "link": "https://www.abebooks.com/9780763641580/Box-Board-Books-Leslie-Patricelli-0763641588/plp",
+      "singleSize": "未核实",
+      "packageSize": "约 7.2 × 7.2 × 2.3 英寸（18.3 × 18.3 × 5.8 cm）",
+      "notes": "三册盒装；外盒大小与常规纸板书相符，未见出版方称内书为迷你版。",
+      "miniStatus": "无迷你版证据",
+      "sources": [
+        "https://www.abebooks.com/9780763641580/Box-Board-Books-Leslie-Patricelli-0763641588/plp",
+        "https://www.ebay.com/itm/377557320140"
+      ]
+    },
+    {
+      "title": "Leslie Patricelli’s Little Library",
+      "isbn": "9781536218794",
+      "books": [
+        "Big Kid Bed",
+        "Huggy Kissy",
+        "Nighty-Night",
+        "Potty",
+        "Quiet Loud",
+        "Toot",
+        "Tooth",
+        "Yummy Yucky"
+      ],
+      "link": "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b",
+      "singleSize": "小于常规约 17.8 cm 的单册；未核实精确尺寸",
+      "packageSize": "BookXcess：约 15.1 × 15.3 × 10.5 cm；Books4School：6 × 6 × 4.1 英寸（约 15.2 × 15.2 × 10.4 cm）",
+      "notes": "上述两家书店的盒装尺寸彼此接近。另有 Book Outlet 标为 6.5 × 6.5 × 4.5 英寸。根据盒长推断，是小于常规版的开本，不能把盒长当作每册边长。",
+      "miniStatus": "较小开本的合辑；与 6 cm 书塔不同",
+      "sources": [
+        "https://www.bookxcess.com/products/bxosst-leslie-patricellis-little-library-8-bb-box-9781536218794",
+        "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html",
+        "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b"
+      ]
+    },
+    {
+      "title": "Leslie Patricelli’s Big Box of Brilliant Books",
+      "isbn": "9781406378092",
+      "books": [
+        "Tickle",
+        "Huggy Kissy",
+        "Potty",
+        "Higher! Higher!",
+        "No No Yes Yes",
+        "Tubby",
+        "Quiet Loud",
+        "Toot"
+      ],
+      "link": "https://www.eslite.com/product/10012071872682884000000",
+      "ukBooks": [
+        {
+          "title": "Tickle",
+          "isbn": "9781406348859"
+        },
+        {
+          "title": "Huggy Kissy",
+          "isbn": "9781406344202"
+        },
+        {
+          "title": "On My Potty",
+          "isbn": "9781406328370"
+        },
+        {
+          "title": "Higher! Higher!",
+          "isbn": "9781406378108"
+        },
+        {
+          "title": "No No Yes Yes",
+          "isbn": "9781406311792"
+        },
+        {
+          "title": "In the Bath",
+          "isbn": "9781406328387"
+        },
+        {
+          "title": "Quiet Loud",
+          "isbn": "9780744593372"
+        },
+        {
+          "title": "Toot",
+          "isbn": "9781406348842"
+        }
+      ],
+      "singleSize": "On My Potty 书号 9781406328370 单册官方尺寸 17.8 × 17.8 cm；没有逐册确认所有内书的实测尺寸",
+      "packageSize": "约 17.8 × 17.8 × 8 cm（诚品整套商品规格）",
+      "notes": "英国版8册。套内书号和英版名见诚品。On My Potty=Potty；In the Bath=Tubby；Higher! Higher! 属于另一个绘本系列。",
+      "miniStatus": "常规尺寸单册获印证；无迷你版证据",
+      "sources": [
+        "https://www.eslite.com/product/10012071872682884000000",
+        "https://www.walker.co.uk/9781406328370/on-my-potty/"
+      ]
+    },
+    {
+      "title": "Leslie Patricelli Shrinkwrap Set",
+      "isbn": "9781536211337",
+      "books": [
+        "Potty",
+        "Yummy Yucky",
+        "Toot",
+        "No No Yes Yes",
+        "Huggy Kissy",
+        "Tickle"
+      ],
+      "link": "https://www.eslite.com/product/1003149142733666",
+      "format": "塑封合售",
+      "singleSize": "未单独核实",
+      "packageSize": "未核实塑封总厚度；YES24 商品资料列 18 × 18 × 2 cm，无法确定对应塑封整套或一本书，故不采用为整套尺寸",
+      "notes": "6 册塑封合售；未见迷你版本说明。",
+      "miniStatus": "无迷你版证据",
+      "sources": [
+        "https://www.eslite.com/product/1003149142733666",
+        "https://www.yes24.com/product/goods/72156572"
+      ]
+    }
+  ],
+  "standaloneMini": "未找到可独立核实的书塔约 6 cm 英文单册独立 ISBN。",
+  "standaloneAlternate": [
+    {
+      "title": "Huggy Kissy",
+      "isbn": "9781536211351",
+      "singleSize": "7.99 × 7.99 英寸，约 20.3 × 20.3 cm",
+      "format": "Padded Board Book（加厚软垫封面纸板书）",
+      "link": "https://www.candlewick.com/9781536211351/huggy-kissy/"
+    }
+  ],
+  "costco": "未核到 Costco 另有不同 ISBN 的英文迷你套装。有明确书号与内书清单的 Little Library 独立列出，不把销售渠道重复计数。"
+}
