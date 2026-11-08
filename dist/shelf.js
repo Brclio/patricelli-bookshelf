@@ -3,7 +3,6 @@
   const byId = new Map(books.map(book => [book.isbn, book]));
   const cards = [...document.querySelectorAll('.book')];
   const variants = new Map(books.flatMap(book => book.variants.map(edition => [edition.key, {edition,book}])));
-  const hasOwned = book => book.variants.some(v => owned.has(v.key));
   const purchases = window.createPurchaseShelf(new Set(variants.keys()), refreshPurchases);
   let {marked: owned, pending, usable, phase, storageAvailable} = purchases.state();
   function refreshPurchases(state) {
@@ -28,16 +27,26 @@
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
   function applyFilters() {
     const term = norm(search.value);
+    const purchaseFilter = filter === 'owned' || filter === 'unowned';
     let count = 0;
+    let matchingEditions = 0;
     for (const card of cards) {
       const book = byId.get(card.dataset.isbn);
-      const matches = (!group.value || book.group === group.value) &&
-        (filter === 'all' || (filter === 'sizes' && book.multiSize) || (filter === 'tower' && book.tower) || (filter === 'more' && book.group === '一根毛宝宝' && !book.tower) || (filter === 'owned' && usable && hasOwned(book)) || (filter === 'unowned' && usable && book.variants.some(v => !owned.has(v.key)))) &&
-        (!term || [book.title, book.cn, book.isbn, book.alias, book.about, book.summary, book.author, book.artist, book.series,...book.variants.flatMap(v => [v.isbn,v.size,v.label])].some(value => norm(value).includes(term)));
+      const candidateEditions = purchaseFilter
+        ? book.variants.filter(v => usable && owned.has(v.key) === (filter === 'owned'))
+        : book.variants;
+      const matchesWorkText = !term || [book.title, book.cn, book.alias, book.about, book.summary, book.author, book.artist, book.series]
+        .some(value => norm(value).includes(term));
+      const matching = matchesWorkText ? candidateEditions : candidateEditions.filter(v =>
+        [v.isbn, v.size, v.label, v.pack || ''].some(value => norm(value).includes(term)));
+      const matches = matching.length > 0 && (!group.value || book.group === group.value) &&
+        (filter === 'all' || purchaseFilter || (filter === 'sizes' && book.multiSize) || (filter === 'tower' && book.tower) ||
+        (filter === 'more' && book.group === '一根毛宝宝' && !book.tower));
       card.hidden = !matches;
-      if (matches) count++;
+      if (matches) { count++; matchingEditions += matching.length; }
     }
-    document.querySelector('#count').textContent = count + ' 本';
+    document.querySelector('#count').textContent = purchaseFilter ?
+      count + ' 部作品 · ' + matchingEditions + ' 个版本' : count + ' 本';
     document.querySelector('#empty').hidden = count > 0;
     const nOwned = [...variants.keys()].filter(key => owned.has(key)).length;
     document.querySelector('#ownedcount').textContent = usable ? nOwned : '…';
@@ -56,7 +65,7 @@
       const {book,edition} = variants.get(button.dataset.owned);
       const marked = owned.has(edition.key);
       button.disabled = !usable;
-      button.textContent = !usable ? '购买记录未载入' : (marked ? '✓ 已购买' : '＋ 未购买') + (pending.has(edition.key) ? ' · 待同步' : '');
+      button.textContent = !usable ? '购买记录未载入' : (marked ? '✓ 已购买' : '未购买 · 标记购买') + (pending.has(edition.key) ? ' · 待同步' : '');
       button.setAttribute('aria-label', (marked ? '设为未购买 ' : '设为已购买 ') + book.title + ' ' + edition.label);
       button.setAttribute('aria-pressed', String(marked));
     });
