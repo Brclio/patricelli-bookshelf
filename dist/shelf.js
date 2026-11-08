@@ -143,16 +143,26 @@
     document.body.style.overflow = 'hidden';
     applyFilters();
   }
+  function editionDimensions(edition) {
+    const known = edition.size !== '待核实';
+    const source = (url, label) => '<a href="' + escape(url) + '" target="_blank" rel="noopener">' + label + ' ↗</a>';
+    const copy = '<p class="edsize"><span>单册尺寸（宽 × 高）</span> <b>' + escape(edition.size) + '</b>' +
+      (known && edition.ref ? ' ' + source(edition.ref, edition.sizeBasis || '尺寸出处') : '') + '</p>';
+    const outer = edition.packageSize ? '<p class="meta outer-size">外盒（宽 × 高 × 厚） ' +
+      escape(edition.packageSize) + ' ' + source(edition.packageRef, '外盒出处') + '</p>' : '';
+    const note = edition.sizeNote ? '<p class="meta">' + escape(edition.sizeNote) + '</p>' : '';
+    return copy + outer + note;
+  }
   function showBook(id) {
     const b = byId.get(id);
     const note = b.alias ? '<p class="meta">英国版同一本也叫 <b>' + escape(b.alias) + '</b></p>' : '';
     const credit = b.author === b.artist ? '著绘 · ' + b.author : (b.artist ? '文字 · ' + b.author + '　插画 · ' + b.artist : '共同创作 · ' + b.author);
     const editionRows = b.variants.map(v => '<div class="editionrow">' +
       (v.cover ? '<img class="versionimg" src="covers/' + v.cover + '.jpg" alt="' + escape(v.pack || (b.title + ' ' + v.label)) + ' 封面">' : '') +
-      '<div><strong>' + escape(v.label) + '</strong><p class="edsize">' + escape(v.size) + '</p>' +
+      '<div><strong>' + escape(v.label) + '</strong>' + editionDimensions(v) +
       (v.pack ? '<p class="meta">随 ' + escape(v.pack) + ' 收录</p>' : '') +
       info(v.isbn, v.scope) + '<div class="edactions"><button class="secondary" data-owned="' + v.key + '" type="button"></button><a target="_blank" rel="noopener" href="' + escape(v.link) + '">英文版资料 ↗</a>' +
-      (v.ref && v.ref !== v.link ? '<a target="_blank" rel="noopener" href="' + escape(v.ref) + '">尺寸出处 ↗</a>' : '') + '</div>' + purchaseLinks(v.isbn) + '</div></div>').join('');
+      '</div>' + purchaseLinks(v.isbn) + '</div></div>').join('');
     show(art(id, b.title) + '<div class="description"><div class="kicker">' + escape(b.group + ' · ' + b.edition) + '</div><h2 id="dialogtitle">' + escape(b.title) +
       '</h2><div class="zh">' + escape(b.cn) + '</div><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p><p class="meta">' + escape(credit) + '　<a target="_blank" rel="noopener" href="' + escape(b.summarySource) + '">内容出处 ↗</a></p>' +
       (b.tower ? '<p class="meta">照片里的四册书塔收录了迷你版。</p>' : '') + note + '<h3 class="edhead">英文购买版本</h3>' + editionRows + '<p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
@@ -166,7 +176,7 @@
     const detailArt = '<div class="detailart miniart"><img src="covers/' + b.isbn + '.jpg" alt="' + escape(b.title) +
       ' 常规英文版封面参考"><small>同名常规版封面参考</small></div>';
     show(detailArt + '<div class="description"><p class="kicker">' + escape(v.label) + '</p><h2 id="dialogtitle">' + escape(b.title) +
-      '</h2><div class="zh">' + escape(b.cn) + '</div><p class="minidetail-size"><b>' + escape(v.size) + '</b></p>' +
+      '</h2><div class="zh">' + escape(b.cn) + '</div>' + editionDimensions(v) +
       '<div class="edactions"><button class="secondary" type="button" data-owned="' + key + '"></button></div>' +
       (same ? '<p class="meta">另有同名小本：<button type="button" class="minilink" data-mini-open="' + same.key + '">' + escape(same.label) + ' ↗</button>，购买状态分别记录。</p>' : '') +
       '<p id="dialogsync" class="meta" role="status"></p><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p>' +
@@ -180,7 +190,11 @@
   }
   function showTower() {
     show(art('9780763650100', 'Baby’s Book Tower') + '<div class="description"><div class="kicker">FOUR MINI BOARD BOOKS</div><h2 id="dialogtitle">Baby’s Book Tower</h2><div class="zh">照片里的四册迷你书塔</div><p>盒内每本约 <b>6 × 6 cm</b>。同样四个故事也有约 <b>17.8 × 17.8 cm</b> 的常规英文单行本，各自有独立 ISBN。</p><p class="tower-contents">' +
-      books.filter(b => b.tower).map(b => '<button class="titlechip" data-open="'+b.isbn+'">'+escape(b.title)+'</button>').join(' ') + '</p>' + info('9780763650100', '四册迷你版的整盒 ISBN') +
+      books.filter(b => b.tower).map(b => {
+        const edition = b.variants.find(v => v.isbn === '9780763650100');
+        return '<button class="titlechip set-title" data-mini-open="' + edition.key + '">' +
+          escape(b.title) + '<small>单册（宽 × 高） ' + escape(edition.size) + '</small></button>';
+      }).join(' ') + '</p>' + info('9780763650100', '四册迷你版的整盒 ISBN') +
       purchaseLinks('9780763650100') + '<div class="dialogactions"><button class="action" id="markTower" type="button"></button><button class="secondary" id="filtertower" type="button">逐册整理这四本 ↓</button></div><p class="meta"><a href="https://www.mackids.com.tw/product/detail/1907" target="_blank" rel="noopener">迷你单册尺寸 ↗</a>　<a href="https://www.walkerbooks.com.au/book/9780763650100/" target="_blank" rel="noopener">书塔出版信息 ↗</a></p><p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }
   async function copyIsbn(button) {
@@ -265,7 +279,16 @@
     const fresh = next.books.filter(t => !first.books.includes(t));
     const titles = list => list.map(title => {
       const book = books.find(b => b.title === title);
-      return '<button class="titlechip" type="button" data-open="' + book.isbn + '">' + escape(title) + '</button>';
+      const edition = book.variants.find(v => v.isbn === next.isbn);
+      const packRecord = next.copySizes?.[title];
+      const size = edition?.size || packRecord?.size || '待核实';
+      const target = edition ? 'data-mini-open="' + edition.key + '"' : 'data-open="' + book.isbn + '"';
+      const source = packRecord ? ' <a class="set-size-source" href="' + escape(packRecord.ref) +
+        '" target="_blank" rel="noopener" aria-label="' + escape(title) + ' 的尺寸出处">出处 ↗</a>' : '';
+      const difference = packRecord?.note ? '<small class="set-size-note"><a href="' + escape(packRecord.otherRef) +
+        '" target="_blank" rel="noopener">' + escape(packRecord.note) + ' ↗</a></small>' : '';
+      return '<span class="set-title-row"><button class="titlechip set-title" type="button" ' + target + '>' +
+        escape(title) + '<small>单册（宽 × 高） ' + escape(size) + '</small></button>' + source + difference + '</span>';
     }).join('');
     document.querySelector('#comparison').innerHTML = '<div><h3>重复 · ' + common.length + ' 本</h3>' + (titles(common) || '两套没有重复的书。') +
       '</div><div><h3>新增 · ' + fresh.length + ' 本</h3>' + (titles(fresh) || '已有套装包含这些书。') +

@@ -3,9 +3,12 @@
     "title": "Huggy Kissy",
     "isbn": "9781536211351",
     "format": "大开本软垫纸板书",
-    "w_cm": 20.32,
-    "h_cm": 20.32,
-    "source": "https://www.candlewick.com/9781536211351/huggy-kissy/"
+    "w_cm": 20.2946,
+    "h_cm": 20.2946,
+    "source": "https://www.candlewick.com/9781536211351/huggy-kissy/",
+    "w_in": 7.99,
+    "h_in": 7.99,
+    "size_basis": "出版社规格"
   },
   {
     "title": "Higher! Higher!",
@@ -13,7 +16,8 @@
     "format": "小开本纸板书",
     "w_cm": 17.78,
     "h_cm": 17.78,
-    "source": "https://www.candlewick.com/9780763644338/higher-higher/"
+    "source": "https://www.candlewick.com/9780763644338/higher-higher/",
+    "size_basis": "出版社规格"
   },
   {
     "title": "Faster! Faster!",
@@ -21,7 +25,10 @@
     "format": "小开本纸板书",
     "w_cm": 17.78,
     "h_cm": 17.78,
-    "source": "https://www.sanmin.com.tw/product/index/003937590"
+    "source": "https://www.penguinrandomhouseretail.com/wp-content/uploads/2017/11/RH-Childrens-2018-Catalog-2.pdf",
+    "secondary_source": "https://www.walkerbooks.com.au/book/9780763662226/",
+    "notes": "采用美国发行目录 7 × 7 英寸，三民书店列 17.8 × 17.8 cm。Walker Books Australia 同书号列裁切尺寸 17.6 × 17.6 cm。",
+    "size_basis": "发行目录"
   },
   {
     "title": "The Birthday Box",
@@ -29,7 +36,8 @@
     "format": "大开本精装绘本",
     "w_cm": 24.9,
     "h_cm": 24.9,
-    "source": "https://www.ebay.com/itm/358513833418"
+    "source": "https://www.ebay.com/itm/358513833418",
+    "size_basis": "书店规格"
   },
   {
     "title": "The Rizzlerunk Club: Best Buds Under Frogs",
@@ -37,6 +45,8 @@
     "format": "平装插图小说",
     "w_cm": 13,
     "h_cm": 20,
-    "source": "https://www.candlewick.com/9781536223071/the-rizzlerunk-club-best-buds-under-frogs/"
+    "source": "https://www.candlewick.com/9781536223071/the-rizzlerunk-club-best-buds-under-frogs/",
+    "secondary_source": "https://www.walkerbooks.com.au/book/9781536223071/",
+    "size_basis": "出版社规格"
   }
 ]

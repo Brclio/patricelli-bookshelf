@@ -18,7 +18,12 @@
         "https://www.mackids.com.tw/product/detail/1907",
         "https://www.walkerbooks.com.au/book/9780763650100/",
         "https://www.booktopia.com.au/baby-s-book-tower-leslie-patricelli/book/9780763650100.html"
-      ]
+      ],
+      "copyDimensions": {
+        "widthCm": 6,
+        "heightCm": 6,
+        "source": "https://www.mackids.com.tw/product/detail/1907"
+      }
     },
     {
       "title": "Yes Yes! A Box of Board Books",
@@ -60,7 +65,13 @@
         "https://www.bookxcess.com/products/bxosst-leslie-patricellis-little-library-8-bb-box-9781536218794",
         "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html",
         "https://bookoutlet.com/products/leslie-patricelli-s-little-library-8-book-set-9781536218794b"
-      ]
+      ],
+      "boxDimensions": {
+        "widthCm": 15.24,
+        "heightCm": 15.24,
+        "depthCm": 10.414,
+        "source": "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html"
+      }
     },
     {
       "title": "Leslie Patricelli’s Big Box of Brilliant Books",
@@ -110,14 +121,52 @@
           "isbn": "9781406348842"
         }
       ],
-      "singleSize": "On My Potty 书号 9781406328370 单册官方尺寸 17.8 × 17.8 cm；没有逐册确认所有内书的实测尺寸",
+      "singleSize": "两家书商为这套英版纸板书标示的开本为约 17.8 × 17.8 cm。",
       "packageSize": "约 17.8 × 17.8 × 8 cm（诚品整套商品规格）",
-      "notes": "英国版8册。套内书号和英版名见诚品。On My Potty=Potty；In the Bath=Tubby；Higher! Higher! 属于另一个绘本系列。",
+      "notes": "英国版8册。套内书号和英版名见诚品。On My Potty=Potty；In the Bath=Tubby；Higher! Higher! 属于另一个绘本系列。 Huggy Kissy 的 Walker 单本网页与套装资料不同，该册列出套装书商规格。",
       "miniStatus": "常规尺寸单册获印证；无迷你版证据",
       "sources": [
         "https://www.eslite.com/product/10012071872682884000000",
-        "https://www.walker.co.uk/9781406328370/on-my-potty/"
-      ]
+        "https://www.walker.co.uk/9781406328370/on-my-potty/",
+        "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043",
+        "https://www.lwbooks.co.kr/books/books_view.asp?idx=3582"
+      ],
+      "copySizes": {
+        "Tickle": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043"
+        },
+        "Huggy Kissy": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043",
+          "note": "套装书商规格。Walker 单本页另列 12.8 × 19.8 cm。",
+          "otherRef": "https://www.walker.co.uk/9781406344202/huggy-kissy/"
+        },
+        "Potty": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.walker.co.uk/9781406328370/on-my-potty/"
+        },
+        "Higher! Higher!": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043"
+        },
+        "No No Yes Yes": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043"
+        },
+        "Tubby": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://assets-us-01.kc-usercontent.com/c47bdf8e-37f3-4353-b63b-5f82ede29bf0/4a1947c1-08cd-4af4-84fd-3b562c4dc58e/Walker2018Backlist%20Cat_2018%20Emailable.pdf#page=6"
+        },
+        "Quiet Loud": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://www.englishplus.co.kr/book/book_view.asp?GCODE=EWB25090043"
+        },
+        "Toot": {
+          "size": "约 17.8 × 17.8 cm",
+          "ref": "https://assets-us-01.kc-usercontent.com/c47bdf8e-37f3-4353-b63b-5f82ede29bf0/4a1947c1-08cd-4af4-84fd-3b562c4dc58e/Walker2018Backlist%20Cat_2018%20Emailable.pdf#page=6"
+        }
+      }
     },
     {
       "title": "Leslie Patricelli Shrinkwrap Set",

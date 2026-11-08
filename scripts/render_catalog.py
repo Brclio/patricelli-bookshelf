@@ -44,30 +44,49 @@ packs = json.loads((base / "mini-editions.json").read_text())["packs"]
 alt = json.loads((base / "standalone-editions.json").read_text())
 size_by_pack = {p["isbn"]: p for p in packs}
 for box in boxes:
-    box.update({k: size_by_pack[box["isbn"]][k] for k in ["singleSize", "packageSize", "miniStatus"]})
+    pack = size_by_pack[box["isbn"]]
+    box.update({k: pack[k] for k in ["singleSize", "packageSize", "miniStatus"]})
+    if pack.get("copySizes"):
+        box["copySizes"] = pack["copySizes"]
 
-def cm(w,h):
-    if not (w and h): return "单册尺寸待核"
-    return f"约 {float(w):.1f} × {float(h):.1f} cm"
+def cm(width, height):
+    if not (width and height):
+        return "待核实"
+    def magnitude(n):
+        return f"{float(n):.1f}".removesuffix(".0")
+    return f"约 {magnitude(width)} × {magnitude(height)} cm"
+
+def kit_dimensions(pack):
+    copy = pack.get("copyDimensions", {})
+    package = pack.get("boxDimensions", {})
+    size = cm(copy.get("widthCm"), copy.get("heightCm"))
+    if package:
+        package_size = "约 {:.1f} × {:.1f} × {:.1f} cm".format(
+            package["widthCm"], package["heightCm"], package["depthCm"])
+    else:
+        package_size = ""
+    return dict(size=size, ref=copy.get("source") or package.get("source", ""),
+                sizeBasis="书店规格" if copy else "",
+                packageSize=package_size, packageRef=package.get("source", ""))
 
 for b in books:
     isbn = b["isbn"]
     d = dim.get(isbn) or {}
     size = cm(d.get("w_cm"),d.get("h_cm"))
     b["variants"] = [dict(key=isbn, isbn=isbn, label="常规纸板书" if b["group"]=="一根毛宝宝" else b["edition"],
-                          size=size, scope="单本 ISBN", link=b["link"], ref=d.get("source") or b["link"], cover=isbn)]
+                          size=size, sizeBasis=d.get("size_basis",""), sizeNote=d.get("notes",""), scope="单本 ISBN", link=b["link"], ref=d.get("source") or b["link"], cover=isbn)]
     for a in alt:
         if a["title"] != b["title"]: continue
         aid=a["isbn"]
-        b["variants"].append(dict(key=aid,isbn=aid,label=a["format"],size=cm(a["w_cm"],a["h_cm"]),scope="单本 ISBN",
+        b["variants"].append(dict(key=aid,isbn=aid,label=a["format"],size=cm(a["w_cm"],a["h_cm"]), sizeBasis=a.get("size_basis",""), sizeNote=a.get("notes",""), scope="单本 ISBN",
                                   link=a["source"],ref=a["source"],cover=aid if (site / "covers" / f"{aid}.jpg").exists() else ""))
     for pack in (size_by_pack["9780763650100"], size_by_pack["9781536218794"]):
         if b["title"] not in pack["books"]: continue
         mini=pack["isbn"]=="9780763650100"
         pid=pack["isbn"]
         b["variants"].append(dict(key=f"{isbn}-{pid}",isbn=pid,label="书塔迷你纸板书" if mini else "Little Library 较小盒装本",
-                                  size="单册约 6 × 6 cm" if mini else "按外盒尺寸判断，单册比常规版小；精确边长待核",
-                                  scope="整盒 ISBN", pack=pack["title"], link=pack["link"], ref=pack["sources"][0],
+                                  **kit_dimensions(pack),
+                                  scope="整盒 ISBN", pack=pack["title"], link=pack["link"],
                                   cover=pid if (site / "covers" / f"{pid}.jpg").exists() else ""))
     b["multiSize"] = len(b["variants"])>1 and not b["title"].startswith("The Rizzlerunk Club:")
 synopses = {}
@@ -80,6 +99,15 @@ for b in books:
     b["summary"] = synopsis.get("summary", b["about"])
     b["summarySource"] = synopsis.get("source", b["link"])
 
+def outer_size_line(edition):
+    if not edition.get("packageSize"):
+        return ""
+    return f'<small class="outer-size">外盒（宽 × 高 × 厚） {html.escape(edition["packageSize"])}</small>'
+
+def card_size_line(edition):
+    return (f'<div data-size-edition="{edition["key"]}"><dt>{html.escape(edition["label"])}</dt>'
+            f'<dd>{html.escape(edition["size"])}{outer_size_line(edition)}</dd></div>')
+
 def card(book):
     isbn = book["isbn"]
     return f'''<article class="book" data-isbn="{isbn}">
@@ -89,24 +117,25 @@ def card(book):
     <button class="booktitle" type="button" data-open="{isbn}">{html.escape(book['title'])}</button>
     <p class="cname">{html.escape(book["cn"])}</p>
     <p class="cardintro">{html.escape(book["about"].rstrip("。"))}。</p>
-    <p class="sizenote">{'常规单本 ' if book['group']=='一根毛宝宝' else ''}{html.escape(book['variants'][0]['size'])}</p>
+    <div class="book-sizes"><p>单册尺寸（宽 × 高）</p><dl>{"".join(card_size_line(v) for v in book["variants"])}</dl></div>
     <div class="bookmeta"><span>{'书塔含迷你本' if book["tower"] else book["group"]}</span><button type="button" data-variants="{isbn}" aria-label="查看并标记 {html.escape(book['title'])} 的购买版本">选购版本 ↗</button></div>
     </article>'''
 
 # Miniature copies remain individual editions of an existing work. Reuse the
 # original edition keys so existing purchases appear here without a migration.
-mini_packs = [(size_by_pack["9780763650100"], "书塔迷你本", "约 6 × 6 cm", "tower"),
-              (size_by_pack["9781536218794"], "Little Library 小开本", "单册比常规本小，精确尺寸待核", "library")]
+mini_packs = [(size_by_pack["9780763650100"], "书塔迷你本", "tower"),
+              (size_by_pack["9781536218794"], "Little Library 小开本", "library")]
 work_by_title = {b["title"]: b for b in books}
 mini_stories = [title for pack, *_ in mini_packs for title in pack["books"]]
 mini_cards, mini_guides, mini_options = [], [], []
 esc = html.escape
-for pack, label, size_label, style in mini_packs:
+for pack, label, style in mini_packs:
     pid = pack["isbn"]
+    guide_dimensions = kit_dimensions(pack)
     mini_options.append(f'<option value="{pid}">{("书塔" if style == "tower" else "Little Library")} · {len(pack["books"])} 册</option>')
     mini_guides.append(f'''<button type="button" class="miniguide {style}" data-mini-pack="{pid}" aria-label="筛选{esc(label)}" aria-pressed="false"><img src="covers/{pid}.jpg" alt="{esc(pack["title"])} 整盒外观">
       <div><small>{esc(pack["title"])}</small><strong>{esc(label)} · {len(pack["books"])} 册</strong>
-      <span>{esc(size_label)}</span></div></button>''')
+      <span>单册（宽 × 高） {esc(guide_dimensions["size"])}</span></div></button>''')
     for number, title in enumerate(pack["books"], 1):
         b = work_by_title[title]
         work = b["isbn"]
@@ -116,7 +145,7 @@ for pack, label, size_label, style in mini_packs:
         mini_cards.append(f'''<article class="mini-item {style}" data-edition-key="{key}" data-pack="{pid}" data-work="{work}" aria-labelledby="mini-{key}">
           <div class="minitag"><span>{esc(label)}</span><small>{number:02d} / {len(pack["books"]):02d}</small></div>
           <div class="mini-book"><button type="button" data-mini-open="{key}" class="minicover" aria-label="查看 {esc(title)} {esc(label)}"><img src="covers/{work}.jpg" loading="lazy" width="82" height="82" alt="{esc(title)} 常规英文版封面参考"></button>
-          <div><h3 id="mini-{key}"><button type="button" data-mini-open="{key}">{esc(title)}</button></h3><p class="minicn">{esc(b["cn"])} {same}</p><p class="minisize">{esc(size_label)}</p></div></div>
+          <div><h3 id="mini-{key}"><button type="button" data-mini-open="{key}">{esc(title)}</button></h3><p class="minicn">{esc(b["cn"])} {same}</p><p class="minisize">单册（宽 × 高） <b>{esc(v["size"])}</b></p>{outer_size_line(v)}</div></div>
           <div class="miniactions"><button class="secondary" type="button" data-owned="{key}">正在读取…</button><button class="minilink" type="button" data-mini-open="{key}">摘要与购买 ↗</button></div></article>''')
 mini_view = (base / "mini-view.html").read_text().replace("MINICARDS", "".join(mini_cards)).replace("MINIGUIDES", "".join(mini_guides)).replace("MINIOPTIONS", "".join(mini_options)).replace("MINIROWNUM", str(len(mini_stories))).replace("MINISTORYNUM", str(len(set(mini_stories))))
 
