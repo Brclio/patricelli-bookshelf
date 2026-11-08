@@ -32,18 +32,96 @@
 </style><link rel="stylesheet" href="shelf.css"><script src="purchases.js" defer></script><script src="account.js" defer></script><script src="shelf.js" defer></script></head>
 <body><a href="#catalog" class="skip">跳到单本目录</a>
 <header class="top"><div class="topline"><a class="brand" href="#top"><i class="mark" aria-hidden="true"><b></b><b></b><b></b></i>Patricelli Bookshelf</a>
-<nav aria-label="站内导航"><a href="#catalog">单本目录</a><a class="setlink" href="#sets">套装查重</a><button type="button" data-tower>照片里的书塔 <span aria-hidden="true">↗</span></button><button type="button" class="accountnav" id="accountOpen" aria-haspopup="dialog">书架账号</button></nav></div></header>
+<nav aria-label="站内导航"><div class="shelflinks"><a href="#catalog">单本目录</a><a class="mininav" href="#mini">迷你本清单</a><a class="setlink" href="#sets">套装查重</a><button type="button" data-tower>照片里的书塔 <span aria-hidden="true">↗</span></button></div><button type="button" class="accountnav" id="accountOpen" aria-haspopup="dialog">书架账号</button></nav></div></header>
 <main id="top">
 <div class="herowrap"><section class="hero wrap"><div class="intro"><p class="byline"><span></span>LESLIE PATRICELLI</p>
 <h1>从一根毛宝宝<br><em>到整座书架</em></h1>
 <p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 44 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。点开封面，可选尺寸、找购买链接，并分别标记已购。</p>
 <a class="primary" href="#catalog">浏览单本目录 <span aria-hidden="true">↓</span></a>
-<button class="herocompare" type="button" data-tower>书塔小本与常规本 ↗</button></div>
+<a class="herocompare" href="#mini">打开迷你本逐册清单 →</a></div>
 <div class="showcase" aria-label="书架选取的三本英文原版封面">
 <div class="hbook hback"><img src="covers/9780763632410.jpg" alt="Higher! Higher! 封面"></div>
 <div class="hbook hmiddle"><img src="covers/9781419709517.jpg" alt="Be Patient, Pandora! 封面"></div>
 <div class="hbook hfront"><img src="covers/9780763619503.jpg" alt="Yummy Yucky 封面"></div>
 <div class="showcaption"><span>Leslie Patricelli</span><span>Collected Works</span></div></div></section></div>
+<section id="mini" class="wrap minishelf" aria-labelledby="mini-heading" tabindex="-1">
+  <div class="minilead">
+    <div class="miniheading"><p class="kicker">THE LITTLE BOOKS</p><h1 id="mini-heading">迷你本逐册清单</h1>
+      <p class="minidek">按手里实际拿到的那一册打勾。书名相同、开本不同，可以各收一本。</p>
+    </div>
+    <div class="ministats"><div><strong>12</strong><span>册可单独标记</span></div><div><strong>10</strong><span>个不同故事</span></div></div>
+  </div>
+  <div class="miniguides"><button type="button" class="miniguide tower" data-mini-pack="9780763650100" aria-label="筛选书塔迷你本" aria-pressed="false"><img src="covers/9780763650100.jpg" alt="Baby’s Book Tower 整盒外观">
+      <div><small>Baby’s Book Tower</small><strong>书塔迷你本 · 4 册</strong>
+      <span>约 6 × 6 cm</span></div></button><button type="button" class="miniguide library" data-mini-pack="9781536218794" aria-label="筛选Little Library 小开本" aria-pressed="false"><img src="covers/9781536218794.jpg" alt="Leslie Patricelli’s Little Library 整盒外观">
+      <div><small>Leslie Patricelli’s Little Library</small><strong>Little Library 小开本 · 8 册</strong>
+      <span>单册比常规本小，精确尺寸待核</span></div></button></div>
+  <div class="mini-toolbar">
+    <div class="mini-status-tabs filters" role="group" aria-label="按迷你本购买状态筛选">
+      <button type="button" data-mini-filter="all" aria-pressed="true">全部</button>
+      <button type="button" data-mini-filter="unowned" aria-pressed="false">未购买</button>
+      <button type="button" data-mini-filter="owned" aria-pressed="false">已购买</button>
+    </div>
+    <div class="controls">
+      <label class="groupctl"><select id="mini-pack" aria-label="按迷你本来源筛选"><option value="all">两种开本</option><option value="9780763650100">书塔 · 4 册</option><option value="9781536218794">Little Library · 8 册</option></select></label>
+      <label class="search"><span class="glass" aria-hidden="true"></span><input id="mini-search" type="search" aria-label="搜索迷你本书名或套装 ISBN" placeholder="书名、中文或套装 ISBN"></label>
+    </div>
+  </div>
+  <div class="minisub"><p id="mini-count" role="status">共 12 册</p><p>封面用同名英文常规版认书，尺寸以本卡标注为准。</p></div>
+  <div class="mini-grid"><article class="mini-item tower" data-edition-key="9780763632458-9780763650100" data-pack="9780763650100" data-work="9780763632458" aria-labelledby="mini-9780763632458-9780763650100">
+          <div class="minitag"><span>书塔迷你本</span><small>01 / 04</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763632458-9780763650100" class="minicover" aria-label="查看 Baby Happy Baby Sad 书塔迷你本"><img src="covers/9780763632458.jpg" loading="lazy" width="82" height="82" alt="Baby Happy Baby Sad 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763632458-9780763650100"><button type="button" data-mini-open="9780763632458-9780763650100">Baby Happy Baby Sad</button></h3><p class="minicn">开心 不开心 </p><p class="minisize">约 6 × 6 cm</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763632458-9780763650100">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763632458-9780763650100">摘要与购买 ↗</button></div></article><article class="mini-item tower" data-edition-key="9780763632441-9780763650100" data-pack="9780763650100" data-work="9780763632441" aria-labelledby="mini-9780763632441-9780763650100">
+          <div class="minitag"><span>书塔迷你本</span><small>02 / 04</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763632441-9780763650100" class="minicover" aria-label="查看 No No Yes Yes 书塔迷你本"><img src="covers/9780763632441.jpg" loading="lazy" width="82" height="82" alt="No No Yes Yes 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763632441-9780763650100"><button type="button" data-mini-open="9780763632441-9780763650100">No No Yes Yes</button></h3><p class="minicn">可以 不可以 </p><p class="minisize">约 6 × 6 cm</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763632441-9780763650100">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763632441-9780763650100">摘要与购买 ↗</button></div></article><article class="mini-item tower" data-edition-key="9780763619527-9780763650100" data-pack="9780763650100" data-work="9780763619527" aria-labelledby="mini-9780763619527-9780763650100">
+          <div class="minitag"><span>书塔迷你本</span><small>03 / 04</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763619527-9780763650100" class="minicover" aria-label="查看 Quiet Loud 书塔迷你本"><img src="covers/9780763619527.jpg" loading="lazy" width="82" height="82" alt="Quiet Loud 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763619527-9780763650100"><button type="button" data-mini-open="9780763619527-9780763650100">Quiet Loud</button></h3><p class="minicn">小声 大声 <span class="minioverlap">两套同名</span></p><p class="minisize">约 6 × 6 cm</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763619527-9780763650100">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763619527-9780763650100">摘要与购买 ↗</button></div></article><article class="mini-item tower" data-edition-key="9780763619503-9780763650100" data-pack="9780763650100" data-work="9780763619503" aria-labelledby="mini-9780763619503-9780763650100">
+          <div class="minitag"><span>书塔迷你本</span><small>04 / 04</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763619503-9780763650100" class="minicover" aria-label="查看 Yummy Yucky 书塔迷你本"><img src="covers/9780763619503.jpg" loading="lazy" width="82" height="82" alt="Yummy Yucky 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763619503-9780763650100"><button type="button" data-mini-open="9780763619503-9780763650100">Yummy Yucky</button></h3><p class="minicn">好吃 不好吃 <span class="minioverlap">两套同名</span></p><p class="minisize">约 6 × 6 cm</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763619503-9780763650100">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763619503-9780763650100">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763679347-9781536218794" data-pack="9781536218794" data-work="9780763679347" aria-labelledby="mini-9780763679347-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>01 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763679347-9781536218794" class="minicover" aria-label="查看 Big Kid Bed Little Library 小开本"><img src="covers/9780763679347.jpg" loading="lazy" width="82" height="82" alt="Big Kid Bed 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763679347-9781536218794"><button type="button" data-mini-open="9780763679347-9781536218794">Big Kid Bed</button></h3><p class="minicn">大孩子的床 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763679347-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763679347-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763632465-9781536218794" data-pack="9781536218794" data-work="9780763632465" aria-labelledby="mini-9780763632465-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>02 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763632465-9781536218794" class="minicover" aria-label="查看 Huggy Kissy Little Library 小开本"><img src="covers/9780763632465.jpg" loading="lazy" width="82" height="82" alt="Huggy Kissy 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763632465-9781536218794"><button type="button" data-mini-open="9780763632465-9781536218794">Huggy Kissy</button></h3><p class="minicn">抱抱 亲亲 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763632465-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763632465-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763679323-9781536218794" data-pack="9781536218794" data-work="9780763679323" aria-labelledby="mini-9780763679323-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>03 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763679323-9781536218794" class="minicover" aria-label="查看 Nighty-Night Little Library 小开本"><img src="covers/9780763679323.jpg" loading="lazy" width="82" height="82" alt="Nighty-Night 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763679323-9781536218794"><button type="button" data-mini-open="9780763679323-9781536218794">Nighty-Night</button></h3><p class="minicn">晚安 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763679323-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763679323-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763644765-9781536218794" data-pack="9781536218794" data-work="9780763644765" aria-labelledby="mini-9780763644765-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>04 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763644765-9781536218794" class="minicover" aria-label="查看 Potty Little Library 小开本"><img src="covers/9780763644765.jpg" loading="lazy" width="82" height="82" alt="Potty 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763644765-9781536218794"><button type="button" data-mini-open="9780763644765-9781536218794">Potty</button></h3><p class="minicn">上厕所 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763644765-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763644765-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763619527-9781536218794" data-pack="9781536218794" data-work="9780763619527" aria-labelledby="mini-9780763619527-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>05 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763619527-9781536218794" class="minicover" aria-label="查看 Quiet Loud Little Library 小开本"><img src="covers/9780763619527.jpg" loading="lazy" width="82" height="82" alt="Quiet Loud 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763619527-9781536218794"><button type="button" data-mini-open="9780763619527-9781536218794">Quiet Loud</button></h3><p class="minicn">小声 大声 <span class="minioverlap">两套同名</span></p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763619527-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763619527-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763663216-9781536218794" data-pack="9781536218794" data-work="9780763663216" aria-labelledby="mini-9780763663216-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>06 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763663216-9781536218794" class="minicover" aria-label="查看 Toot Little Library 小开本"><img src="covers/9780763663216.jpg" loading="lazy" width="82" height="82" alt="Toot 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763663216-9781536218794"><button type="button" data-mini-open="9780763663216-9781536218794">Toot</button></h3><p class="minicn">放屁啦 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763663216-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763663216-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763679330-9781536218794" data-pack="9781536218794" data-work="9780763679330" aria-labelledby="mini-9780763679330-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>07 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763679330-9781536218794" class="minicover" aria-label="查看 Tooth Little Library 小开本"><img src="covers/9780763679330.jpg" loading="lazy" width="82" height="82" alt="Tooth 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763679330-9781536218794"><button type="button" data-mini-open="9780763679330-9781536218794">Tooth</button></h3><p class="minicn">长牙了 </p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763679330-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763679330-9781536218794">摘要与购买 ↗</button></div></article><article class="mini-item library" data-edition-key="9780763619503-9781536218794" data-pack="9781536218794" data-work="9780763619503" aria-labelledby="mini-9780763619503-9781536218794">
+          <div class="minitag"><span>Little Library 小开本</span><small>08 / 08</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="9780763619503-9781536218794" class="minicover" aria-label="查看 Yummy Yucky Little Library 小开本"><img src="covers/9780763619503.jpg" loading="lazy" width="82" height="82" alt="Yummy Yucky 常规英文版封面参考"></button>
+          <div><h3 id="mini-9780763619503-9781536218794"><button type="button" data-mini-open="9780763619503-9781536218794">Yummy Yucky</button></h3><p class="minicn">好吃 不好吃 <span class="minioverlap">两套同名</span></p><p class="minisize">单册比常规本小，精确尺寸待核</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="9780763619503-9781536218794">正在读取…</button><button class="minilink" type="button" data-mini-open="9780763619503-9781536218794">摘要与购买 ↗</button></div></article></div>
+  <div id="mini-empty" hidden><p>没有符合条件的迷你本。</p><button type="button" data-mini-reset>显示全部迷你本</button></div>
+  <p class="minisync"><span id="mini-sync" role="status"></span> <button type="button" data-mini-retry hidden>重试同步</button></p>
+  <nav class="minifoot" aria-label="更多书目"><a href="#catalog">查看常规单本目录 →</a><a href="#sets">比较套装内容 →</a><a href="english-board-books.xlsx" download>下载 Excel 清单 ↓</a></nav>
+</section>
+
 <section class="wrap catalog" id="catalog"><div class="cataloghead"><div><p class="kicker">THE COLLECTION</p><h2>单本目录</h2></div>
 <div class="controls"><label class="groupctl"><select id="group" aria-label="按作品类型筛选"><option value="">所有作品类型</option><option value="一根毛宝宝">一根毛宝宝 · 27 本</option><option value="原创绘本">原创绘本 · 6 本</option><option value="章节小说">章节小说 · 2 本</option><option value="合作绘本">合作绘本 · 8 本</option><option value="成人漫画">成人漫画 · 1 本</option></select></label>
 <label class="search"><span aria-hidden="true" class="glass"></span><input id="search" type="search" aria-label="搜索英文书名、中文或 ISBN" placeholder="搜索书名、中文或 ISBN"></label></div></div>
@@ -457,7 +535,7 @@
 <small class="storage">已购买和未购买的数量按版本统计。同一部作品还有未购买版本时，会同时出现在两项筛选中。尺寸按宽 × 高排列。</small></section>
 <section class="wrap setcompare" id="sets"><p class="kicker">BOXED EDITIONS</p><h2>套装查重</h2>
 <p class="setintro"><b>照片里约 6 cm 见方的迷你本，目前核实到 4 本。</b>另外，《Little Library》收录 8 本较小开本，其中《Yummy Yucky》和《Quiet Loud》也在书塔里。两套合起来有 10 个不同故事。</p>
-<p class="setintro">下面可以任选两套英文组合，比较重复的书名和各自的尺寸。</p>
+<p class="setintro">想逐本查看或打勾？<a class="minilink" href="#mini">打开迷你本逐册清单 →</a>　也可以在下面任选两套，比较重复书名。</p>
 <div class="setinputs"><label>已有的套装<select id="baseBox" aria-label="已有的套装"><option value="9780763650100">Baby’s Book Tower（4 册）</option><option value="9780763641580">Yes Yes! A Box of Board Books（3 册）</option><option value="9781536218794">Leslie Patricelli’s Little Library（8 册）</option><option value="9781406378092">Leslie Patricelli’s Big Box of Brilliant Books（8 册）</option><option value="9781536211337">Leslie Patricelli Shrinkwrap Set（6 册）</option></select></label>
 <label>想比较的套装<select id="nextBox" aria-label="想比较的套装"><option value="9780763650100">Baby’s Book Tower（4 册）</option><option value="9780763641580">Yes Yes! A Box of Board Books（3 册）</option><option value="9781536218794">Leslie Patricelli’s Little Library（8 册）</option><option value="9781406378092">Leslie Patricelli’s Big Box of Brilliant Books（8 册）</option><option value="9781536211337">Leslie Patricelli Shrinkwrap Set（6 册）</option></select></label></div>
 <div id="comparison" aria-live="polite"></div></section>

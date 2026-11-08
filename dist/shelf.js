@@ -23,10 +23,38 @@
   const group = document.querySelector('#group');
   const detail = document.querySelector('#detail');
   let filter = 'all';
+  const miniRows = [...document.querySelectorAll('.mini-item')];
+  const miniSearch = document.querySelector('#mini-search');
+  const miniPack = document.querySelector('#mini-pack');
+  let miniFilter = 'all';
+  function updateMini() {
+    const term = norm(miniSearch.value);
+    let visible = 0, acquired = 0, scope = 0;
+    for (const row of miniRows) {
+      const {book,edition} = variants.get(row.dataset.editionKey);
+      const marked = usable && owned.has(edition.key);
+      if (miniPack.value !== 'all' && edition.isbn !== miniPack.value) { row.hidden = true; continue; }
+      scope++;
+      if (marked) acquired++;
+      const matches = (miniFilter === 'all' || (usable && marked === (miniFilter === 'owned'))) &&
+        (!term || [book.title, book.cn, book.alias, edition.label, edition.size, edition.pack, edition.isbn, row.querySelector('.minitag span').textContent]
+              .some(value => norm(value || '').includes(term)));
+      row.hidden = !matches;
+      if (matches) visible++;
+    }
+    document.querySelector('#mini-count').textContent = '显示 ' + visible + ' 册' +
+      (usable ? '　·　所选开本：已购 ' + acquired + ' / ' + scope + ' 册' : '');
+    document.querySelector('#mini-empty').hidden = !!visible;
+    document.querySelectorAll('[data-mini-filter]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.miniFilter === miniFilter)));
+    document.querySelectorAll('[data-mini-pack]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.miniPack === miniPack.value)));
+    document.querySelector('#mini-sync').textContent = syncMessage();
+    document.querySelector('[data-mini-retry]').hidden = phase !== 'offline';
+  }
   
   const norm = text => text.normalize('NFKC').toLowerCase().replace(/[\s.,!！?？:，、。\-–—]/g, '');
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
   function applyFilters() {
+    updateMini();
     const term = norm(search.value);
     const purchaseFilter = filter === 'owned' || filter === 'unowned';
     let count = 0;
@@ -110,6 +138,7 @@
   function show(content) {
     document.querySelector('#inside').innerHTML = '<div class="dialoglayout">' + content + '</div>';
     if (!detail.open) detail.showModal();
+    document.querySelector('#inside').scrollTop = 0;
     document.querySelector('#close').focus({preventScroll:true});
     document.body.style.overflow = 'hidden';
     applyFilters();
@@ -128,10 +157,31 @@
       '</h2><div class="zh">' + escape(b.cn) + '</div><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p><p class="meta">' + escape(credit) + '　<a target="_blank" rel="noopener" href="' + escape(b.summarySource) + '">内容出处 ↗</a></p>' +
       (b.tower ? '<p class="meta">照片里的四册书塔收录了迷你版。</p>' : '') + note + '<h3 class="edhead">英文购买版本</h3>' + editionRows + '<p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }
+  function showMini(key) {
+    const {book:b, edition:v} = variants.get(key);
+    const same = b.variants.find(other => other.pack && other.key !== key);
+    const fromTower = b.tower && v.isbn === '9780763650100';
+    const splitTerms = ('Leslie Patricelli ' + b.title + ' ' + (fromTower ? "Baby's Book Tower 6cm" : "Little Library") + ' 英文 拆售');
+    const splitUrl = 'https://s.taobao.com/search?q=' + encodeURIComponent(splitTerms);
+    const detailArt = '<div class="detailart miniart"><img src="covers/' + b.isbn + '.jpg" alt="' + escape(b.title) +
+      ' 常规英文版封面参考"><small>同名常规版封面参考</small></div>';
+    show(detailArt + '<div class="description"><p class="kicker">' + escape(v.label) + '</p><h2 id="dialogtitle">' + escape(b.title) +
+      '</h2><div class="zh">' + escape(b.cn) + '</div><p class="minidetail-size"><b>' + escape(v.size) + '</b></p>' +
+      '<div class="edactions"><button class="secondary" type="button" data-owned="' + key + '"></button></div>' +
+      (same ? '<p class="meta">另有同名小本：<button type="button" class="minilink" data-mini-open="' + same.key + '">' + escape(same.label) + ' ↗</button>，购买状态分别记录。</p>' : '') +
+      '<p id="dialogsync" class="meta" role="status"></p><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p>' +
+      '<p class="meta"><a href="' + escape(b.summarySource) + '" target="_blank" rel="noopener">内容出处 ↗</a></p>' +
+      '<h3 class="edhead">想买这一册</h3><p class="meta">此开本尚未查到单册独立 ISBN。找拆售时，请让卖家确认书名、尺寸和英文内页。</p>' +
+      '<a class="minilink" target="_blank" rel="noopener noreferrer" href="' + escape(splitUrl) + '">淘宝搜这册拆售 ↗</a>' +
+      '<h3 class="edhead">购买整套</h3><div class="minipackdetail"><img src="covers/' + v.isbn + '.jpg" alt="' + escape(v.pack) +
+      ' 整套封面"><div><b>' + escape(v.pack) + '</b><br><a href="' + escape(v.ref) + '" target="_blank" rel="noopener">' + (fromTower ? '查看四册实物与尺寸' : '尺寸与套装资料') + ' ↗</a></div></div>' +
+      info(v.isbn, '整套 ISBN（非单册书号）') + purchaseLinks(v.isbn) +
+      '<p class="meta"><button class="minilink" data-open="' + b.isbn + '" type="button">查看同一故事的常规本与其他版本 ↗</button></p><p id="dialogstatus" class="meta" role="status"></p></div>');
+  }
   function showTower() {
     show(art('9780763650100', 'Baby’s Book Tower') + '<div class="description"><div class="kicker">FOUR MINI BOARD BOOKS</div><h2 id="dialogtitle">Baby’s Book Tower</h2><div class="zh">照片里的四册迷你书塔</div><p>盒内每本约 <b>6 × 6 cm</b>。同样四个故事也有约 <b>17.8 × 17.8 cm</b> 的常规英文单行本，各自有独立 ISBN。</p><p class="tower-contents">' +
       books.filter(b => b.tower).map(b => '<button class="titlechip" data-open="'+b.isbn+'">'+escape(b.title)+'</button>').join(' ') + '</p>' + info('9780763650100', '四册迷你版的整盒 ISBN') +
-      purchaseLinks('9780763650100') + '<div class="dialogactions"><button class="action" id="markTower" type="button"></button><button class="secondary" id="filtertower" type="button">查看这四部作品 ↓</button></div><p class="meta"><a href="https://www.mackids.com.tw/product/detail/1907" target="_blank" rel="noopener">迷你单册尺寸 ↗</a>　<a href="https://www.walkerbooks.com.au/book/9780763650100/" target="_blank" rel="noopener">书塔出版信息 ↗</a></p><p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
+      purchaseLinks('9780763650100') + '<div class="dialogactions"><button class="action" id="markTower" type="button"></button><button class="secondary" id="filtertower" type="button">逐册整理这四本 ↓</button></div><p class="meta"><a href="https://www.mackids.com.tw/product/detail/1907" target="_blank" rel="noopener">迷你单册尺寸 ↗</a>　<a href="https://www.walkerbooks.com.au/book/9780763650100/" target="_blank" rel="noopener">书塔出版信息 ↗</a></p><p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }
   async function copyIsbn(button) {
     const id = button.dataset.copy;
@@ -155,6 +205,19 @@
       if (phase === 'login' && ['owned','unowned'].includes(button.dataset.filter)) account.open();
       else { filter = button.dataset.filter; group.value = ''; applyFilters(); }
     }
+    else if (button.hasAttribute('data-mini-filter')) {
+      if (!usable && phase === 'login' && button.dataset.miniFilter !== 'all') { account.open(); return; }
+      miniFilter = button.dataset.miniFilter; updateMini();
+    }
+    else if (button.hasAttribute('data-mini-pack')) {
+      miniPack.value = miniPack.value === button.dataset.miniPack ? 'all' : button.dataset.miniPack;
+      updateMini();
+    }
+    else if (button.hasAttribute('data-mini-open')) showMini(button.dataset.miniOpen);
+    else if (button.hasAttribute('data-mini-reset')) {
+      miniFilter = 'all'; miniPack.value = 'all'; miniSearch.value = ''; updateMini();
+    }
+    else if (button.hasAttribute('data-mini-retry')) purchases.sync();
     else if (button.hasAttribute('data-account-login')) account.open();
     else if (button.hasAttribute('data-tower')) showTower();
     else if (button.hasAttribute('data-open')) showBook(button.dataset.open);
@@ -169,7 +232,7 @@
     else if (button.hasAttribute('data-owned')) toggleOwned(button.dataset.owned);
     else if (button.hasAttribute('data-copy')) copyIsbn(button);
     else if (button.id === 'filtertower') {
-      detail.close(); filter = 'tower'; search.value = ''; group.value = ''; applyFilters(); document.querySelector('#catalog').scrollIntoView();
+      detail.close(); miniPack.value = '9780763650100'; miniSearch.value = ''; miniFilter = 'all'; updateMini(); location.hash = 'mini';
     } else if (button.id === 'reset') { filter = 'all'; search.value = ''; group.value = ''; applyFilters(); }
     else if (button.id === 'close') detail.close();
   });
@@ -178,6 +241,16 @@
     const rect = detail.getBoundingClientRect();
     if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) detail.close();
   }});
+  miniSearch.addEventListener('input', updateMini);
+  miniPack.addEventListener('change', updateMini);
+  function syncNavigation() {
+    const active = location.hash === '#mini';
+    document.querySelector('.mininav').toggleAttribute('aria-current', active);
+    if (active) document.querySelector('.mininav').setAttribute('aria-current', 'page');
+    document.title = active ? '迷你本逐册清单 · Patricelli Bookshelf' : 'Leslie Patricelli 的英文书架 · 英文作品目录';
+  }
+  window.addEventListener('hashchange', syncNavigation);
+  syncNavigation();
   search.addEventListener('input', applyFilters);
   group.addEventListener('change', () => { if (filter !== 'owned' && filter !== 'unowned') filter = 'all'; applyFilters(); });
   const boxes = JSON.parse(document.querySelector('#boxdata').textContent);

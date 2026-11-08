@@ -93,6 +93,33 @@ def card(book):
     <div class="bookmeta"><span>{'书塔含迷你本' if book["tower"] else book["group"]}</span><button type="button" data-variants="{isbn}" aria-label="查看并标记 {html.escape(book['title'])} 的购买版本">选购版本 ↗</button></div>
     </article>'''
 
+# Miniature copies remain individual editions of an existing work. Reuse the
+# original edition keys so existing purchases appear here without a migration.
+mini_packs = [(size_by_pack["9780763650100"], "书塔迷你本", "约 6 × 6 cm", "tower"),
+              (size_by_pack["9781536218794"], "Little Library 小开本", "单册比常规本小，精确尺寸待核", "library")]
+work_by_title = {b["title"]: b for b in books}
+mini_stories = [title for pack, *_ in mini_packs for title in pack["books"]]
+mini_cards, mini_guides, mini_options = [], [], []
+esc = html.escape
+for pack, label, size_label, style in mini_packs:
+    pid = pack["isbn"]
+    mini_options.append(f'<option value="{pid}">{("书塔" if style == "tower" else "Little Library")} · {len(pack["books"])} 册</option>')
+    mini_guides.append(f'''<button type="button" class="miniguide {style}" data-mini-pack="{pid}" aria-label="筛选{esc(label)}" aria-pressed="false"><img src="covers/{pid}.jpg" alt="{esc(pack["title"])} 整盒外观">
+      <div><small>{esc(pack["title"])}</small><strong>{esc(label)} · {len(pack["books"])} 册</strong>
+      <span>{esc(size_label)}</span></div></button>''')
+    for number, title in enumerate(pack["books"], 1):
+        b = work_by_title[title]
+        work = b["isbn"]
+        v = next(v for v in b["variants"] if v.get("pack") == pack["title"])
+        key = v["key"]
+        same = '<span class="minioverlap">两套同名</span>' if mini_stories.count(title) > 1 else ''
+        mini_cards.append(f'''<article class="mini-item {style}" data-edition-key="{key}" data-pack="{pid}" data-work="{work}" aria-labelledby="mini-{key}">
+          <div class="minitag"><span>{esc(label)}</span><small>{number:02d} / {len(pack["books"]):02d}</small></div>
+          <div class="mini-book"><button type="button" data-mini-open="{key}" class="minicover" aria-label="查看 {esc(title)} {esc(label)}"><img src="covers/{work}.jpg" loading="lazy" width="82" height="82" alt="{esc(title)} 常规英文版封面参考"></button>
+          <div><h3 id="mini-{key}"><button type="button" data-mini-open="{key}">{esc(title)}</button></h3><p class="minicn">{esc(b["cn"])} {same}</p><p class="minisize">{esc(size_label)}</p></div></div>
+          <div class="miniactions"><button class="secondary" type="button" data-owned="{key}">正在读取…</button><button class="minilink" type="button" data-mini-open="{key}">摘要与购买 ↗</button></div></article>''')
+mini_view = (base / "mini-view.html").read_text().replace("MINICARDS", "".join(mini_cards)).replace("MINIGUIDES", "".join(mini_guides)).replace("MINIOPTIONS", "".join(mini_options)).replace("MINIROWNUM", str(len(mini_stories))).replace("MINISTORYNUM", str(len(set(mini_stories))))
+
 index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fcf9ef">
 <title>Leslie Patricelli 的英文书架 · 英文作品目录</title>
@@ -100,18 +127,19 @@ index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <style>BASECSS</style><link rel="stylesheet" href="shelf.css"><script src="purchases.js" defer></script><script src="account.js" defer></script><script src="shelf.js" defer></script></head>
 <body><a href="#catalog" class="skip">跳到单本目录</a>
 <header class="top"><div class="topline"><a class="brand" href="#top"><i class="mark" aria-hidden="true"><b></b><b></b><b></b></i>Patricelli Bookshelf</a>
-<nav aria-label="站内导航"><a href="#catalog">单本目录</a><a class="setlink" href="#sets">套装查重</a><button type="button" data-tower>照片里的书塔 <span aria-hidden="true">↗</span></button><button type="button" class="accountnav" id="accountOpen" aria-haspopup="dialog">书架账号</button></nav></div></header>
+<nav aria-label="站内导航"><div class="shelflinks"><a href="#catalog">单本目录</a><a class="mininav" href="#mini">迷你本清单</a><a class="setlink" href="#sets">套装查重</a><button type="button" data-tower>照片里的书塔 <span aria-hidden="true">↗</span></button></div><button type="button" class="accountnav" id="accountOpen" aria-haspopup="dialog">书架账号</button></nav></div></header>
 <main id="top">
 <div class="herowrap"><section class="hero wrap"><div class="intro"><p class="byline"><span></span>LESLIE PATRICELLI</p>
 <h1>从一根毛宝宝<br><em>到整座书架</em></h1>
 <p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 COUNT 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。点开封面，可选尺寸、找购买链接，并分别标记已购。</p>
 <a class="primary" href="#catalog">浏览单本目录 <span aria-hidden="true">↓</span></a>
-<button class="herocompare" type="button" data-tower>书塔小本与常规本 ↗</button></div>
+<a class="herocompare" href="#mini">打开迷你本逐册清单 →</a></div>
 <div class="showcase" aria-label="书架选取的三本英文原版封面">
 <div class="hbook hback"><img src="covers/9780763632410.jpg" alt="Higher! Higher! 封面"></div>
 <div class="hbook hmiddle"><img src="covers/9781419709517.jpg" alt="Be Patient, Pandora! 封面"></div>
 <div class="hbook hfront"><img src="covers/9780763619503.jpg" alt="Yummy Yucky 封面"></div>
 <div class="showcaption"><span>Leslie Patricelli</span><span>Collected Works</span></div></div></section></div>
+MINISECTION
 <section class="wrap catalog" id="catalog"><div class="cataloghead"><div><p class="kicker">THE COLLECTION</p><h2>单本目录</h2></div>
 <div class="controls"><label class="groupctl"><select id="group" aria-label="按作品类型筛选">GROUPS</select></label>
 <label class="search"><span aria-hidden="true" class="glass"></span><input id="search" type="search" aria-label="搜索英文书名、中文或 ISBN" placeholder="搜索书名、中文或 ISBN"></label></div></div>
@@ -129,7 +157,7 @@ index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <small class="storage">已购买和未购买的数量按版本统计。同一部作品还有未购买版本时，会同时出现在两项筛选中。尺寸按宽 × 高排列。</small></section>
 <section class="wrap setcompare" id="sets"><p class="kicker">BOXED EDITIONS</p><h2>套装查重</h2>
 <p class="setintro"><b>照片里约 6 cm 见方的迷你本，目前核实到 4 本。</b>另外，《Little Library》收录 8 本较小开本，其中《Yummy Yucky》和《Quiet Loud》也在书塔里。两套合起来有 10 个不同故事。</p>
-<p class="setintro">下面可以任选两套英文组合，比较重复的书名和各自的尺寸。</p>
+<p class="setintro">想逐本查看或打勾？<a class="minilink" href="#mini">打开迷你本逐册清单 →</a>　也可以在下面任选两套，比较重复书名。</p>
 <div class="setinputs"><label>已有的套装<select id="baseBox" aria-label="已有的套装">BOXOPTIONS</select></label>
 <label>想比较的套装<select id="nextBox" aria-label="想比较的套装">BOXOPTIONS</select></label></div>
 <div id="comparison" aria-live="polite"></div></section>
@@ -172,4 +200,4 @@ for name in dict.fromkeys(b["group"] for b in books):
 index = index.replace("BASECSS", variables).replace("GROUPS","".join(groups)).replace("SIZECOUNT",str(sum(b["multiSize"] for b in books))).replace("COUNT",str(len(books))).replace("CARDS", "".join(map(card, books))).replace("DATA", json.dumps(books,ensure_ascii=False).replace("<","\\u003c"))
 index = index.replace("BOXOPTIONS", "".join(f'<option value="{b["isbn"]}">{html.escape(b["title"])}（{len(b["books"])} 册）</option>' for b in boxes)).replace("BOXJSON", json.dumps(boxes, ensure_ascii=False).replace("<","\\u003c"))
 index = index.replace("RETAILJSON", json.dumps(retail, ensure_ascii=False).replace("<","\\u003c"))
-(site / "index.html").write_text(index)
+(site / "index.html").write_text(index.replace("MINISECTION", mini_view))

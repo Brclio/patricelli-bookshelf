@@ -1,0 +1,25 @@
+<section id="mini" class="wrap minishelf" aria-labelledby="mini-heading" tabindex="-1">
+  <div class="minilead">
+    <div class="miniheading"><p class="kicker">THE LITTLE BOOKS</p><h1 id="mini-heading">迷你本逐册清单</h1>
+      <p class="minidek">按手里实际拿到的那一册打勾。书名相同、开本不同，可以各收一本。</p>
+    </div>
+    <div class="ministats"><div><strong>MINIROWNUM</strong><span>册可单独标记</span></div><div><strong>MINISTORYNUM</strong><span>个不同故事</span></div></div>
+  </div>
+  <div class="miniguides">MINIGUIDES</div>
+  <div class="mini-toolbar">
+    <div class="mini-status-tabs filters" role="group" aria-label="按迷你本购买状态筛选">
+      <button type="button" data-mini-filter="all" aria-pressed="true">全部</button>
+      <button type="button" data-mini-filter="unowned" aria-pressed="false">未购买</button>
+      <button type="button" data-mini-filter="owned" aria-pressed="false">已购买</button>
+    </div>
+    <div class="controls">
+      <label class="groupctl"><select id="mini-pack" aria-label="按迷你本来源筛选"><option value="all">两种开本</option>MINIOPTIONS</select></label>
+      <label class="search"><span class="glass" aria-hidden="true"></span><input id="mini-search" type="search" aria-label="搜索迷你本书名或套装 ISBN" placeholder="书名、中文或套装 ISBN"></label>
+    </div>
+  </div>
+  <div class="minisub"><p id="mini-count" role="status">共 MINIROWNUM 册</p><p>封面用同名英文常规版认书，尺寸以本卡标注为准。</p></div>
+  <div class="mini-grid">MINICARDS</div>
+  <div id="mini-empty" hidden><p>没有符合条件的迷你本。</p><button type="button" data-mini-reset>显示全部迷你本</button></div>
+  <p class="minisync"><span id="mini-sync" role="status"></span> <button type="button" data-mini-retry hidden>重试同步</button></p>
+  <nav class="minifoot" aria-label="更多书目"><a href="#catalog">查看常规单本目录 →</a><a href="#sets">比较套装内容 →</a><a href="english-board-books.xlsx" download>下载 Excel 清单 ↓</a></nav>
+</section>
