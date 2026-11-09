@@ -105,20 +105,34 @@ def outer_size_line(edition):
     return f'<small class="outer-size">外盒（宽 × 高 × 厚） {html.escape(edition["packageSize"])}</small>'
 
 def card_size_line(edition):
-    return (f'<div data-size-edition="{edition["key"]}"><dt>{html.escape(edition["label"])}</dt>'
-            f'<dd>{html.escape(edition["size"])}{outer_size_line(edition)}</dd></div>')
+    key = edition["key"]
+    label = html.escape(edition["label"])
+    size = html.escape(edition["size"])
+    return f'''<div data-size-edition="{key}">
+        <dt>{label}</dt>
+        <dd><span class="edition-measurement">{size}</span>{outer_size_line(edition)}
+          <div class="quick-purchase">
+            <div class="purchase-choice" role="group" aria-label="{label}购买状态" hidden>
+              <button type="button" data-owned="{key}" data-purchase-value="false" aria-pressed="false">未购买</button>
+              <button type="button" data-owned="{key}" data-purchase-value="true" aria-pressed="false">已购买</button>
+            </div>
+            <button class="quick-login" type="button" data-quick-login disabled>正在读取…</button>
+            <small class="quick-pending" hidden>待同步</small>
+          </div>
+        </dd>
+    </div>'''
 
 def card(book):
     isbn = book["isbn"]
     return f'''<article class="book" data-isbn="{isbn}">
-    <button class="coverbtn" type="button" data-open="{isbn}" aria-label="查看 {html.escape(book['title'])} 的封面和版本">
+    <div class="book-cover-wrap"><button class="coverbtn" type="button" data-open="{isbn}" aria-label="查看 {html.escape(book['title'])} 的封面和版本">
       <span class="jacket {'originalshape' if book['group'] != '一根毛宝宝' else ''}"><img src="covers/{isbn}.jpg" loading="lazy" alt="{html.escape(book['title'])} 英文版封面"></span>
-    </button>
+    </button><span class="purchase-badge" hidden></span></div>
     <button class="booktitle" type="button" data-open="{isbn}">{html.escape(book['title'])}</button>
     <p class="cname">{html.escape(book["cn"])}</p>
     <p class="cardintro">{html.escape(book["about"].rstrip("。"))}。</p>
     <div class="book-sizes"><p>单册尺寸（宽 × 高）</p><dl>{"".join(card_size_line(v) for v in book["variants"])}</dl></div>
-    <div class="bookmeta"><span>{'书塔含迷你本' if book["tower"] else book["group"]}</span><button type="button" data-variants="{isbn}" aria-label="查看并标记 {html.escape(book['title'])} 的购买版本">选购版本 ↗</button></div>
+    <div class="bookmeta"><span>{'书塔含迷你本' if book["tower"] else book["group"]}</span><button type="button" data-variants="{isbn}" aria-label="查看 {html.escape(book['title'])} 的摘要、版本与购买链接">摘要与购买链接 ↗</button></div>
     </article>'''
 
 # Miniature copies remain individual editions of an existing work. Reuse the
@@ -144,6 +158,7 @@ for pack, label, style in mini_packs:
         same = '<span class="minioverlap">两套同名</span>' if mini_stories.count(title) > 1 else ''
         mini_cards.append(f'''<article class="mini-item {style}" data-edition-key="{key}" data-pack="{pid}" data-work="{work}" aria-labelledby="mini-{key}">
           <div class="minitag"><span>{esc(label)}</span><small>{number:02d} / {len(pack["books"]):02d}</small></div>
+          <span class="purchase-badge" hidden></span>
           <div class="mini-book"><button type="button" data-mini-open="{key}" class="minicover" aria-label="查看 {esc(title)} {esc(label)}"><img src="covers/{work}.jpg" loading="lazy" width="82" height="82" alt="{esc(title)} 常规英文版封面参考"></button>
           <div><h3 id="mini-{key}"><button type="button" data-mini-open="{key}">{esc(title)}</button></h3><p class="minicn">{esc(b["cn"])} {same}</p><p class="minisize">单册（宽 × 高） <b>{esc(v["size"])}</b></p>{outer_size_line(v)}</div></div>
           <div class="miniactions"><button class="secondary" type="button" data-owned="{key}">正在读取…</button><button class="minilink" type="button" data-mini-open="{key}">摘要与购买 ↗</button></div></article>''')
@@ -160,7 +175,7 @@ index = '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <main id="top">
 <div class="herowrap"><section class="hero wrap"><div class="intro"><p class="byline"><span></span>LESLIE PATRICELLI</p>
 <h1>从一根毛宝宝<br><em>到整座书架</em></h1>
-<p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 COUNT 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。点开封面，可选尺寸、找购买链接，并分别标记已购。</p>
+<p class="introtext">Leslie Patricelli 著绘、合著或参与插画的 COUNT 部英文作品。照片里的书塔小本约 6 cm 见方，常规宝宝纸板书约 17.8 cm 见方。在尺寸旁就能标记购买状态。点开封面可读摘要、找购买链接。</p>
 <a class="primary" href="#catalog">浏览单本目录 <span aria-hidden="true">↓</span></a>
 <a class="herocompare" href="#mini">打开迷你本逐册清单 →</a></div>
 <div class="showcase" aria-label="书架选取的三本英文原版封面">

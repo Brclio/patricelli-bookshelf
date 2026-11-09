@@ -27,12 +27,33 @@
   const miniSearch = document.querySelector('#mini-search');
   const miniPack = document.querySelector('#mini-pack');
   let miniFilter = 'all';
+  function updatePurchaseBadge(card, purchased, total) {
+    const badge = card.querySelector('.purchase-badge');
+    let state = 'unknown';
+    let label = '';
+    if (usable) {
+      if (!purchased) {
+        state = 'unowned';
+        label = '未购买';
+      } else if (purchased < total) {
+        state = 'partial';
+        label = '部分已购 ' + purchased + '/' + total;
+      } else {
+        state = 'owned';
+        label = total === 1 ? '✓ 已购买' : '✓ 全部已购 ' + total + '/' + total;
+      }
+    }
+    card.dataset.purchaseState = state;
+    badge.textContent = label;
+    badge.hidden = !usable;
+  }
   function updateMini() {
     const term = norm(miniSearch.value);
     let visible = 0, acquired = 0, scope = 0;
     for (const row of miniRows) {
       const {book,edition} = variants.get(row.dataset.editionKey);
       const marked = usable && owned.has(edition.key);
+      updatePurchaseBadge(row, marked ? 1 : 0, 1);
       if (miniPack.value !== 'all' && edition.isbn !== miniPack.value) { row.hidden = true; continue; }
       scope++;
       if (marked) acquired++;
@@ -71,6 +92,19 @@
       const matches = matching.length > 0 && (!group.value || book.group === group.value) &&
         (filter === 'all' || purchaseFilter || (filter === 'sizes' && book.multiSize) || (filter === 'tower' && book.tower) ||
         (filter === 'more' && book.group === '一根毛宝宝' && !book.tower));
+      const purchased = book.variants.filter(v => owned.has(v.key)).length;
+      updatePurchaseBadge(card, purchased, book.variants.length);
+      for (const row of card.querySelectorAll('[data-size-edition]')) {
+        const key = row.dataset.sizeEdition;
+        row.hidden = purchaseFilter && !matching.some(v => v.key === key);
+        row.dataset.marked = String(usable && owned.has(key));
+        row.querySelector('.purchase-choice').hidden = !usable;
+        const login = row.querySelector('[data-quick-login]');
+        login.hidden = usable;
+        login.disabled = phase !== 'login';
+        login.textContent = phase === 'login' ? '登录后标记' : phase === 'loading' ? '正在读取…' : '购买记录未载入';
+        row.querySelector('.quick-pending').hidden = !usable || !pending.has(key);
+      }
       card.hidden = !matches;
       if (matches) { count++; matchingEditions += matching.length; }
     }
@@ -85,15 +119,17 @@
     document.querySelector('[data-account-login]').hidden = phase !== 'login';
     const dialogSync = document.querySelector('#dialogsync');
     if (dialogSync) dialogSync.textContent = syncMessage();
-    document.querySelectorAll('[data-variants]').forEach(button => {
-      const book = byId.get(button.dataset.variants);
-      const n = book.variants.filter(v => owned.has(v.key)).length;
-      button.textContent = !usable ? '摘要与版本 ↗' : n ? '已购买 ' + n + '/' + book.variants.length + ' 版' : '未购买 · ' + book.variants.length + ' 版 ↗';
-    });
     document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
     document.querySelectorAll('[data-owned]').forEach(button => {
       const {book,edition} = variants.get(button.dataset.owned);
       const marked = owned.has(edition.key);
+      if (button.hasAttribute('data-purchase-value')) {
+        const target = button.dataset.purchaseValue === 'true';
+        button.disabled = !usable;
+        button.setAttribute('aria-pressed', String(usable && marked === target));
+        button.setAttribute('aria-label', book.title + '，' + edition.label + '，' + (target ? '已购买' : '未购买'));
+        return;
+      }
       button.disabled = !usable && phase !== 'login';
       button.textContent = !usable ? (phase === 'login' ? '登录后标记' : '购买记录未载入') : (marked ? '✓ 已购买' : '未购买 · 标记购买') + (pending.has(edition.key) ? ' · 待同步' : '');
       button.setAttribute('aria-label', (phase === 'login' ? '登录后标记 ' : marked ? '设为未购买 ' : '设为已购买 ') + book.title + ' ' + edition.label);
@@ -232,7 +268,7 @@
       miniFilter = 'all'; miniPack.value = 'all'; miniSearch.value = ''; updateMini();
     }
     else if (button.hasAttribute('data-mini-retry')) purchases.sync();
-    else if (button.hasAttribute('data-account-login')) account.open();
+    else if (button.hasAttribute('data-account-login') || button.hasAttribute('data-quick-login')) account.open();
     else if (button.hasAttribute('data-tower')) showTower();
     else if (button.hasAttribute('data-open')) showBook(button.dataset.open);
     else if (button.hasAttribute('data-variants')) showBook(button.dataset.variants);
@@ -243,6 +279,11 @@
       purchases.edit(ids.map(key => ({key, purchased:!marked})));
     }
     else if (button.id === 'syncagain') purchases.sync();
+    else if (button.hasAttribute('data-purchase-value')) {
+      const key = button.dataset.owned;
+      const purchased = button.dataset.purchaseValue === 'true';
+      if (usable && owned.has(key) !== purchased) purchases.edit([{key, purchased}]);
+    }
     else if (button.hasAttribute('data-owned')) toggleOwned(button.dataset.owned);
     else if (button.hasAttribute('data-copy')) copyIsbn(button);
     else if (button.id === 'filtertower') {

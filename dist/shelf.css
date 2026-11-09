@@ -129,3 +129,35 @@ button.miniguide{text-align:left;border:1px solid transparent}button.miniguide:h
 .set-title-row{display:inline-flex;align-items:center;gap:4px;margin:3px 10px 3px 0}.set-title{display:inline-flex;flex-direction:column;align-items:flex-start;text-decoration:none;margin:2px 0}
 .set-title small{font-size:11px;font-weight:400;color:var(--muted)}.set-title:hover{text-decoration:underline}
 .set-title-row:has(.set-size-note){display:flex;flex-wrap:wrap}.set-size-note{flex-basis:100%;color:var(--muted)}.set-size-note a{text-decoration:underline;text-underline-offset:2px}
+
+/* Put the purchase action next to the size of the exact copy it affects. */
+.book-sizes dl{padding:0;background:none;border:0}
+.book-sizes dl>div{padding:9px 10px;background:#f2f2e9;border-left:3px solid #d0cec1;border-radius:0 4px 4px 0}
+.book-sizes dl>div+div{margin-top:6px;padding-top:9px;border-top:0}
+.book-sizes dl>div[data-marked=true]{background:#eaf3e9;border-left-color:#28724d}
+.book-sizes dl>div[hidden],.quick-purchase [hidden],.purchase-badge[hidden]{display:none}
+.quick-purchase{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:6px}
+.purchase-choice{display:inline-flex;max-width:100%;border:1px solid #bbc2b9;border-radius:5px;background:#fffdf7;overflow:hidden}
+.purchase-choice button{min-height:34px;min-width:0;padding:5px 9px;font-size:12px;font-weight:600;color:#566159;line-height:1.25;white-space:nowrap}
+.purchase-choice button+button{border-left:1px solid #bbc2b9}
+.purchase-choice button[data-purchase-value=false][aria-pressed=true]{background:#e3e5de;color:#37433b}
+.purchase-choice button[data-purchase-value=true][aria-pressed=true]{background:#246747;color:white}
+.purchase-choice button:hover:not([aria-pressed=true]){background:#edf2e7}
+.purchase-choice button:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}
+.quick-login{min-height:32px;padding:4px 9px;background:#fffdf7;border:1px solid #b4bdb4;border-radius:5px;color:var(--navy);font-size:12px;font-weight:600}
+.quick-login:disabled,.quick-pending{font-size:11px;color:var(--muted)}
+.book-cover-wrap{position:relative}
+.purchase-badge{display:inline-flex;align-items:center;max-width:calc(100% - 16px);border-radius:5px;padding:5px 10px;font-size:12px;font-weight:750;line-height:1.3;background:#fffdf5;color:#515a53;border:1px solid #afb5aa;box-shadow:0 1px 4px #1c2b4020;pointer-events:none}
+.book-cover-wrap .purchase-badge{position:absolute;right:8px;top:8px}
+[data-purchase-state=owned] .purchase-badge{background:#206444;color:white;border-color:#185338}
+[data-purchase-state=partial] .purchase-badge{background:#fae5ab;color:#64471b;border-color:#c29b50}
+.book[data-purchase-state=owned] .book-cover-wrap,.book[data-purchase-state=partial] .book-cover-wrap{border-radius:5px}
+.book[data-purchase-state=owned] .book-cover-wrap::after,.book[data-purchase-state=partial] .book-cover-wrap::after{content:'';position:absolute;inset:0;border:3px solid #28724d;border-radius:5px;pointer-events:none}
+.book[data-purchase-state=partial] .book-cover-wrap::after{border-color:#b48835}
+.mini-item>.purchase-badge{align-self:flex-start;margin-top:8px}
+.mini-item[data-purchase-state=owned]{border:2px solid #28724d;background:#f1f7ee}
+@media(max-width:650px){
+  .book-sizes dl>div{padding:7px}.quick-purchase{gap:3px}
+  .purchase-choice button{min-height:36px;padding-inline:6px;font-size:11px}
+  .book-cover-wrap .purchase-badge{right:5px;top:5px;padding:4px 7px;font-size:11px}
+}
