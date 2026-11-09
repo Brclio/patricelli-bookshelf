@@ -1,8 +1,8 @@
 # Leslie Patricelli 英文作品书架
 
-[在线书架](https://baby-bookshelf.bornforthis.cn/)收录 44 部作品，附英文封面、中文内容摘要和 61 条购买版本记录。亚马逊、淘宝及其他书店的入口按单本或套装 ISBN 匹配，搜索入口标为「按 ISBN 搜索」。读者可以注册自己的书架账号，登录后分别标记同一个故事的不同开本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
+[在线书架](https://brclio-baby-bookshelf.brclio.chatgpt.site/)收录 44 部作品，附英文封面、中文内容摘要和 61 条购买版本记录。亚马逊、淘宝及其他书店的入口按单本或套装 ISBN 匹配，搜索入口标为「按 ISBN 搜索」。读者可以注册自己的书架账号，登录后可直接在首页的尺寸旁选择已购买或未购买，封面会显示已购版本数。点开详情也可以标记同一版本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
 
-[迷你本逐册清单](https://baby-bookshelf.bornforthis.cn/#mini) 将书塔 4 册和 Little Library 8 册分别列出，涵盖 10 个不同故事。两种开本和常规本分别使用自己的版本记录；在作品目录或迷你本清单中修改同一册，状态会同步。单册详情区分拆售搜索和按整盒 ISBN 购买的入口。
+[迷你本逐册清单](https://brclio-baby-bookshelf.brclio.chatgpt.site/#mini) 将书塔 4 册和 Little Library 8 册分别列出，涵盖 10 个不同故事。两种开本和常规本分别使用自己的版本记录；在作品目录或迷你本清单中修改同一册，状态会同步。单册详情区分拆售搜索和按整盒 ISBN 购买的入口。
 
 ## 本地运行
 
