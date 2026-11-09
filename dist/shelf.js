@@ -88,7 +88,7 @@
       const matchesWorkText = !term || [book.title, book.cn, book.alias, book.about, book.summary, book.author, book.artist, book.series]
         .some(value => norm(value).includes(term));
       const matching = matchesWorkText ? candidateEditions : candidateEditions.filter(v =>
-        [v.isbn, v.size, v.label, v.pack || ''].some(value => norm(value).includes(term)));
+        [v.isbn, v.size, v.label, v.editionTitle || '', v.market || '', v.pack || ''].some(value => norm(value).includes(term)));
       const matches = matching.length > 0 && (!group.value || book.group === group.value) &&
         (filter === 'all' || purchaseFilter || (filter === 'sizes' && book.multiSize) || (filter === 'tower' && book.tower) ||
         (filter === 'more' && book.group === '一根毛宝宝' && !book.tower));
@@ -198,15 +198,21 @@
       ? '<p class="meta">同一个故事的美版书名为 <b>' + escape(b.title) + '</b>，英版书名为 <b>' + escape(b.alias) + '</b>。</p>'
       : '';
     const credit = b.author === b.artist ? '著绘 · ' + b.author : (b.artist ? '文字 · ' + b.author + '　插画 · ' + b.artist : '共同创作 · ' + b.author);
+    const purchaseArea = v => {
+      if (!v.packOnly) return purchaseLinks(v.isbn);
+      return '<p class="meta">已核实此册随套装出售，整套 ISBN ' + escape(v.packOnly) + '。</p>' + purchaseLinks(v.packOnly);
+    };
     const editionRows = editions.map(v => '<div class="editionrow">' +
       (v.cover ? '<img class="versionimg" src="covers/' + v.cover + '.jpg" alt="' + escape(v.pack || (b.title + ' ' + v.label)) + ' 封面">' : '') +
       '<div><strong>' + escape(v.label) + '</strong>' +
-      (v.publisher ? '<p class="meta">' + escape([v.publisher, v.year, v.pages + ' 页'].join(' · ')) + '</p>' : '') +
+      (v.publisher ? '<p class="meta">' + escape([v.publisher, v.year, v.pages ? v.pages + ' 页' : ''].filter(Boolean).join(' · ')) + '</p>' : '') +
       editionDimensions(v) +
       (v.pack ? '<p class="meta">随 ' + escape(v.pack) + ' 收录</p>' : '') +
       info(v.isbn, v.scope) + '<div class="edactions"><button class="secondary" data-owned="' + v.key + '" type="button"></button><a target="_blank" rel="noopener" href="' + escape(v.link) + '">英文版资料 ↗</a>' +
-      '</div>' + purchaseLinks(v.isbn) + '</div></div>').join('');
-    show(art(selected.cover || id, title) + '<div class="description"><div class="kicker">' + escape([b.group, selected.market, b.edition].filter(Boolean).join(' · ')) + '</div><h2 id="dialogtitle">' + escape(title) +
+      '</div>' + purchaseArea(v) + '</div></div>').join('');
+    const selectedArt = selected.cover ? art(selected.cover, title) :
+      '<div class="detailart"><span>本版封面待核</span></div>';
+    show(selectedArt + '<div class="description"><div class="kicker">' + escape([b.group, selected.market, b.edition].filter(Boolean).join(' · ')) + '</div><h2 id="dialogtitle">' + escape(title) +
       '</h2><div class="zh">' + escape(b.cn) + '</div><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p><p class="meta">' + escape(credit) + '　<a target="_blank" rel="noopener" href="' + escape(b.summarySource) + '">内容出处 ↗</a></p>' +
       (b.tower ? '<p class="meta">照片里的四册书塔收录了迷你版。</p>' : '') + note + '<h3 class="edhead">英文购买版本</h3>' + editionRows + '<p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }

@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-09",
+  "scope": "英文纸质书，按独立作品和可辨认的实体版本分别统计。书号相同的跨国销售只算一次。纯译本、双语版、电子书和音频版不计入英文单本清单。",
+  "sources": [
+    [
+      "作者官网 · 宝宝纸板书",
+      "https://www.lesliepatricelli.com/board-books"
+    ],
+    [
+      "作者官网 · Mini Myths 合作绘本",
+      "https://www.lesliepatricelli.com/mini-myths-books"
+    ],
+    [
+      "美国发行方 · 英文纸板书目录",
+      "https://www.penguinrandomhouseretail.com/series-landing-page/?seriesCode=LEP&seriesName=Leslie+Patricelli+Board+Books"
+    ],
+    [
+      "Walker · 英版出版社目录",
+      "https://assets-us-01.kc-usercontent.com/c47bdf8e-37f3-4353-b63b-5f82ede29bf0/4a1947c1-08cd-4af4-84fd-3b562c4dc58e/Walker2018Backlist%20Cat_2018%20Emailable.pdf"
+    ],
+    [
+      "Open Library · 作者及版本记录",
+      "https://openlibrary.org/authors/OL631336A/Leslie_Patricelli"
+    ],
+    [
+      "Candlewick · Spring!",
+      "https://www.candlewick.com/9781536230031/spring/"
+    ],
+    [
+      "Scholastic · Higher! Higher! 平装",
+      "https://shop.scholastic.com/teachers-ecommerce/teacher/books/higher-higher-9780545266581.html"
+    ],
+    [
+      "Big Box 八册套内书号",
+      "https://www.eslite.com/product/10012071872682884000000"
+    ]
+  ],
+  "bundleISBN": "9780763656515",
+  "pending": [
+    {
+      "title": "Like My Father Always Said…",
+      "note": "ISBN 9781419716218。部分书目列 Leslie Patricelli 为插画者，Abrams 与扫描本馆藏资料只列 Erin McHugh；尚未核到版权页确认插画署名，暂不计入已确认作品。",
+      "source": "https://openlibrary.org/books/OL28556148M",
+      "otherSource": "https://www.abramsbooks.com/product/like-my-father-always-said_9781613127933/"
+    },
+    {
+      "title": "Nighty-Night 英版线索",
+      "note": "ISBN 9781406374322 仅见于次级书目。英版实物和出版记录尚待核实，同名美版已在书架。",
+      "source": "https://www.abebooks.com/servlet/SearchResults?isbn=9781406374322"
+    },
+    {
+      "title": "Little Library 八册小开本",
+      "note": "已查到整盒尺寸，八册的单册宽高仍待核实。",
+      "source": "https://www.books4school.com/leslie-patricellis-little-library-8-board-book-boxed-set-9781536218794-1536218790.html"
+    },
+    {
+      "title": "Learn and Play With Baby 八册商家组合",
+      "note": "历史商家页面出现 9789124330033，所列内容与 Little Library 有出入。尚未核到可靠的独立出版记录或商品实物。",
+      "source": "https://www.letsbuybooks.com/collections/fiction-bestsellers?page=72"
+    },
+    {
+      "title": "部分版本仍缺实物规格或封面",
+      "note": "Higher! Higher! 的早期英版及八册盒内版、Big Kid Bed 与 Tooth 的 Penworthy 馆藏版仍缺已核实的对应封面。已确认的书号可分别登记。",
+      "source": "https://www.eslite.com/product/10012071872682884000000"
+    }
+  ],
+  "notes": [
+    "依次比对作者官网、英美出版社、发行目录、图书馆和实体书商的 ISBN 记录，亦核对仅由 Leslie 参与插画的合作作品。",
+    "不同 ISBN 可分别收藏。套装另计，已确定的实体书允许先登记，尚无证据的尺寸、封面或作者署名均标明待核实。"
+  ]
+}

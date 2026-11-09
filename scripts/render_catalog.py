@@ -33,8 +33,6 @@ assert len({b["isbn"] for b in books}) == len({b["title"] for b in books}) == le
 boxes = json.loads((base / "boxes.json").read_text())
 retail = json.loads((base / "retailers.json").read_text())
 for isbn, shops in retail["products"].items():
-    if not (site / "covers" / f"{isbn}.jpg").exists():
-        raise ValueError(f"Unknown purchase ISBN: {isbn}")
     for shop in shops:
         if urlsplit(shop["url"]).scheme != "https":
             raise ValueError(f"Invalid retailer URL: {isbn}")
@@ -83,11 +81,16 @@ for b in books:
     for a in alt:
         if a["title"] != b["title"]: continue
         aid=a["isbn"]
-        title_metadata = {field: a[field] for field in ("editionTitle","market","publisher","year","pages") if field in a}
+        title_metadata = {field: a[field] for field in ("editionTitle","market","publisher","year","pages","packOnly") if field in a}
         if "editionTitle" in title_metadata:
-            b["permalink"] = a["permalink"]
-            b["variants"][0].update(editionTitle=b["title"], market="美版", label=f'美版纸板书 · {b["title"]}')
-        b["variants"].append(dict(key=aid,isbn=aid,label=a["format"],size=cm(a["w_cm"],a["h_cm"]), sizeBasis=a.get("size_basis",""), sizeNote=a.get("notes",""), scope="单本 ISBN",
+            if a.get("permalink"):
+                b["permalink"] = a["permalink"]
+            base_label = "美国常规纸板书" if b["group"] == "一根毛宝宝" else "美版" + b["edition"]
+            b["variants"][0].update(editionTitle=b["title"], market="美版", label=base_label + " · " + b["title"])
+        single_size = cm(a.get("w_cm"), a.get("h_cm"))
+        if a.get("sizeAxes") == "unconfirmed":
+            single_size += "（两边长度，宽高顺序待核）"
+        b["variants"].append(dict(key=aid,isbn=aid,label=a["format"],size=single_size, sizeBasis=a.get("size_basis",""), sizeNote=a.get("notes",""), scope="套内单册 ISBN" if a.get("packOnly") else "单本 ISBN",
                                   **title_metadata, link=a["source"],ref=a.get("dimensionSource", a["source"]),cover=aid if (site / "covers" / f"{aid}.jpg").exists() else ""))
     for pack in (size_by_pack["9780763650100"], size_by_pack["9781536218794"]):
         if b["title"] not in pack["books"]: continue
@@ -97,7 +100,12 @@ for b in books:
                                   **kit_dimensions(pack),
                                   scope="整盒 ISBN", pack=pack["title"], link=pack["link"],
                                   cover=pid if (site / "covers" / f"{pid}.jpg").exists() else ""))
-    b["multiSize"] = len({v["size"] for v in b["variants"]}) > 1
+    known_sizes = {v["size"] for v in b["variants"] if v["size"] != "待核实"}
+    b["multiSize"] = len(known_sizes) > 1 or any(v.get("pack") for v in b["variants"])
+
+edition_ids = {v["isbn"] for book in books for v in book["variants"]}
+if set(retail["products"]) != edition_ids | {box["isbn"] for box in boxes}:
+    raise ValueError("Purchase links and catalog ISBNs do not match.")
 synopses = {}
 for filename in ("baby-synopses.json", "authored-synopses.json", "other-synopses.json"):
     file = base / filename
@@ -117,8 +125,9 @@ def card_size_line(edition):
     key = edition["key"]
     label = html.escape(edition["label"])
     size = html.escape(edition["size"])
-    return f'''<div data-size-edition="{key}">
-        <dt>{label}</dt>
+    action = "data-mini-open" if edition.get("pack") else "data-edition-open"
+    return f'''<div data-size-edition="{key}" id="edition-{key}">
+        <dt><button class="version-link" type="button" {action}="{key}">{label}</button></dt>
         <dd><span class="edition-measurement">{size}</span>{outer_size_line(edition)}
           <div class="quick-purchase">
             <div class="purchase-choice" role="group" aria-label="{label}购买状态" hidden>
@@ -134,7 +143,11 @@ def card_size_line(edition):
 def card(book):
     isbn = book["isbn"]
     title = html.escape(book["title"])
-    named_editions = [v for v in book["variants"] if v.get("editionTitle")]
+    named_editions = []
+    if book.get("permalink"):
+        for v in book["variants"]:
+            if v.get("editionTitle") and v["editionTitle"] not in {e["editionTitle"] for e in named_editions}:
+                named_editions.append(v)
     anchor = ""
     if named_editions:
         anchor = f' id="{html.escape(book["permalink"], quote=True)}"'
@@ -142,8 +155,10 @@ def card(book):
         for v in named_editions:
             edition_title = html.escape(v["editionTitle"])
             action = f'data-open="{isbn}"' if v["key"] == isbn else f'data-edition-open="{v["key"]}"'
+            cover_img = (f'<img src="covers/{v["cover"]}.jpg" loading="lazy" alt="{edition_title} {v["market"]}封面">'
+                         if v["cover"] else '<span>本版封面待核</span>')
             covers.append(f'''<button class="coverbtn region-cover" type="button" {action} aria-label="查看{v['market']} {edition_title}">
-                <img src="covers/{v['cover']}.jpg" loading="lazy" alt="{edition_title} {v['market']}封面"><small>{v['market']}</small></button>''')
+                {cover_img}<small>{v['market']}</small></button>''')
             titles.append(f'<button class="booktitle" type="button" {action}>{edition_title}</button>')
         cover = '<div class="paired-covers">' + "".join(covers) + '</div>'
         heading = '<div class="paired-titles">' + '<span aria-hidden="true"> / </span>'.join(titles) + '</div>'
@@ -223,6 +238,7 @@ MINISECTION
 <button type="button" data-filter="unowned" aria-pressed="false">未购买 <small id="unownedcount">…</small></button>
 </div><p class="count" aria-live="polite" id="count">COUNT 本</p></div>
 <div class="syncrow"><span id="syncnote" role="status">正在读取账号的购买记录…</span> <button type="button" class="syncagain" id="syncagain" hidden>重试同步</button><button type="button" class="syncagain" data-account-login hidden>登录 / 注册</button></div>
+<p class="audit-shortcut"><a href="#audit">查看最近补入的版本与核查依据 ↓</a></p>
 <div class="grid" id="books">CARDS</div>
 <div id="empty" hidden><p>当前没有匹配的图书。</p><button type="button" id="reset">查看全部单本</button></div>
 <small class="storage">已购买和未购买的数量按版本统计。同一部作品还有未购买版本时，会同时出现在两项筛选中。尺寸按宽 × 高排列。</small></section>
@@ -232,7 +248,8 @@ MINISECTION
 <div class="setinputs"><label>已有的套装<select id="baseBox" aria-label="已有的套装">BOXOPTIONS</select></label>
 <label>想比较的套装<select id="nextBox" aria-label="想比较的套装">BOXOPTIONS</select></label></div>
 <div id="comparison" aria-live="polite"></div></section>
-</main><footer><div class="wrap foot"><div><strong>Patricelli Bookshelf</strong><p>截至 2026 年 11 月 8 日可核实的英文独立作品。中文用于理解书名，同一作品的再版与盒装选集均合并。</p></div><div class="footlinks"><a href="https://www.lesliepatricelli.com" target="_blank" rel="noopener">作者书目 ↗</a><a href="https://www.lesliepatricelli.com/mini-myths-books" target="_blank" rel="noopener">合作绘本 ↗</a><a href="english-board-books.xlsx" download>下载 Excel 清单 ↓</a></div><small>Design · Brclio</small></div></footer>
+REVIEWBLOCK
+</main><footer><div class="wrap foot"><div><strong>Patricelli Bookshelf</strong><p>书目核对日期为 2026 年 11 月 9 日。中文用于理解书名，同一作品的再版与盒装选集均合并。</p></div><div class="footlinks"><a href="https://www.lesliepatricelli.com" target="_blank" rel="noopener">作者书目 ↗</a><a href="https://www.lesliepatricelli.com/mini-myths-books" target="_blank" rel="noopener">合作绘本 ↗</a><a href="english-board-books.xlsx" download>下载 Excel 清单 ↓</a></div><small>Design · Brclio</small></div></footer>
 <dialog id="detail" aria-labelledby="dialogtitle"><button class="close" type="button" id="close" aria-label="关闭详情">×</button><div id="inside"></div></dialog>
 <dialog id="accountDialog" aria-labelledby="accountTitle">
 <button type="button" class="close" id="accountClose" aria-label="关闭账号窗口">×</button>
@@ -264,11 +281,40 @@ MINISECTION
 <script type="application/json" id="bookdata">DATA</script>
 <script type="application/json" id="boxdata">BOXJSON</script>
 <script type="application/json" id="retaildata">RETAILJSON</script>
+<script type="application/json" id="auditdata">REVIEWJSON</script>
 </body></html>'''
+review = json.loads((base / "bibliography-review.json").read_text())
+added = [edition for edition in alt if edition.get("auditDate") == review["date"]]
+def review_link(url, text):
+    return f'<a href="{html.escape(url, quote=True)}" target="_blank" rel="noopener">{html.escape(text)} ↗</a>'
+
+review_items = []
+for edition in added:
+    caption = edition.get("editionTitle") or edition["title"]
+    if caption != edition["title"]:
+        caption += " / " + edition["title"]
+    review_items.append(f'<li><button type="button" data-edition-open="{edition["isbn"]}">{esc(caption)}</button>'
+                        f'<small>{esc(edition["format"])} · {edition["isbn"]}</small></li>')
+bundle = size_by_pack[review["bundleISBN"]]
+pending_rows = []
+for item in review["pending"]:
+    extra = review_link(item["otherSource"], "出版社资料") if item.get("otherSource") else ""
+    pending_rows.append(f'<li>{review_link(item["source"], item["title"])}　{esc(item["note"])} {extra}</li>')
+review_html = f'''<section class="wrap audit-section" id="audit">
+<h2>书目核查</h2><p>{esc(review["date"])} · {len(books)} 部作品，{sum(len(b["variants"]) for b in books)} 个可分别标记的版本，{len(boxes)} 个已核实套装或合售书号。</p>
+<p>{esc(review["scope"])}</p>
+<details><summary>本次补入的 {len(added)} 个版本</summary><ul class="audit-editions">{"".join(review_items)}</ul></details>
+<p><b>套装查重</b>　{review_link(bundle["link"], bundle["title"])} 与 Yes Yes! A Box of Board Books 收录相同的三本书。<a href="#sets">比较套装 →</a></p>
+<details><summary>待核实的书目与规格</summary><ul>{"".join(pending_rows)}</ul></details>
+<p class="audit-sources">{"　".join(review_link(url, title) for title,url in review["sources"])}</p>
+</section>'''
+review["editionCount"] = sum(len(b["variants"]) for b in books)
+review["additions"] = [{"isbn": e["isbn"], "work": e["title"], "title": e.get("editionTitle") or e["title"], "source": e["source"]} for e in added]
 groups = ['<option value="">所有作品类型</option>']
 for name in dict.fromkeys(b["group"] for b in books):
     groups.append(f'<option value="{name}">{name} · {sum(b["group"]==name for b in books)} 本</option>')
 index = index.replace("BASECSS", variables).replace("GROUPS","".join(groups)).replace("SIZECOUNT",str(sum(b["multiSize"] for b in books))).replace("COUNT",str(len(books))).replace("CARDS", "".join(map(card, books))).replace("DATA", json.dumps(books,ensure_ascii=False).replace("<","\\u003c"))
 index = index.replace("BOXOPTIONS", "".join(f'<option value="{b["isbn"]}">{html.escape(b["title"])}（{len(b["books"])} 册）</option>' for b in boxes)).replace("BOXJSON", json.dumps(boxes, ensure_ascii=False).replace("<","\\u003c"))
 index = index.replace("RETAILJSON", json.dumps(retail, ensure_ascii=False).replace("<","\\u003c"))
+index = index.replace("REVIEWBLOCK", review_html).replace("REVIEWJSON", json.dumps(review, ensure_ascii=False).replace("<","\\u003c"))
 (site / "index.html").write_text(index.replace("MINISECTION", mini_view))

@@ -1,8 +1,10 @@
 # Leslie Patricelli 英文作品书架
 
-[在线书架](https://brclio-baby-bookshelf.brclio.chatgpt.site/)收录 44 部作品，附英文封面、中文内容摘要和 62 条购买版本记录。亚马逊、淘宝及其他书店的入口按单本或套装 ISBN 匹配，搜索入口标为「按 ISBN 搜索」。读者可以注册自己的书架账号，登录后可直接在首页的尺寸旁选择已购买或未购买，封面会显示已购版本数。点开详情也可以标记同一版本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
+[在线书架](https://brclio-baby-bookshelf.brclio.chatgpt.site/)收录 44 部作品，附英文封面、中文内容摘要和 95 条购买版本记录。亚马逊、淘宝及其他书店的入口按单本或套装 ISBN 匹配，搜索入口标为「按 ISBN 搜索」。读者可以注册自己的书架账号，登录后可直接在首页的尺寸旁选择已购买或未购买，封面会显示已购版本数。点开详情也可以标记同一版本。购买记录保存在 Cloudflare D1，同一账号可在不同设备上使用。
 
 [迷你本逐册清单](https://brclio-baby-bookshelf.brclio.chatgpt.site/#mini) 将书塔 4 册和 Little Library 8 册分别列出，涵盖 10 个不同故事。两种开本和常规本分别使用自己的版本记录；在作品目录或迷你本清单中修改同一册，状态会同步。单册详情区分拆售搜索和按整盒 ISBN 购买的入口。
+
+[书目核查](https://brclio-baby-bookshelf.brclio.chatgpt.site/#audit)列有此次补入的 33 个英文实体版本，包含英美异名、美国贴纸平装和学校馆藏版。另列 6 个套装或合售书号，以及署名、封面或尺寸仍待核实的项目。
 
 ## 本地运行
 
@@ -19,7 +21,7 @@ npm run preview
 
 ## 维护书目
 
-书名、摘要、ISBN、尺寸和出处在 `catalog/`，封面在 `dist/covers/`。`catalog/retailers.json` 保存按 ISBN 核对的商品页、核对来源和日期。编辑书目后运行以下命令重新生成页面并构建 Worker。渲染脚本使用 Python 3 标准库。
+书名、摘要、ISBN、尺寸和出处在 `catalog/`，封面在 `dist/covers/`。`catalog/retailers.json` 保存按 ISBN 核对的商品页、核对来源和日期。Excel 的生成和核验步骤见[工作簿说明](scripts/workbook.md)。编辑书目后运行以下命令重新生成页面并构建 Worker。渲染脚本使用 Python 3 标准库。
 
 ```sh
 python3 scripts/render_catalog.py

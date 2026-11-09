@@ -2090,9 +2090,820 @@
         "source": "https://carturesti.ro/carte/in-the-bath-235708",
         "stock": "暂无货"
       }
-    ]
+    ],
+    "9780763656515": [
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005110425",
+        "source": "https://www.sanmin.com.tw/product/index/005110425",
+        "stock": "无库存"
+      },
+      {
+        "platform": "YES24",
+        "channel": "other",
+        "url": "https://www.yes24.com/product/goods/17629966",
+        "source": "https://www.yes24.com/product/goods/17629966"
+      },
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9780763656515/Bundle-Board-Books-Big-Little-0763656518/plp",
+        "source": "https://www.abebooks.co.uk/9780763656515/Bundle-Board-Books-Big-Little-0763656518/plp"
+      }
+    ],
+    "9781536216004": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781536216004/Big-Kid-Bed-Patricelli-Leslie-1536216003/plp",
+        "source": "https://www.abebooks.co.uk/9781536216004/Big-Kid-Bed-Patricelli-Leslie-1536216003/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007764035",
+        "source": "https://www.sanmin.com.tw/product/index/007764035"
+      }
+    ],
+    "9781536216011": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781536216011/Tooth-Patricelli-Leslie-1536216011/plp",
+        "source": "https://www.abebooks.co.uk/9781536216011/Tooth-Patricelli-Leslie-1536216011/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007764036",
+        "source": "https://www.sanmin.com.tw/product/index/007764036"
+      }
+    ],
+    "9780545266581": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9780545266581/Higherhigher-0545266580/plp",
+        "source": "https://www.abebooks.co.uk/9780545266581/Higherhigher-0545266580/plp"
+      },
+      {
+        "platform": "Scholastic 美国",
+        "channel": "other",
+        "url": "https://shop.scholastic.com/teachers-ecommerce/teacher/books/higher-higher-9780545266581.html",
+        "source": "https://shop.scholastic.com/teachers-ecommerce/teacher/books/higher-higher-9780545266581.html"
+      },
+      {
+        "platform": "AbeBooks",
+        "channel": "other",
+        "url": "https://www.iberlibro.com/9780545266581/Higherhigher-0545266580/plp",
+        "source": "https://www.iberlibro.com/9780545266581/Higherhigher-0545266580/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005336756",
+        "source": "https://www.sanmin.com.tw/product/index/005336756"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/18143",
+        "source": "https://www.mackids.com.tw/product/detail/18143"
+      }
+    ],
+    "9781406321913": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406321913/Higher-Patricelli-Leslie-1406321915/plp",
+        "source": "https://www.abebooks.co.uk/9781406321913/Higher-Patricelli-Leslie-1406321915/plp"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406321913",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406321913",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406378108": [
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406378108",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406378108",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406336504": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406336504/Quiet-Mike-Patricelli-Leslie-1406336505/plp",
+        "source": "https://www.abebooks.co.uk/9781406336504/Quiet-Mike-Patricelli-Leslie-1406336505/plp"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406336504",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406336504",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406380453": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406380453/Bigger-Patricelli-Leslie-1406380458/plp",
+        "source": "https://www.abebooks.co.uk/9781406380453/Bigger-Patricelli-Leslie-1406380458/plp"
+      },
+      {
+        "platform": "Wendybook",
+        "channel": "other",
+        "url": "https://mkr.wendybook.com/goods/detail/138242",
+        "source": "https://mkr.wendybook.com/goods/detail/138242"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/006657458",
+        "source": "https://www.sanmin.com.tw/product/index/006657458"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/32033",
+        "source": "https://www.mackids.com.tw/product/detail/32033"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406380453",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406380453",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9780744593389": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9780744593389/Yummy-Yucky-Patricelli-Leslie-0744593387/plp",
+        "source": "https://www.abebooks.co.uk/9780744593389/Yummy-Yucky-Patricelli-Leslie-0744593387/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9780744593389/isbn/Yummy-Yucky-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9780744593389/isbn/Yummy-Yucky-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593389",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593389",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406311792": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406311792/Patricelli-Leslie-1406311790/plp",
+        "source": "https://www.abebooks.co.uk/9781406311792/Patricelli-Leslie-1406311790/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406311792/isbn/No-No-Yes-Yes-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406311792/isbn/No-No-Yes-Yes-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406311792",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406311792",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9780744593372": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9780744593372/Quiet-Loud-Patricelli-Leslie-0744593379/plp",
+        "source": "https://www.abebooks.co.uk/9780744593372/Quiet-Loud-Patricelli-Leslie-0744593379/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005401374",
+        "source": "https://www.sanmin.com.tw/product/index/005401374"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9780744593372/isbn/Quiet-Loud-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9780744593372/isbn/Quiet-Loud-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593372",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593372",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406311785": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406311785/Baby-Happy-Sad-Patricelli-Leslie-1406311782/plp",
+        "source": "https://www.abebooks.co.uk/9781406311785/Baby-Happy-Sad-Patricelli-Leslie-1406311782/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406311785/isbn/Baby-Happy-Baby-Sad-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406311785/isbn/Baby-Happy-Baby-Sad-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406311785",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406311785",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9780744593365": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9780744593365/Big-Little-Patricelli-Leslie-0744593360/plp",
+        "source": "https://www.abebooks.co.uk/9780744593365/Big-Little-Patricelli-Leslie-0744593360/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005401373",
+        "source": "https://www.sanmin.com.tw/product/index/005401373"
+      },
+      {
+        "platform": "Better World Books",
+        "channel": "other",
+        "url": "https://www.betterworldbooks.com/product/detail/big-little-9780744593365",
+        "source": "https://www.betterworldbooks.com/product/detail/big-little-9780744593365"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593365",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9780744593365",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781844281961": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781844281961/Dummy-Board-Book-Patricelli-Leslie-1844281965/plp",
+        "source": "https://www.abebooks.co.uk/9781844281961/Dummy-Board-Book-Patricelli-Leslie-1844281965/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781844281961/isbn/Dummy-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781844281961/isbn/Dummy-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781844281961",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781844281961",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781844281954": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781844281954/Blankie-Patricelli-Leslie-1844281957/plp",
+        "source": "https://www.abebooks.co.uk/9781844281954/Blankie-Patricelli-Leslie-1844281957/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781844281954/isbn/Blankie-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781844281954/isbn/Blankie-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781844281954",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781844281954",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406328370": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406328370/Potty-perfect-first-toilet-training-1406328375/plp",
+        "source": "https://www.abebooks.co.uk/9781406328370/Potty-perfect-first-toilet-training-1406328375/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004492361",
+        "source": "https://www.sanmin.com.tw/product/index/004492361"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406328370/isbn/On-My-Potty-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406328370/isbn/On-My-Potty-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406328370",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406328370",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406384987": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406384987/Tooth-Patricelli-Leslie-1406384984/plp",
+        "source": "https://www.abebooks.co.uk/9781406384987/Tooth-Patricelli-Leslie-1406384984/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007036330",
+        "source": "https://www.sanmin.com.tw/product/index/007036330"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406384987/isbn/Tooth-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406384987/isbn/Tooth-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406384987",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406384987",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406348842": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406348842/Toot-Patricelli-Leslie-1406348848/plp",
+        "source": "https://www.abebooks.co.uk/9781406348842/Toot-Patricelli-Leslie-1406348848/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005401295",
+        "source": "https://www.sanmin.com.tw/product/index/005401295"
+      },
+      {
+        "platform": "麥克兒童外文書店",
+        "channel": "other",
+        "url": "https://www.mackids.com.tw/product/detail/37223",
+        "source": "https://www.mackids.com.tw/product/detail/37223"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406348842/isbn/Toot-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406348842/isbn/Toot-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406348842",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406348842",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406384994": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406384994/Big-Kid-Bed-Patricelli-Leslie-1406384992/plp",
+        "source": "https://www.abebooks.co.uk/9781406384994/Big-Kid-Bed-Patricelli-Leslie-1406384992/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007036331",
+        "source": "https://www.sanmin.com.tw/product/index/007036331"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406384994/isbn/Big-Kid-Bed-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406384994/isbn/Big-Kid-Bed-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406384994",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406384994",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406344202": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406344202/Huggy-Kissy-Patricelli-Leslie-1406344206/plp",
+        "source": "https://www.abebooks.co.uk/9781406344202/Huggy-Kissy-Patricelli-Leslie-1406344206/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004492364",
+        "source": "https://www.sanmin.com.tw/product/index/004492364"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406344202/isbn/Huggy-Kissy-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406344202/isbn/Huggy-Kissy-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406344202",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406344202",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406348859": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406348859/Tickle-Patricelli-Leslie-1406348856/plp",
+        "source": "https://www.abebooks.co.uk/9781406348859/Tickle-Patricelli-Leslie-1406348856/plp"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406348859/isbn/Tickle-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406348859/isbn/Tickle-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406348859",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406348859",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406397970": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406397970/Mummy-ultimate-celebration-Mum-perfect-1406397970/plp",
+        "source": "https://www.abebooks.co.uk/9781406397970/Mummy-ultimate-celebration-Mum-perfect-1406397970/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/008003290",
+        "source": "https://www.sanmin.com.tw/product/index/008003290"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406397970/isbn/Mummy-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406397970/isbn/Mummy-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406397970",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406397970",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406397987": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406397987/Daddy-special-celebration-Dad-perfect-1406397989/plp",
+        "source": "https://www.abebooks.co.uk/9781406397987/Daddy-special-celebration-Dad-perfect-1406397989/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/008806939",
+        "source": "https://www.sanmin.com.tw/product/index/008806939"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406397987/isbn/Daddy-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406397987/isbn/Daddy-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406397987",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406397987",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406393521": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406393521/Mad-Patricelli-Leslie-1406393525/plp",
+        "source": "https://www.abebooks.co.uk/9781406393521/Mad-Patricelli-Leslie-1406393525/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007724624",
+        "source": "https://www.sanmin.com.tw/product/index/007724624"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406393521/isbn/Mad-Mad-Mad-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406393521/isbn/Mad-Mad-Mad-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406393521",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406393521",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406393514": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406393514/Doggie-Gets-Scared-Patricelli-Leslie-1406393517/plp",
+        "source": "https://www.abebooks.co.uk/9781406393514/Doggie-Gets-Scared-Patricelli-Leslie-1406393517/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/007724623",
+        "source": "https://www.sanmin.com.tw/product/index/007724623"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406393514/isbn/Doggie-Gets-Scared-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406393514/isbn/Doggie-Gets-Scared-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406393514",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406393514",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406305227": [
+      {
+        "platform": "Avenue Bookstore 澳大利亚",
+        "channel": "other",
+        "url": "https://avenuebookstore.com.au/p/birthday-box",
+        "source": "https://avenuebookstore.com.au/p/birthday-box"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406305227",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406305227",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406322446": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406322446/Birthday-Box-Patricelli-Leslie-140632244X/plp",
+        "source": "https://www.abebooks.co.uk/9781406322446/Birthday-Box-Patricelli-Leslie-140632244X/plp"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406322446",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406322446",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406359473": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406359473/Hop-Baby-celebrates-joys-springtime-1406359475/plp",
+        "source": "https://www.abebooks.co.uk/9781406359473/Hop-Baby-celebrates-joys-springtime-1406359475/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/005000693",
+        "source": "https://www.sanmin.com.tw/product/index/005000693"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406359473/isbn/Hop-Hop-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406359473/isbn/Hop-Hop-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406359473",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406359473",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781406343649": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406343649/Fa-Patricelli-Leslie-1406343641/plp",
+        "source": "https://www.abebooks.co.uk/9781406343649/Fa-Patricelli-Leslie-1406343641/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/004492363",
+        "source": "https://www.sanmin.com.tw/product/index/004492363"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781406343649/isbn/Fa-La-La-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781406343649/isbn/Fa-La-La-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406343649",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406343649",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781529506389": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781529506389/Splash-Patricelli-Leslie-1529506387/plp",
+        "source": "https://www.abebooks.co.uk/9781529506389/Splash-Patricelli-Leslie-1529506387/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/010422364",
+        "source": "https://www.sanmin.com.tw/product/index/010422364"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781529506389/isbn/Splash-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781529506389/isbn/Splash-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529506389",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529506389",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781529516104": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781529516104/Snow-Patricelli-Leslie-1529516102/plp",
+        "source": "https://www.abebooks.co.uk/9781529516104/Snow-Patricelli-Leslie-1529516102/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/012537184",
+        "source": "https://www.sanmin.com.tw/product/index/012537184"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781529516104/isbn/Snow-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781529516104/isbn/Snow-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529516104",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529516104",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781529518481": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781529518481/Spring-first-board-book-springtime-1529518482/plp",
+        "source": "https://www.abebooks.co.uk/9781529518481/Spring-first-board-book-springtime-1529518482/plp"
+      },
+      {
+        "platform": "三民網路書店",
+        "channel": "other",
+        "url": "https://www.sanmin.com.tw/product/index/015176359",
+        "source": "https://www.sanmin.com.tw/product/index/015176359"
+      },
+      {
+        "platform": "LoveReading4Kids 英国",
+        "channel": "other",
+        "url": "https://www.lovereading4kids.co.uk/book/9781529518481/isbn/Spring-by-Leslie-Patricelli.html",
+        "source": "https://www.lovereading4kids.co.uk/book/9781529518481/isbn/Spring-by-Leslie-Patricelli.html"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529518481",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781529518481",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      }
+    ],
+    "9781646978267": [],
+    "9781646978274": []
   },
   "checkedByISBN": {
-    "9781406328387": "2026-11-09"
+    "9781406328387": "2026-11-09",
+    "9780763656515": "2026-11-09",
+    "9781536216004": "2026-11-09",
+    "9781536216011": "2026-11-09",
+    "9780545266581": "2026-11-09",
+    "9781406321913": "2026-11-09",
+    "9781406378108": "2026-11-09",
+    "9781406336504": "2026-11-09",
+    "9781406380453": "2026-11-09",
+    "9780744593389": "2026-11-09",
+    "9781406311792": "2026-11-09",
+    "9780744593372": "2026-11-09",
+    "9781406311785": "2026-11-09",
+    "9780744593365": "2026-11-09",
+    "9781844281961": "2026-11-09",
+    "9781844281954": "2026-11-09",
+    "9781406328370": "2026-11-09",
+    "9781406384987": "2026-11-09",
+    "9781406348842": "2026-11-09",
+    "9781406384994": "2026-11-09",
+    "9781406344202": "2026-11-09",
+    "9781406348859": "2026-11-09",
+    "9781406397970": "2026-11-09",
+    "9781406397987": "2026-11-09",
+    "9781406393521": "2026-11-09",
+    "9781406393514": "2026-11-09",
+    "9781406305227": "2026-11-09",
+    "9781406322446": "2026-11-09",
+    "9781406359473": "2026-11-09",
+    "9781406343649": "2026-11-09",
+    "9781529506389": "2026-11-09",
+    "9781529516104": "2026-11-09",
+    "9781529518481": "2026-11-09",
+    "9781646978267": "2026-11-09",
+    "9781646978274": "2026-11-09"
   }
 }

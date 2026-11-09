@@ -169,3 +169,15 @@ button.miniguide{text-align:left;border:1px solid transparent}button.miniguide:h
 .paired-titles{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:5px;margin-top:13px}
 .paired-titles .booktitle{margin:0}.paired-titles>span{color:var(--muted)}
 .book:target{scroll-margin-block-start:1rem}
+
+.version-link{font:inherit;text-align:left;color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+.audit-shortcut{margin:-8px 0 18px;font-size:13px;color:var(--blue)}
+.audit-section{padding:28px 0 35px;border-top:1px solid var(--line);font-size:14px}
+.audit-section h2{font:700 32px var(--serif);margin-bottom:8px}
+.audit-section p{margin:9px 0;color:var(--muted)}
+.audit-section summary{font-weight:650;cursor:pointer;padding:5px 0;color:var(--navy)}
+.audit-section ul{margin:8px 0 14px 20px}
+.audit-section a,.audit-section button,.audit-shortcut a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.audit-editions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:7px 18px}
+.audit-editions button{text-align:left}.audit-editions small{display:block;color:var(--muted)}
+.audit-sources{font-size:12px}

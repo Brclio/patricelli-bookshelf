@@ -189,6 +189,25 @@
         "https://www.eslite.com/product/1003149142733666",
         "https://www.yes24.com/product/goods/72156572"
       ]
+    },
+    {
+      "title": "Yes Yes! A Bundle of Board Books",
+      "isbn": "9780763656515",
+      "books": [
+        "Big Little",
+        "No No Yes Yes",
+        "Yummy Yucky"
+      ],
+      "link": "https://www.sanmin.com.tw/product/index/005110425",
+      "format": "三册合售",
+      "singleSize": "套内单册尺寸待核实。",
+      "packageSize": "YES24 的整套商品规格约 21.8 × 30.2 × 10.2 cm。",
+      "miniStatus": "单册开本未核实",
+      "notes": "与 2008 年的 Yes Yes! A Box of Board Books 收录相同三部作品。此为 2010 年的另一组商品书号。",
+      "sources": [
+        "https://www.sanmin.com.tw/product/index/005110425",
+        "https://www.yes24.com/product/goods/17629966"
+      ]
     }
   ],
   "standaloneMini": "未找到可独立核实的书塔约 6 cm 英文单册独立 ISBN。",
