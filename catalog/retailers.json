@@ -2038,6 +2038,61 @@
         "url": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536230031.html",
         "source": "https://www.booktopia.com.au/leslie-patricelli-board-books-leslie-patricelli/book/9781536230031.html"
       }
+    ],
+    "9781406328387": [
+      {
+        "platform": "AbeBooks 英国",
+        "channel": "other",
+        "url": "https://www.abebooks.co.uk/9781406328387/Bath-Patricelli-Leslie-1406328383/plp",
+        "source": "https://www.abebooks.co.uk/9781406328387/Bath-Patricelli-Leslie-1406328383/plp",
+        "stock": "二手书"
+      },
+      {
+        "platform": "誠品線上",
+        "channel": "other",
+        "url": "https://www.eslite.com/product/1003149142674203",
+        "source": "https://www.eslite.com/product/1003149142674203",
+        "stock": "到货通知"
+      },
+      {
+        "platform": "亚马逊英国",
+        "channel": "amazon-uk",
+        "url": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406328387",
+        "source": "https://www.amazon.co.uk/s?i=stripbooks&k=9781406328387",
+        "stock": "按 ISBN 搜索",
+        "kind": "search"
+      },
+      {
+        "platform": "AbeBooks 美国",
+        "channel": "other",
+        "url": "https://www.abebooks.com/9781406328387/Bath-Patricelli-Leslie-1406328383/plp",
+        "source": "https://www.abebooks.com/9781406328387/Bath-Patricelli-Leslie-1406328383/plp",
+        "stock": "二手书"
+      },
+      {
+        "platform": "新西兰 The Children’s Bookshop",
+        "channel": "other",
+        "url": "https://thechildrensbookshop.co.nz/p/962338",
+        "source": "https://thechildrensbookshop.co.nz/p/962338",
+        "stock": "到货通知"
+      },
+      {
+        "platform": "日本乐天图书",
+        "channel": "other",
+        "url": "https://books.rakuten.co.jp/rb/11118823/",
+        "source": "https://books.rakuten.co.jp/rb/11118823/",
+        "stock": "暂不可订购"
+      },
+      {
+        "platform": "Cărturești",
+        "channel": "other",
+        "url": "https://carturesti.ro/carte/in-the-bath-235708",
+        "source": "https://carturesti.ro/carte/in-the-bath-235708",
+        "stock": "暂无货"
+      }
     ]
+  },
+  "checkedByISBN": {
+    "9781406328387": "2026-11-09"
   }
 }

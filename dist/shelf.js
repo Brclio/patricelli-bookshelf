@@ -189,17 +189,24 @@
     const note = edition.sizeNote ? '<p class="meta">' + escape(edition.sizeNote) + '</p>' : '';
     return copy + outer + note;
   }
-  function showBook(id) {
+  function showBook(id, editionKey = id) {
     const b = byId.get(id);
-    const note = b.alias ? '<p class="meta">英国版同一本也叫 <b>' + escape(b.alias) + '</b></p>' : '';
+    const selected = b.variants.find(v => v.key === editionKey);
+    const title = selected.editionTitle || b.title;
+    const editions = [selected, ...b.variants.filter(v => v !== selected)];
+    const note = b.alias
+      ? '<p class="meta">同一个故事的美版书名为 <b>' + escape(b.title) + '</b>，英版书名为 <b>' + escape(b.alias) + '</b>。</p>'
+      : '';
     const credit = b.author === b.artist ? '著绘 · ' + b.author : (b.artist ? '文字 · ' + b.author + '　插画 · ' + b.artist : '共同创作 · ' + b.author);
-    const editionRows = b.variants.map(v => '<div class="editionrow">' +
+    const editionRows = editions.map(v => '<div class="editionrow">' +
       (v.cover ? '<img class="versionimg" src="covers/' + v.cover + '.jpg" alt="' + escape(v.pack || (b.title + ' ' + v.label)) + ' 封面">' : '') +
-      '<div><strong>' + escape(v.label) + '</strong>' + editionDimensions(v) +
+      '<div><strong>' + escape(v.label) + '</strong>' +
+      (v.publisher ? '<p class="meta">' + escape([v.publisher, v.year, v.pages + ' 页'].join(' · ')) + '</p>' : '') +
+      editionDimensions(v) +
       (v.pack ? '<p class="meta">随 ' + escape(v.pack) + ' 收录</p>' : '') +
       info(v.isbn, v.scope) + '<div class="edactions"><button class="secondary" data-owned="' + v.key + '" type="button"></button><a target="_blank" rel="noopener" href="' + escape(v.link) + '">英文版资料 ↗</a>' +
       '</div>' + purchaseLinks(v.isbn) + '</div></div>').join('');
-    show(art(id, b.title) + '<div class="description"><div class="kicker">' + escape(b.group + ' · ' + b.edition) + '</div><h2 id="dialogtitle">' + escape(b.title) +
+    show(art(selected.cover || id, title) + '<div class="description"><div class="kicker">' + escape([b.group, selected.market, b.edition].filter(Boolean).join(' · ')) + '</div><h2 id="dialogtitle">' + escape(title) +
       '</h2><div class="zh">' + escape(b.cn) + '</div><h3 class="edhead">内容摘要</h3><p class="synopsis">' + escape(b.summary) + '</p><p class="meta">' + escape(credit) + '　<a target="_blank" rel="noopener" href="' + escape(b.summarySource) + '">内容出处 ↗</a></p>' +
       (b.tower ? '<p class="meta">照片里的四册书塔收录了迷你版。</p>' : '') + note + '<h3 class="edhead">英文购买版本</h3>' + editionRows + '<p id="dialogsync" role="status" class="meta"></p><p id="dialogstatus" role="status" class="meta"></p></div>');
   }
@@ -270,6 +277,10 @@
     else if (button.hasAttribute('data-mini-retry')) purchases.sync();
     else if (button.hasAttribute('data-account-login') || button.hasAttribute('data-quick-login')) account.open();
     else if (button.hasAttribute('data-tower')) showTower();
+    else if (button.hasAttribute('data-edition-open')) {
+      const {book, edition} = variants.get(button.dataset.editionOpen);
+      showBook(book.isbn, edition.key);
+    }
     else if (button.hasAttribute('data-open')) showBook(button.dataset.open);
     else if (button.hasAttribute('data-variants')) showBook(button.dataset.variants);
     else if (button.id === 'markTower') {
@@ -323,13 +334,16 @@
       const edition = book.variants.find(v => v.isbn === next.isbn);
       const packRecord = next.copySizes?.[title];
       const size = edition?.size || packRecord?.size || '待核实';
-      const target = edition ? 'data-mini-open="' + edition.key + '"' : 'data-open="' + book.isbn + '"';
+      let target = 'data-open="' + book.isbn + '"';
+      if (edition) target = 'data-mini-open="' + edition.key + '"';
+      else if (packRecord?.editionKey) target = 'data-edition-open="' + packRecord.editionKey + '"';
+      const printedTitle = packRecord?.editionTitle || title;
       const source = packRecord ? ' <a class="set-size-source" href="' + escape(packRecord.ref) +
         '" target="_blank" rel="noopener" aria-label="' + escape(title) + ' 的尺寸出处">出处 ↗</a>' : '';
       const difference = packRecord?.note ? '<small class="set-size-note"><a href="' + escape(packRecord.otherRef) +
         '" target="_blank" rel="noopener">' + escape(packRecord.note) + ' ↗</a></small>' : '';
       return '<span class="set-title-row"><button class="titlechip set-title" type="button" ' + target + '>' +
-        escape(title) + '<small>单册（宽 × 高） ' + escape(size) + '</small></button>' + source + difference + '</span>';
+        escape(printedTitle) + '<small>单册（宽 × 高） ' + escape(size) + '</small></button>' + source + difference + '</span>';
     }).join('');
     document.querySelector('#comparison').innerHTML = '<div><h3>重复 · ' + common.length + ' 本</h3>' + (titles(common) || '两套没有重复的书。') +
       '</div><div><h3>新增 · ' + fresh.length + ' 本</h3>' + (titles(fresh) || '已有套装包含这些书。') +

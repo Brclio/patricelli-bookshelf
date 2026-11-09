@@ -48,6 +48,11 @@ for box in boxes:
     box.update({k: pack[k] for k in ["singleSize", "packageSize", "miniStatus"]})
     if pack.get("copySizes"):
         box["copySizes"] = pack["copySizes"]
+        kit_isbns = {item["isbn"] for item in pack.get("ukBooks", [])}
+        for edition in alt:
+            if edition["isbn"] in kit_isbns and edition.get("editionTitle"):
+                box["copySizes"][edition["title"]].update(
+                    editionTitle=edition["editionTitle"], editionKey=edition["isbn"])
 
 def cm(width, height):
     if not (width and height):
@@ -78,8 +83,12 @@ for b in books:
     for a in alt:
         if a["title"] != b["title"]: continue
         aid=a["isbn"]
+        title_metadata = {field: a[field] for field in ("editionTitle","market","publisher","year","pages") if field in a}
+        if "editionTitle" in title_metadata:
+            b["permalink"] = a["permalink"]
+            b["variants"][0].update(editionTitle=b["title"], market="美版", label=f'美版纸板书 · {b["title"]}')
         b["variants"].append(dict(key=aid,isbn=aid,label=a["format"],size=cm(a["w_cm"],a["h_cm"]), sizeBasis=a.get("size_basis",""), sizeNote=a.get("notes",""), scope="单本 ISBN",
-                                  link=a["source"],ref=a["source"],cover=aid if (site / "covers" / f"{aid}.jpg").exists() else ""))
+                                  **title_metadata, link=a["source"],ref=a.get("dimensionSource", a["source"]),cover=aid if (site / "covers" / f"{aid}.jpg").exists() else ""))
     for pack in (size_by_pack["9780763650100"], size_by_pack["9781536218794"]):
         if b["title"] not in pack["books"]: continue
         mini=pack["isbn"]=="9780763650100"
@@ -88,7 +97,7 @@ for b in books:
                                   **kit_dimensions(pack),
                                   scope="整盒 ISBN", pack=pack["title"], link=pack["link"],
                                   cover=pid if (site / "covers" / f"{pid}.jpg").exists() else ""))
-    b["multiSize"] = len(b["variants"])>1 and not b["title"].startswith("The Rizzlerunk Club:")
+    b["multiSize"] = len({v["size"] for v in b["variants"]}) > 1
 synopses = {}
 for filename in ("baby-synopses.json", "authored-synopses.json", "other-synopses.json"):
     file = base / filename
@@ -124,11 +133,29 @@ def card_size_line(edition):
 
 def card(book):
     isbn = book["isbn"]
-    return f'''<article class="book" data-isbn="{isbn}">
-    <div class="book-cover-wrap"><button class="coverbtn" type="button" data-open="{isbn}" aria-label="查看 {html.escape(book['title'])} 的封面和版本">
-      <span class="jacket {'originalshape' if book['group'] != '一根毛宝宝' else ''}"><img src="covers/{isbn}.jpg" loading="lazy" alt="{html.escape(book['title'])} 英文版封面"></span>
-    </button><span class="purchase-badge" hidden></span></div>
-    <button class="booktitle" type="button" data-open="{isbn}">{html.escape(book['title'])}</button>
+    title = html.escape(book["title"])
+    named_editions = [v for v in book["variants"] if v.get("editionTitle")]
+    anchor = ""
+    if named_editions:
+        anchor = f' id="{html.escape(book["permalink"], quote=True)}"'
+        covers, titles = [], []
+        for v in named_editions:
+            edition_title = html.escape(v["editionTitle"])
+            action = f'data-open="{isbn}"' if v["key"] == isbn else f'data-edition-open="{v["key"]}"'
+            covers.append(f'''<button class="coverbtn region-cover" type="button" {action} aria-label="查看{v['market']} {edition_title}">
+                <img src="covers/{v['cover']}.jpg" loading="lazy" alt="{edition_title} {v['market']}封面"><small>{v['market']}</small></button>''')
+            titles.append(f'<button class="booktitle" type="button" {action}>{edition_title}</button>')
+        cover = '<div class="paired-covers">' + "".join(covers) + '</div>'
+        heading = '<div class="paired-titles">' + '<span aria-hidden="true"> / </span>'.join(titles) + '</div>'
+    else:
+        shape = "originalshape" if book["group"] != "一根毛宝宝" else ""
+        cover = f'''<button class="coverbtn" type="button" data-open="{isbn}" aria-label="查看 {title} 的封面和版本">
+      <span class="jacket {shape}"><img src="covers/{isbn}.jpg" loading="lazy" alt="{title} 英文版封面"></span>
+    </button>'''
+        heading = f'<button class="booktitle" type="button" data-open="{isbn}">{title}</button>'
+    return f'''<article class="book" data-isbn="{isbn}"{anchor}>
+    <div class="book-cover-wrap">{cover}<span class="purchase-badge" hidden></span></div>
+    {heading}
     <p class="cname">{html.escape(book["cn"])}</p>
     <p class="cardintro">{html.escape(book["about"].rstrip("。"))}。</p>
     <div class="book-sizes"><p>单册尺寸（宽 × 高）</p><dl>{"".join(card_size_line(v) for v in book["variants"])}</dl></div>
